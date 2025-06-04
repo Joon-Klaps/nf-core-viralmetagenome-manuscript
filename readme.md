@@ -12,8 +12,17 @@
 
 # Results
 
+- Performance on certain viruses
+    - SARS-CoV-2
+    - Influenza A
+    - HIV
+    - MPXV
+    - EBOV
+    - RSVA
+    - West Nile Virus
+    - Crimena-Congo Hemorrhagic Fever Virus (Orthonairovirus haemorrhagiae)
+    - Zika Virus
 - Runtime metrics
-- How to navigate the output
 - Why certain default variables are set to themselves (cluster tools vs variant calling tools & consensus calling tools & used databases)
 
 
