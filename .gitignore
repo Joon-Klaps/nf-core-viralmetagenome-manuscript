@@ -13,7 +13,9 @@
 .*.lb
 docs/
 .DS_Store
-
+.nextflow
+viralgenie/
+*.fastq.gz
 ## Intermediate documents:
 *.dvi
 *.xdv
