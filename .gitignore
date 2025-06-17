@@ -16,6 +16,8 @@ docs/
 .nextflow
 viralgenie/
 *.fastq.gz
+analysis/viralgenie/plotting.ipynb
+
 ## Intermediate documents:
 *.dvi
 *.xdv
