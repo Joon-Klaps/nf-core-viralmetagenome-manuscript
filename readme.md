@@ -1,34 +1,30 @@
-# Abstract
--> Explain wht the pipeline is, why there was a need to construct it
+# Manuscript of nf-core/viralmetagenome
 
-# Introduction
--> Abstract above but in more detail
+Jupyter Notebooks can be found in the `analysis` directory, which contains a subset of the pipeline output and the  analysis results.
 
-# Methods
+For reproducibility purposes, run them in a devcontainer.
 
-- Walk through how the pipeline works and how to run it
-- Which tools are used
--
+# Dual-Version Manuscript Setup
 
-# Results
+This directory contains a LaTeX manuscript setup that can generate two different versions:
+1. **bioRxiv preprint version** - formatted for preprint submission
+2. **Oxford Bioinformatics journal version** - using the OUP template
 
-- Performance on certain viruses
-    - SARS-CoV-2
-    - Influenza A
-    - HIV
-    - MPXV
-    - EBOV
-    - RSVA
-    - West Nile Virus
-    - Crimena-Congo Hemorrhagic Fever Virus (Orthonairovirus haemorrhagiae)
-    - Zika Virus
-- Runtime metrics
-- Why certain default variables are set to themselves (cluster tools vs variant calling tools & consensus calling tools & used databases)
+## File Structure
 
+### Main Files
+- `manuscript-biorxiv.tex` - Main file for bioRxiv version
+- `manuscript-oxford.tex` - Main file for Oxford Bioinformatics version
+- `Makefile` - Automation for building both versions
 
-# Use case
+### Content Files
+- `manuscript-content.tex` - Shared content formatted for OUP template
+- `manuscript-content-biorxiv.tex` - Content formatted for bioRxiv
 
-
+### Supporting Files
+- `reference.bib` - Bibliography database (shared between versions)
+- `oup-authoring-template.cls` - OUP document class
+- `Fig/` - Directory for figures (shared between versions)
 
 
 # Template
