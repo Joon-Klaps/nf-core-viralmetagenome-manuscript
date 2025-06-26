@@ -10,7 +10,7 @@ We simulated mixed  HIV-1 samples containing paired-end read data based on four 
 Sample mixtures were run with nf-core/viralmetagenome using default settings unless specified otherwise. Reference sequences used to compare the influence of the reference during scaffolding are the same sequences used for read generation, in addition to the databases, Virosaurus \cite{Gleizes2020-rq} and the Reference Viral Database \cite{Goodacre2018-dw}. Visualisation was done in R \cite{R_Core_Team2021-ow} using tidyverse \cite{Wickham2019-vr}.
 
 
-\subsubsection*{S2 Evaluation of nf-core/viralmetagenome on public data}
+\subsubsection*{S2. Evaluation of nf-core/viralmetagenome on public data}
 
 A public metagenomic dataset was constructed by selecting a randomized subset of 2,000 records from the NCBI Virus database, targeting the following viruses: \textit{Orthonairovirus haemorrhagiae}, \textit{Mammarenavirus lassaense}, \textit{Zika virus}, \textit{West Nile virus}, \textit{Monkeypox virus}, \textit{Influenza A virus}, \textit{Severe acute respiratory syndrome coronavirus 2}, and \textit{Human respiratory syncytial virus A}. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than ‘Amplicon’. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, \texttt{--keep\_unclassified false} and \texttt{--skip\_read\_classification} to speed up the analysis.
 
