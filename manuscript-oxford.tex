@@ -1,0 +1,86 @@
+%%
+%% Oxford Bioinformatics journal version using OUP template
+%%
+%% Copyright 2022 OXFORD UNIVERSITY PRESS
+%%
+%% This file is part of the 'oup-authoring-template Bundle'.
+%%
+
+%%%CONTEMPORARY%%%
+\documentclass[unnumsec,webpdf,contemporary,large]{oup-authoring-template}%
+%\documentclass[unnumsec,webpdf,contemporary,large,namedate]{oup-authoring-template}% uncomment this line for author year citations and comment the above
+
+% Uncomment for other layout options:
+%\documentclass[unnumsec,webpdf,contemporary,medium]{oup-authoring-template}
+%\documentclass[unnumsec,webpdf,contemporary,small]{oup-authoring-template}
+
+%%%MODERN%%%
+%\documentclass[unnumsec,webpdf,modern,large]{oup-authoring-template}
+%\documentclass[unnumsec,webpdf,modern,large,namedate]{oup-authoring-template}
+
+%%%TRADITIONAL%%%
+%\documentclass[unnumsec,webpdf,traditional,large]{oup-authoring-template}
+%\documentclass[unnumsec,webpdf,traditional,large,namedate]{oup-authoring-template}
+
+\graphicspath{{Fig/}}
+
+% line numbers for review (comment out for final version)
+%\usepackage[mathlines, switch]{lineno}
+%\linenumbers
+
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%
+\newtheorem{proposition}[theorem]{Proposition}%
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+% Journal metadata
+\journaltitle{Bioinformatics}
+\DOI{10.1093/bioinformatics/btab123} % Will be assigned by journal
+\copyrightyear{2025}
+\pubyear{2025}
+\access{Advance Access Publication Date: Day Month Year}
+\appnotes{Application Note}
+
+\firstpage{1}
+
+% Manuscript metadata (title, authors, abstract)
+\title[ViralGenie: A Comprehensive Pipeline for Viral Metagenomics]{ViralGenie: A Comprehensive Pipeline for Viral Metagenomics and Phylogenetic Analysis}
+
+\author[1,$\ast$]{Joon Klaps\ORCID{0000-0002-2507-0430}}
+\author[1]{Philippe Lemey\ORCID{0000-0003-2826-5353}}
+\author[1]{Liana Kafetzopoulou\ORCID{0000-0003-4531-1374}}
+
+\authormark{Joon Klaps et al.}
+
+\address[1]{\orgdiv{Rega Institute for Medical Research, Department of Microbiology, Immunology and Transplantation}, \orgname{KU Leuven}, \orgaddress{\street{Herestraat 49}, \postcode{3000}, \state{Leuven}, \country{Belgium}}}
+
+\corresp[$\ast$]{Corresponding author. \href{email:joon.klaps@kuleuven.be}{joon.klaps@kuleuven.be}}
+
+\received{Date}{0}{Year}
+\revised{Date}{0}{Year}
+\accepted{Date}{0}{Year}
+
+\abstract{
+\textbf{Motivation:} Eukaryotic viruses present significant challenges in genome reconstruction and variant analysis due to their extensive diversity, quasi-species, absence of universal marker genes, and genome segmentation. While de novo assembly followed by reference database matching and consequently, read mapping is a common approach, manual execution of this workflow is extremely time-consuming, particularly due to the extensive reference verification and selection required. There is a critical need for an automated, scalable pipeline that can efficiently handle viral metagenomic analysis without manual intervention.\\
+\textbf{Results:} Here, we present nf-core/viralgenie, a comprehensive viral metagenomic pipeline for untargeted genome reconstruction, and variant analysis of eukaryotic viruses. Viralgenie is implemented as a modular Nextflow workflow that processes metagenomic and hybridization capture enriched samples to automatically detect and assemble viral genomes, while also performing variant analysis. The pipeline features automated reference selection, quality control metrics, comprehensive documentation, and seamless integration with containerization technologies including Docker, Singularity, and Podman. We demonstrate its utility and accuracy through validation on both simulated and real datasets, showing robust performance across diverse viral families and sample types.\\
+\textbf{Availability:} nf-core/viralgenie is freely available at https://github.com/nf-core/viralgenie with comprehensive documentation at https://nf-co.re/viralgenie.\\
+}
+
+\keywords{viralgenie, bioinformatic pipeline, nextflow, viral metagenomics, viral assembly, viral variant analysis}
+
+\maketitle
+
+% Include the shared manuscript content
+\input{manuscript-content}
+
+% Bibliography for OUP template
+\bibliographystyle{unsrt}
+\bibliography{reference}
+
+\end{document}

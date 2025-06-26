@@ -1,0 +1,111 @@
+%%
+%% bioRxiv preprint version of the manuscript
+%%
+\documentclass[11pt]{article}
+
+% Packages for bioRxiv formatting
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{lineno}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{textcomp} % For additional text symbols
+\usepackage{gensymb} % For degree and other symbols
+
+% Page geometry for bioRxiv
+\geometry{
+    letterpaper,
+    margin=1in,
+    top=1.2in,
+    bottom=1.2in
+}
+
+% Line numbers for preprint
+\linenumbers
+\renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
+
+% Header/footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small bioRxiv preprint}
+\fancyhead[R]{\small \today}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Title formatting for bioRxiv
+\makeatletter
+\renewcommand{\maketitle}{%
+    \begin{center}
+        {\Large\bfseries \@title \par}
+        \vskip 1em
+        {\large \@author \par}
+        \vskip 0.5em
+        {\small \@date \par}
+    \end{center}
+    \vskip 2em
+}
+\makeatother
+
+% bioRxiv specific formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Bibliography style for bioRxiv
+\bibliographystyle{unsrt}
+
+% Document metadata
+\title{ViralGenie: A Comprehensive Pipeline for Viral Metagenomics and Phylogenetic Analysis}
+
+\author{%
+    Joon Klaps$^{1,*}$, Philippe Lemey$^{1}$, Liana Kafetzopoulou$^{1}$ \\[0.5em]
+    \small $^1$Rega Institute for Medical Research, Department of Microbiology, Immunology and Transplantation, KU Leuven, Belgium \\[0.5em]
+    \small $^*$Correspondence: joon.klaps@kuleuven.be
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Preprint notice
+\begin{center}
+\fbox{%
+\parbox{0.9\textwidth}{%
+\centering
+\textbf{bioRxiv Preprint} \\
+This article is a preprint and has not been peer-reviewed. \\
+Data may be preliminary.
+}%
+}
+\end{center}
+
+\vskip 1em
+
+% Abstract section for bioRxiv
+\section*{Abstract}
+Eukaryotic viruses present significant challenges in genome reconstruction and variant analysis due to their extensive diversity, quasi-species, absence of universal marker genes, and genome segmentation. While de novo assembly followed by reference database matching and consequently, read mapping is a common approach, manual execution of this workflow is extremely time-consuming, particularly due to the extensive reference verification and selection required. There is a critical need for an automated, scalable pipeline that can efficiently handle viral metagenomic analysis without manual intervention.
+
+Here, we present nf-core/viralgenie, a comprehensive viral metagenomic pipeline for untargeted genome reconstruction, and variant analysis of eukaryotic viruses. Viralgenie is implemented as a modular Nextflow workflow that processes metagenomic and hybridization capture enriched samples to automatically detect and assemble viral genomes, while also performing variant analysis. The pipeline features automated reference selection, quality control metrics, comprehensive documentation, and seamless integration with containerization technologies including Docker, Singularity, and Podman. We demonstrate its utility and accuracy through validation on both simulated and real datasets, showing robust performance across diverse viral families and sample types.
+
+nf-core/viralgenie is freely available at https://github.com/nf-core/viralgenie with comprehensive documentation at https://nf-co.re/viralgenie.
+
+\textbf{Keywords:} viralgenie, bioinformatic pipeline, nextflow, viral metagenomics, viral assembly, viral variant analysis
+
+\vskip 1em
+
+% Include the shared manuscript content
+\input{manuscript-content}
+
+% Bibliography
+\bibliography{reference}
+
+\end{document}
