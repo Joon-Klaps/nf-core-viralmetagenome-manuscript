@@ -62,11 +62,12 @@
 \bibliographystyle{unsrt}
 
 % Document metadata
-\title{ViralGenie: A Comprehensive Pipeline for Viral Metagenomics and Phylogenetic Analysis}
+\title{nf-core/viralmetagenome: A Novel Pipeline for Untargeted Viral Genome Reconstruction}
 
 \author{%
-    Joon Klaps$^{1,*}$, Philippe Lemey$^{1}$, Liana Kafetzopoulou$^{1}$ \\[0.5em]
+    Joon Klaps$^{1,*}$, Philippe Lemey$^{1}$, nf-core community$^{2}$, Liana Kafetzopoulou$^{1}$ \\[0.5em]
     \small $^1$Rega Institute for Medical Research, Department of Microbiology, Immunology and Transplantation, KU Leuven, Belgium \\[0.5em]
+    \small $^2$A full list of contributors can be found at https://nf-co.re/community. \\[0.5em]
     \small $^*$Correspondence: joon.klaps@kuleuven.be
 }
 
@@ -76,29 +77,17 @@
 
 \maketitle
 
-% Preprint notice
-\begin{center}
-\fbox{%
-\parbox{0.9\textwidth}{%
-\centering
-\textbf{bioRxiv Preprint} \\
-This article is a preprint and has not been peer-reviewed. \\
-Data may be preliminary.
-}%
-}
-\end{center}
-
 \vskip 1em
 
 % Abstract section for bioRxiv
 \section*{Abstract}
-Eukaryotic viruses present significant challenges in genome reconstruction and variant analysis due to their extensive diversity, quasi-species, absence of universal marker genes, and genome segmentation. While de novo assembly followed by reference database matching and consequently, read mapping is a common approach, manual execution of this workflow is extremely time-consuming, particularly due to the extensive reference verification and selection required. There is a critical need for an automated, scalable pipeline that can efficiently handle viral metagenomic analysis without manual intervention.
+\textbf{Motivation:} Eukaryotic viruses present significant challenges for genome reconstruction and variant analysis due to their extensive diversity and potential genome segmentation. While de novo assembly followed by reference database matching and scaffolding is a commonly used approach, the manual execution of this workflow is extremely time-consuming, particularly due to the extensive reference curation required. Here, we address the critical need for an automated, scalable pipeline that can efficiently handle viral metagenomic analysis without manual intervention.\\
+\textbf{Results:} We present nf-core/viralmetagenome, a comprehensive viral metagenomic pipeline for untargeted genome reconstruction and variant analysis of eukaryotic DNA and RNA viruses. Viralmetagenome is implemented as a Nextflow workflow that processes NGS metagenomic samples to automatically detect and assemble viral genomes, while also performing variant analysis. The pipeline features automated reference selection, consensus quality control metrics, comprehensive documentation, and seamless integration with containerization technologies, including Docker and Singularity. We demonstrate its utility and accuracy through validation on both simulated and real datasets, showing robust performance across diverse viral families in metagenomic samples.\\
+\textbf{Availability:} nf-core/viralmetagenome is freely available at https://github.com/nf-core/viralmetagenome with comprehensive documentation at https://nf-co.re/viralmetagenome\\
+\textbf{Contact:} \href{joon.klaps@kuleuven.be}{joon.klaps@kuleuven.be}\\
+\textbf{Supplementary information:} Supplementary data are available at https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript online.\\
 
-Here, we present nf-core/viralgenie, a comprehensive viral metagenomic pipeline for untargeted genome reconstruction, and variant analysis of eukaryotic viruses. Viralgenie is implemented as a modular Nextflow workflow that processes metagenomic and hybridization capture enriched samples to automatically detect and assemble viral genomes, while also performing variant analysis. The pipeline features automated reference selection, quality control metrics, comprehensive documentation, and seamless integration with containerization technologies including Docker, Singularity, and Podman. We demonstrate its utility and accuracy through validation on both simulated and real datasets, showing robust performance across diverse viral families and sample types.
-
-nf-core/viralgenie is freely available at https://github.com/nf-core/viralgenie with comprehensive documentation at https://nf-co.re/viralgenie.
-
-\textbf{Keywords:} viralgenie, bioinformatic pipeline, nextflow, viral metagenomics, viral assembly, viral variant analysis
+\textbf{Keywords:} viralmetagenome, bioinformatic pipeline, nextflow, viral metagenomics, viral assembly, viral variant analysis
 
 \vskip 1em
 

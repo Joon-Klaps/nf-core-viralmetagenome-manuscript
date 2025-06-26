@@ -14,14 +14,14 @@ Nf-core/viralmetagenome implements an automated workflow that performs de novo a
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Fig/fig1.png}
-    \caption{Visual overview of the nf-core/viralmetagenome pipeline for untargeted viral genome reconstruction. nf-core/viralmetagenome processes short FASTQ files through optionally read preprocessing (adapter removal, quality filtering, host removal), metagenomic diversity assessment, de novo assembly with multi-assembler support, scaffolding with automated reference identification and contig taxonomy-guided clustering, and iterative consensus refinement through read mapping and variant calling. Quality control metrics, assembly statistics, and coverage data are integrated into interactive MultiQC reports and standardised overview tables for downstream analysis.}
+    \caption{Visual overview of the nf-core/viralmetagenome pipeline for untargeted viral genome reconstruction. nf-core/viralmetagenome processes short FASTQ files through optionally read preprocessing (adapter removal, quality filtering, host removal), metagenomic diversity assessment, de novo assembly with multiple assemblers, scaffolding with automated reference identification and contig taxonomy-guided clustering, and iterative consensus refinement through read mapping and variant calling. Quality control metrics, assembly statistics, and coverage data are integrated into interactive MultiQC reports and standardised overview tables for downstream analysis.}
     \label{fig:pipeline-workflow}
 \end{figure*}
 
 %% - Continue HERE %%
 \section{Implementation}
 
-Nf-core/viralmetagenome requires nextflow and a container management system (Docker, Singularity, or Conda). The pipeline can be executed with minimal setup:
+Nf-core/viralmetagenome only requires nextflow and a container management system (Docker, Singularity, or Conda). The pipeline can be executed with this minimal setup:
 
 \begin{verbatim}
 nextflow run nf-core/viralmetagenome \
@@ -68,7 +68,6 @@ Multiple sequence alignment using MAFFT \cite{Katoh2002-ox} aligns the final con
 
 \section{Applications}
 
-
 To evaluate the performance of nf-core/viralmetagenome under challenging scenarios, we simulated coinfection scenarios by mixing paired-end reads from public HIV-1 genomes with varying diversity (80-99\% similarity), resulting in 13 samples (see supplementary table 2). Nf-core/viralmetagenome successfully identified coinfections in all mixed samples when genetic similarity was low to moderate ($\leq$ 96.7\% ANI). For highly similar mixtures (98.7\% ANI), the 2 original genomes were only identified and reconstructed once out of 3 times.
 We determined the influence of the reference used during scaffolding on the final consensus genome. Here, we observed that the influence is small to negligible when the reference used closely matches ($\geq$ 96\%) the original genome. However, if the reference is more divergent, the number of mismatches between final consensus genomes could increase up to 187 nucleotides (Figure~\ref{fig:reference-influence}). This highlights the importance of appropriate reference selection for scaffolding or, in general, sequence alignment.
 
@@ -79,28 +78,30 @@ We determined the influence of the reference used during scaffolding on the fina
     \label{fig:reference-influence}
 \end{figure}
 
+To validate nf-core/viralmetagenome's performance on real-world datasets, we applied the pipeline to publicly available metagenomic samples spanning viral pathogens for both humans and plants. Here, the pipeline successfully generated high-quality or near-complete genomes for all species across different viral families, including both segmented viruses (Lassa virus, Orthonairovirus, Tomato spotted wilt tospovirus) and non-segmented viruses (SARS-CoV-2, West Nile virus, Potato virus Y, Youcai mosaic virus,  and Monkeypox virus).
 
-The computational requirements for analyzing these 28 samples were modest, requiring 412 CPU hours and a maximum of 79GB RAM on an HPC system (excluding taxonomic classification steps). The automated reference-contig clustering strategy represents a considerable advancement over manual curation, significantly reducing processing time while maintaining accuracy. Our analysis demonstrates that pipeline performance is strongly influenced by reference database quality and comprehensiveness, with closer reference similarity yielding more complete and accurate consensus genomes. This underscores the importance of maintaining up-to-date databases such as the Reference Viral Database (Goodacre et al. 2018) for reference selection and Virosaurus (Gleizes et al. 2020) for contig annotation. The pipeline uses the Virosaurus-vertebrate database by default; users analyzing plant pathogens should switch to the Virosaurus plant database for optimal results. While nf-core/viralgenie is specifically designed for eukaryotic viruses, bacteriophage analysis requires different approaches and users should consider specialized pipelines such as VIRify (Rangel-Pineros et al. 2022), VIBRANT (Kieft et al. 2020), or VirSorter2 (Guo et al. 2021).
+The computational requirements for analysing 28 samples of human viruses (supplementary methods) required 412 CPU hours and a maximum of 79GB RAM on an HPC system, excluding taxonomic classification steps. The automated reference-contig clustering strategy represents a considerable advancement over manual curation, reducing processing time while maintaining accuracy. However, this analysis also demonstrates that the pipeline's performance is influenced by the quality and comprehensiveness of reference databases, with closer reference similarity yielding more complete and accurate consensus genomes. This underscores the importance of maintaining up-to-date databases such as the Reference Viral Database \cite{Goodacre2018-dw} and Virosaurus \cite{Gleizes2020-rq}. The pipeline uses the Virosaurus-vertebrate database by default; users analysing plant pathogens should switch to the Virosaurus-plant database for optimal results. Since nf-core/viralmetagenome is primarily designed for eukaryotic viruses, bacteriophage analysis requires different approaches and users are encouraged to consider pipelines targeting phages such as VIRify \cite{Rangel-Pineros2022-wv}, VIBRANT \cite{Kieft2020-aq}, VirSorter2 \cite{Guo2021-rf}.
+
 
 \section{Conclusion}
 
-nf-core/viralgenie addresses a critical need in viral genomics by providing an automated, scalable solution for untargeted viral genome reconstruction. The pipeline successfully automates the traditionally manual and time-consuming process of viral genome assembly from metagenomic data through its integrated workflow of de novo contig assembly, automated reference selection, clustering algorithms, and iterative refinement strategies.
+nf-core/viralmetagenome addresses a critical need in viral genomics by providing an automated, scalable solution for untargeted viral genome reconstruction. The pipeline successfully automates the traditionally time-consuming and manual execution process of viral genome assembly from metagenomic data through its integrated workflow of de novo contig assembly, automated reference selection, clustering algorithms, and iterative refinement strategies.
 
 Our validation demonstrates the pipeline's broad applicability across diverse eukaryotic viral families, achieving high-quality genome reconstruction while ensuring reproducibility and ease of deployment across different computational environments.
 
-As viral surveillance and outbreak response increasingly rely on metagenomic sequencing, automated pipelines like viralgenie will be essential for timely pathogen strain identification. The pipeline represents a significant step forward in making viral genome reconstruction accessible to researchers without requiring extensive bioinformatics expertise, facilitating broader adoption of metagenomic approaches in viral research and public health applications.
+As viral surveillance and outbreak response increasingly rely on metagenomic sequencing, automated pipelines like viralmetagenome will be essential for the timely identification of pathogen strains. The pipeline represents a significant step forward in making viral genome reconstruction accessible to researchers without requiring extensive bioinformatics expertise, facilitating broader adoption of metagenomic approaches in viral research and public health applications.
+
 
 \section*{Acknowledgments}
-We thank the nf-core community for their support and feedback during development.
-
-\section*{Funding}
-This work was supported by [funding sources to be added].
+ J.K, P.L. and L.K  acknowledges support from the Research Foundation - Flanders (Fonds voor Wetenschappelijk Onderzoek – Vlaanderen, G005323N and G051322N, 1SH2V24N, 12X9222N).
 
 \section*{Author Contributions}
 J.K. designed and implemented the pipeline, performed validation analyses, and wrote the manuscript. P.L. and L.K. supervised the project and provided critical feedback. All authors reviewed and approved the final manuscript.
 
 \section*{Data Availability}
-The nf-core/viralgenie pipeline is freely available at https://github.com/nf-core/viralgenie. All test datasets and validation scripts are available in the project repository.
+The nf-core/viralmetagenome pipeline is freely available at https://github.com/nf-core/viralmetagenome.
+The raw data and analysis code is available on https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript/.
 
 \section*{Conflict of Interest}
 The authors declare no competing interests.
+

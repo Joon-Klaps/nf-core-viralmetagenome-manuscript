@@ -756,87 +756,6 @@
   urldate      = {2025-06-03},
   language     = {en}
 }
-,@SOFTWARE{Patel2024-sm,
-  type      = {software},
-  title     = {nf-core/fetchngs: nf-core/fetchngs {v1}.12.0 - Titanium Platypus},
-  author    = {Patel, Harshil and Garcia, Maxime U and Talbot, Adam and
-               {Sateesh_Peri} and Beber, Moritz E and Joshi, Esha and Han, Daisy
-               Wenyan and Bot, Nf-Core and Miller, Edmund and Fellows Yates,
-               James A and {nicolae} and Carlson, Dave and Syme, Robert and
-               Ewels, Phil and Espinosa-Carrasco, Jose and Borry, Maxime and
-               Domissy, Alain and {MCMandR} and Ziff, Oliver and {jahdoos} and
-               Menden, Kevin and {sirclockalot}},
-  publisher = {Zenodo},
-  date      = {2024},
-  doi       = {10.5281/ZENODO.10728509},
-  abstract  = {[1.12.0] - 2024-02-29 :warning: Major enhancements The Aspera CLI
-               was recently added to Bioconda and we have added it as another
-               way of downloading FastQ files in addition to the existing FTP
-               and sra-tools support. In our limited benchmarks on all public
-               Clouds we found ~50\% speed-up in download times compared to FTP!
-               FTP downloads will still be the default download method (i.e.
-               --download\_method ftp) but you can choose to use sra-tools or
-               Aspera using --download\_method sratools or --download\_method
-               aspera, respectively. We would love to have your feedback! The
-               --force\_sratools\_download parameter has been deprecated in
-               favour of using --download\_method to explicitly specify the
-               download method; available options are ftp, sratools or aspera.
-               Support for Synapse ids has been dropped in this release. We
-               haven't had any feedback from users whether it is being used or
-               not. Users can run earlier versions of the pipeline if required.
-               We have significantly refactored and standardised the way we are
-               using nf-test within this pipeline. This pipeline is now the
-               current, best-practice implementation for nf-test usage on
-               nf-core. We required a number of features to be added to nf-test
-               and a huge shoutout to Lukas Forer for entertaining our requests
-               and implementing them within upstream :heart:! Credits Special
-               thanks to the following for their contributions to the release:
-               Adam Talbot Alexandru Mizeranschi Alexander Blaessle Lukas Forer
-               Matt Niederhuber Maxime Garcia Sateesh Peri Sebastian Uhrig Thank
-               you to everyone else that has contributed by reporting bugs,
-               enhancements or in any other way, shape or form. Enhancements \&
-               fixes PR \#238 - Resolved bug when prefetching large studies
-               (\#236) PR \#241 - Use wget instead of curl to download files
-               from FTP (\#169, \#194) PR \#242 - Template update for
-               nf-core/tools v2.11 PR \#243 - Fixes for PR \#238 PR \#245 -
-               Refactor nf-test CI and test and other pre-release fixes (\#233)
-               PR \#246 - Handle dark/light mode for logo in GitHub README
-               properly PR \#248 - Update pipeline level test data path to use
-               mirror on s3 PR \#249 - Update modules which includes absolute
-               paths for test data, making module level test compatible within
-               the pipeline. PR \#253 - Add implicit tags in nf-test files for
-               simpler testing strategy PR \#257 - Template update for
-               nf-core/tools v2.12 PR \#258 - Fixes for PR \#253 PR \#259 - Add
-               Aspera CLI download support to pipeline (\#68) PR \#261 - Revert
-               sratools fasterqdump version (\#221) PR \#262 - Use nf-test
-               version v0.8.4 and remove implicit tags PR \#263 - Refine tags
-               used for workflows PR \#264 - Remove synapse workflow from
-               pipeline PR \#265 - Use "+" syntax for profiles to accumulate
-               profiles in nf-test PR \#266 - Make .gitignore match template PR
-               \#268 - Add mermaid diagram PR \#273 - Update utility
-               subworkflows PR \#283 - Template update for nf-core/tools v2.13
-               PR \#288 - Update Github Action to run full-sized test for all 3
-               download methods PR \#290 - Remove mentions of deprecated Synapse
-               functionality in pipeline PR \#294 - Replace mermaid diagram with
-               subway map PR \#295 - Be less stringent with test expectations
-               for CI PR \#296 - Remove params.outdir from tests where required
-               and update snapshots PR \#298 - export CONDA\_PREFIX into
-               container when using Singularity and Apptainer Software
-               dependencies | Dependency | Old version | New version | |
-               ---------- | ----------- | ----------- | | wget | | 1.20.1 | NB:
-               Dependency has been updated if both old and new version
-               information is present. NB: Dependency has been added if just the
-               new version information is present. NB: Dependency has been
-               removed if new version information isn't present. Parameters |
-               Old parameter | New parameter | | --------------------------- |
-               ------------------- | | | --download\_method | | --input\_type |
-               | | --force\_sratools\_download | | | --synapse\_config | | NB:
-               Parameter has been updated if both old and new parameter
-               information is present. NB: Parameter has been added if just the
-               new parameter information is present. NB: Parameter has been
-               removed if new parameter information isn't present.},
-  urldate   = {2025-06-19}
-}
 ,@ARTICLE{Ondov2019-bo,
   title        = {Mash Screen: high-throughput sequence containment estimation
                   for genome discovery},
@@ -1406,15 +1325,6 @@
                   available at http://cab.spbu.ru/software/spades. SUPPLEMENTARY
                   INFORMATION: Supplementary data are available at
                   Bioinformatics.},
-  note         = {\# RNAviral SPAdes: a assembler specific for RNA viruses.
-                  Solve problems of <b>the bias RNA genomes have in
-                  evolution</b> (biases from the reverse transcription and
-                  polymerase chain reaction):<b>- </b>Huge diversity <b>-
-                  </b>Quasi species- Presence of Isoforms<b>MAIN GOAlL:</b> to
-                  remove possible variation due to quasispecies, strain
-                  variation and sequencing artifactsThe solution they have for
-                  is to modify some steps and include a HMM profile to simplify
-                  their de bruijn graph.},
   language     = {en}
 }
 ,@ARTICLE{Li2013-pp,
