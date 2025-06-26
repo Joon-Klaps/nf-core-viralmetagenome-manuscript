@@ -14,9 +14,18 @@
 docs/
 .DS_Store
 .nextflow
-viralgenie/
+nf-core-viralmetagenome/
+analysis/nf-core-viralmetagenome/*-virus/*/
+!analysis/nf-core-viralmetagenome/
+!analysis/nf-core-viralmetagenome/*-virus/
+!analysis/nf-core-viralmetagenome/*-virus/overview-tables/
+!analysis/nf-core-viralmetagenome/*-virus/multiqc/
+
+
+multiqc_data/
 *.fastq.gz
-analysis/viralgenie/plotting.ipynb
+analysis/nf-core-viralmetagenome/plotting.ipynb
+*-vs-ref/
 
 ## Intermediate documents:
 *.dvi
