@@ -19,6 +19,7 @@ analysis/nf-core-viralmetagenome/*-virus/*/
 !analysis/nf-core-viralmetagenome/*-virus/overview-tables/
 !analysis/nf-core-viralmetagenome/*-virus/multiqc/
 analysis/nf-core-viralmetagenome/plotting.ipynb
+!analysis/nf-core-viralmetagenome/*-virus/pipeline_info/
 
 
 multiqc_data/
