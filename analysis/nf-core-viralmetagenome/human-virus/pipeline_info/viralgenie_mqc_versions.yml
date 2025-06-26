@@ -1,0 +1,152 @@
+BCFTOOLS_CONSENSUS:
+  bcftools: 1.18
+BCFTOOLS_FILTER:
+  bcftools: 1.18
+BCFTOOLS_SORT:
+  bcftools: 1.18
+BCFTOOLS_STATS:
+  bcftools: 1.18
+BEDTOOLS_MASKFASTA:
+  bedtools: 2.31.1
+BEDTOOLS_MERGE:
+  bedtools: 2.31.1
+BLASTN_QC:
+  blast: 2.14.1+
+BLAST_BLASTN:
+  blast: 2.14.1+
+BLAST_FILTER:
+  python: 3.8.12
+  pandas: 0.25.3
+  biopython: 1.79
+BLAST_MAKEBLASTDB:
+  blast: 2.15.0+
+BWAMEM2_INDEX:
+  bwamem2: 2.2.1
+BWAMEM2_MEM:
+  bwamem2: 2.2.1
+  samtools: 1.19.2
+CAT_ASSEMBLERS:
+  pigz: 2.3.4
+CAT_CLUSTER:
+  pigz: 2.3.4
+CHECKV_DOWNLOADDATABASE:
+  checkv: 1.0.1
+CONTIG_IDXSTATS:
+  samtools: 1.19.2
+CONTIG_INDEX:
+  samtools: 1.19.2
+CUSTOM_MPILEUP:
+  python: 3.9.19
+  pysam: 0.22.1
+  numpy: 1.26.4
+  pysamstats: 1.1.2
+EXTRACT_CLUSTER:
+  python: 3.12.0
+  biopython: 1.81
+EXTRACT_PRECLUSTER:
+  python: 3.9.1
+  biopython: 1.78
+FASTP:
+  fastp: 0.23.4
+FASTQC_HOST:
+  fastqc: 0.12.1
+FASTQC_RAW:
+  fastqc: 0.12.1
+FASTQC_TRIM:
+  fastqc: 0.12.1
+GUNZIP_DB:
+  gunzip: 1.1
+IVAR_CONTIG_CONSENSUS:
+  ivar: 1.4
+  samtools: 1.16.1
+IVAR_VARIANTS:
+  ivar: 1.4
+  samtools: 1.16.1
+IVAR_VARIANTS_TO_VCF:
+  python: 3.9.12
+KAIJU_CONTIG:
+  kaiju: 1.10.0
+KAIJU_KAIJU2KRONA:
+  kaiju: 1.10.0
+KAIJU_KAIJU2TABLE:
+  kaiju: 1.10.0
+KAIJU_KAIJU:
+  kaiju: 1.10.0
+KRAKEN2_CONTIG:
+  kraken2: 2.1.3
+  pigz: 2.8
+KRAKEN2_HOST_REMOVE:
+  kraken2: 2.1.3
+  pigz: 2.8
+KRAKEN2_KRAKEN2:
+  kraken2: 2.1.3
+  pigz: 2.8
+KRAKENTOOLS_KREPORT2KRONA:
+  kreport2krona.py: 1.2
+KRONA_CLEANUP:
+  sed: 4.7
+KRONA_KTIMPORTTEXT:
+  krona: 2.8.1
+MAKE_BED_MASK:
+  samtools: 1.14
+  python: 3.9.5
+MEGAHIT:
+  megahit: 1.2.9
+MINIMAP2_CONTIG_ALIGN:
+  minimap2: 2.28-r1209
+MINIMAP2_CONTIG_INDEX:
+  minimap2: 2.28-r1209
+MMSEQS_CLUSTER:
+  mmseqs: 15.6f452
+MMSEQS_CREATEANNOTATIONDB:
+  mmseqs: 15.6f452
+MMSEQS_CREATEDB:
+  mmseqs: 15.6f452
+MMSEQS_CREATETSV:
+  mmseqs: 15.6f452
+MMSEQS_EASYSEARCH:
+  mmseqs: 15.6f452
+MOSDEPTH:
+  mosdepth: 0.3.8
+NOCOV_TO_REFERENCE:
+  python: 3.12.5
+  numpy: 2.1.1
+  biopython: 1.84
+  matplotlib: 3.9.2
+PICARD_COLLECTMULTIPLEMETRICS:
+  picard: 3.1.1
+PICARD_MARKDUPLICATES:
+  picard: 3.1.1
+PRINSEQ_CONTIG:
+  prinseqplusplus: 1.2
+QUAST:
+  quast: 5.2.0
+QUAST_QC:
+  quast: 5.2.0
+RENAME_FASTA_HEADER_CALLED_CONSENSUS:
+  sed: 4.7
+RENAME_FASTA_HEADER_CONTIG_CONSENSUS:
+  sed: 4.7
+RENAME_FASTA_HEADER_SINGLETON:
+  sed: 4.7
+SAMTOOLS_FAIDX:
+  samtools: 1.19.2
+SAMTOOLS_FLAGSTAT:
+  samtools: 1.19.2
+SAMTOOLS_IDXSTATS:
+  samtools: 1.19.2
+SAMTOOLS_INDEX:
+  samtools: 1.19.2
+SAMTOOLS_STATS:
+  samtools: 1.19.2
+SPADES:
+  spades: 4.0.0
+SSPACE_BASIC:
+  sspace_base: 2.1.1
+TABIX_TABIX:
+  tabix: 1.19.1
+UNTAR_DB:
+  untar: 1.3
+Workflow:
+    Joon-Klaps/viralgenie: v0.1.3dev
+    Nextflow: 25.04.3
