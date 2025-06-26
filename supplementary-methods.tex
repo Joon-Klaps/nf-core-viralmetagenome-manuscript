@@ -1,0 +1,93 @@
+%%
+%% Supplementary Methods for bioRxiv preprint
+%%
+\documentclass[11pt]{article}
+
+% Packages for bioRxiv formatting
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{lineno}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{textcomp} % For additional text symbols
+\usepackage{gensymb} % For degree and other symbols
+% \usepackage{multirow} % For multirow tables
+\usepackage{tabularx} % For automatic column width adjustment
+\usepackage{booktabs} % For professional table formatting
+\usepackage{longtable} % For tables that span multiple pages
+\usepackage{adjustbox}
+
+% Page geometry for bioRxiv
+\geometry{
+    letterpaper,
+    margin=1in,
+    top=1.2in,
+    bottom=1.2in
+}
+
+% Line numbers for preprint
+\linenumbers
+\renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
+
+% Header/footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Supplementary Methods - nf-core/viralmetagenome}
+\fancyhead[R]{\small \today}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Title formatting for bioRxiv
+\makeatletter
+\renewcommand{\maketitle}{%
+    \begin{center}
+        {\Large\bfseries \@title \par}
+        \vskip 1em
+        {\large \@author \par}
+        \vskip 0.5em
+        {\small \@date \par}
+    \end{center}
+    \vskip 2em
+}
+\makeatother
+
+% bioRxiv specific formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Bibliography style for bioRxiv
+\bibliographystyle{unsrt}
+
+% Document metadata
+\title{Supplementary Methods - nf-core/viralmetagenome: A Novel Pipeline for Untargeted Viral Genome Reconstruction}
+
+\author{%
+    Joon Klaps$^{1,*}$, Philippe Lemey$^{1}$, nf-core community$^{2}$, Liana Kafetzopoulou$^{1}$ \\[0.5em]
+    \small $^1$Rega Institute for Medical Research, Department of Microbiology, Immunology and Transplantation, KU Leuven, Belgium \\[0.5em]
+    \small $^2$A full list of contributors can be found at https://nf-co.re/community. \\[0.5em]
+    \small $^*$Correspondence: joon.klaps@kuleuven.be
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\vskip 1em
+
+% Include the supplementary methods content
+\input{supplementary-methods-content}
+
+% Bibliography
+\bibliography{reference}
+
+\end{document}

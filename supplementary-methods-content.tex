@@ -1,0 +1,121 @@
+% Supplementary Methods content
+% This file contains the detailed methods for the nf-core/viralmetagenome manuscript
+
+\section*{Supplementary Methods}
+
+\subsection*{S1. Influence of Scaffold Reference on Consensus Genome}
+
+We simulated mixed  HIV-1 samples containing paired-end read data based on four genomes (MN090277.1, MN090188.1, MN090240.1, and MZ766668.1) spanning genetic diversity from 80–99\% average nucleotide identity (ANI). Thirteen sample configurations were created with varying abundance ratios to model both single-strain infections (100\% abundance) and coinfections with different abundance ratios (75:25, 50:50, 25:75) to reflect coinfections ( Supplementary table 1). Reads were generated using InSilisocoSeq v2.0.1 \cite{Gourle2019-ox} using ‘kde’ mode and ‘lognormal’ abundance for a ‘MiSeq’ model.
+
+Sample mixtures were run with nf-core/viralmetagenome using default settings unless specified otherwise. Reference sequences used to compare the influence of the reference during scaffolding are the same sequences used for read generation, in addition to the databases, Virosaurus \cite{Gleizes2020-rq} and the Reference Viral Database \cite{Goodacre2018-dw}. Visualisation was done in R \cite{R_Core_Team2021-ow} using tidyverse \cite{Wickham2019-vr}.
+
+
+\subsubsection*{S2 Evaluation of nf-core/viralmetagenome on public data}
+
+A public metagenomic dataset was constructed by selecting a randomized subset of 2,000 records from the NCBI Virus database, targeting the following viruses: \textit{Orthonairovirus haemorrhagiae}, \textit{Mammarenavirus lassaense}, \textit{Zika virus}, \textit{West Nile virus}, \textit{Monkeypox virus}, \textit{Influenza A virus}, \textit{Severe acute respiratory syndrome coronavirus 2}, and \textit{Human respiratory syncytial virus A}. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than ‘Amplicon’. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, \texttt{--keep\_unclassified false} and \texttt{--skip\_read\_classification} to speed up the analysis.
+
+For plant pathogens, two samples were randomly selected from the SRA after querying for the following viruses: Tobacco mosaic virus, Tomato spotted wilt virus, Cucumber mosaic virus, and Potato virus Y. These were also downloaded using nf-core/fetchngs and processed with viralmetagenome using the same parameters, with the addition of the Virosaurus plant virus database.
+
+\newpage
+
+\section*{Supplementary Tables}
+
+{\scriptsize
+\begin{longtable}{p{2.5cm}p{2.5cm}p{1.8cm}p{6.8cm}p{1.8cm}}
+\caption{Overview of computational tools and methods used in the nf-core/viralmetagenome pipeline. The pipeline integrates multiple bioinformatics tools across different stages of viral metagenomic analysis, from preprocessing to consensus calling. Each tool was selected for its specific capabilities and performance characteristics relevant to viral sequence analysis.}
+\label{table:S1} \\
+\toprule
+\textbf{Stage} & \textbf{Step} & \textbf{Tool} & \textbf{Explanation} & \textbf{Reference} \\
+\midrule
+\endfirsthead
+
+\multicolumn{5}{c}{\textit{Table \ref{table:S1} continued from previous page}} \\
+\toprule
+\textbf{Stage} & \textbf{Step} & \textbf{Tool} & \textbf{Explanation} & \textbf{Reference} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{5}{r}{\textit{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+Pre-processing & Read trimming & fastp & A high-performance preprocessing solution built in C++ that consolidates multiple quality control operations into a single workflow. Fastp delivers enhanced processing speed compared to traditional alternatives, like Trimmomatic, while handling adapter removal, quality assessment, base correction, read and filtering. Fastp also features automated adapter detection capabilities for various Illumina sequencing protocols. & \cite{Chen2018-tu} \\
+\cmidrule{3-5}
+ &  & Trimmomatic & A comprehensive preprocessing solution tailored for Illumina sequencing platforms with specialised paired-end read handling capabilities. Provides multiple pre-processing options, including adapter removal, quality-based trimming using sliding window approaches, and length-based filtering. & \cite{Bolger2014-si} \\
+\cmidrule{2-5}
+ & Complexity filtering & Bbduk & A high-performance, multi-threaded tool designed to combine various data-quality-related operations, including trimming, filtering, and masking, into a single pass. It is particularly effective for removing host and other contaminant DNA using k-mer matching strategies, which is crucial for accurate metagenomic analysis. & \cite{BushnellUnknown-qy} \\
+\cmidrule{3-5}
+ &  & Prinseq++ & A C++ implementation that significantly improves upon its predecessor, prinseq-lite.pl, through improved computational efficiency. It offers extensive quality control features, including filtering by length, GC content, quality scores, N content, and sequence complexity (entropy/DUST score). & \cite{Cantu2019-vs} \\
+\midrule
+
+Metagenomic diversity & Taxonomy classification & Kraken2 & An advanced taxonomic classification system with an improved k-mer-based approach through optimised memory usage and enhanced processing speed. Incorporates protein-level search capabilities for improved detection of divergent viral sequences, with a library of pre-built RefSeq indexes. & \cite{Wood2019-jl} \\
+\cmidrule{3-5}
+ &  & Kaiju & A protein-level taxonomic classifier that employs exact matching algorithms on translated sequences using the Burrows-Wheeler transform. It can optionally allow amino acid substitutions and tends to have higher sensitivity and precision compared to k-mer-based classifiers (Kraken2). Kaiju is particularly effective for organisms with limited reference representation. & \cite{Menzel2016-tz} \\
+\midrule
+
+Assembly \& polishing & Assembly & SPAdes & A de Bruijn graph-based assembler designed to overcome challenges in complex sequencing data, such as non-uniform coverage (using multisized de Bruijn graphs) and variable insert sizes. The Spades suite contains multiple specialised modes rnaSPAdes, coronaSPAdes, metaSPAdes for extra flexibility. & \cite{Meleshko2021-gb} \\
+\cmidrule{3-5}
+ &  & MEGAHIT & A succinct de Bruijn graph-based assembler specifically designed for large and complex metagenomic datasets. MEGAHIT has demonstrated the ability to generate larger assemblies with longer contig N50 and average contig length. Its relatively low memory requirements make it well-suited for handling large datasets. & \cite{Li2016-sd} \\
+\cmidrule{3-5}
+ &  & Trinity & A powerful modular transcriptome reconstruction tool, capable of fully reconstructing a large fraction of transcripts, including alternative splice isoforms and transcripts from recently duplicated genes, even in the absence of a reference genome. It partitions sequence data into individual de Bruijn graphs, processing each independently to extract full-length isoforms and resolve paralogous genes. & \cite{Grabherr2011-ef} \\
+\cmidrule{2-5}
+ & Read alignment & BWAmem2 & An optimized version of the BWA-MEM algorithm enhanced with Intel-specific acceleration feature, providing approximately a 2x speedup in alignment throughput over BWA-MEM while ensuring identical SAM output. It is highly efficient for aligning short reads to large reference genomes. & \cite{Vasimuddin2019-rb} \\
+\cmidrule{3-5}
+ &  & BWA & A foundational and widely used Burrows-Wheeler Aligner (BWA-MEM variant) that efficiently maps short reads and long sequences to large reference genomes. It supports long gaps and dynamically adjusts error rates based on sequence length, making it robust to sequencing errors. & \cite{Li2013-pp} \\
+\cmidrule{3-5}
+ &  & Bowtie2 & A fast and memory-efficient alignment tool for aligning sequencing reads to long reference sequences, such as mammalian genomes. Bowtie2 supports gapped, local, and paired-end alignment modes, combining high speed, sensitivity, and accuracy. & \cite{Langmead2019-wx} \\
+\cmidrule{2-5}
+ & Clustering & CD-HIT-EST & A highly efficient and widely used program for clustering large sets of protein or nucleotide sequences. Implementation constraints limit processing to genomes under 10Mbp with minimum 0.8. The program employs a greedy incremental algorithm. & \cite{Li2006-nj} \\
+\cmidrule{3-5}
+ &  & MMSeqs & A powerful software suite for fast and sensitive deep clustering and searching of large protein sequence sets. It is significantly faster than other tools like BLASTclust and can cluster large databases down to low sequence identity thresholds. MMseqs offers a variety of clustering modes for a lot of flexibility. & \cite{Steinegger2017-ci} \\
+\cmidrule{3-5}
+ &  & VSEARCH & An open-source, versatile alternative for USEARCH. VSEARCH supports processing very large datasets, limited primarily by available memory. & \cite{Rognes2016-ju} \\
+\cmidrule{3-5}
+ &  & Mash & A non-alignment based clustering technique that applies MinHash algorithms for rapid genome and metagenome distance estimation. It compresses large sequences into small, representative sketches, enabling ultra-fast estimations of global mutation distances. Mash creates compact sequence representations enabling ultra-fast similarity assessments and large-scale clustering operations, though accuracy decreases below 95\% genome similarity. & \cite{Ondov2019-bo} \\
+\cmidrule{3-5}
+ &  & vRhyme & A machine learning-based binning solution specifically developed for viral genome recovery from metagenomic datasets. VRhyme addresses the unique challenges of viral sequences, such as the lack of universal marker genes. Addresses unique viral sequence characteristics through supervised learning approaches combined with coverage-based analysis across multiple samples. Generates high-quality viral bins with minimal computational overhead, though it may produce empty results when insufficient viral evidence is detected. & \cite{Kieft2022-km} \\
+\midrule
+
+Variant \& consensus calling & Variant \& consensus calling & iVar & A computational package specifically designed for viral amplicon-based sequencing, integrating functions like consensus and variant calling (including iSNVs and insertions/deletions). It is a key component of best-practice pipelines for reconstructing consensus genomes from viral sequencing data. & \cite{Grubaugh2019-xd} \\
+\cmidrule{3-5}
+ &  & BCFtools & A robust suite of utilities for manipulating variant calls in VCF and BCF formats. Provides extensive functionality for variant calling using multiallelic models, data filtering, file merging, and consensus sequence generation through variant application. & \cite{Danecek2021-je} \\
+
+\end{longtable}
+}
+
+\newpage
+
+\begin{table}[!htbp]
+\centering
+\caption{Overview of simulated HIV-1 sample mixtures with the used reference genome and metadata.}
+\label{table:S2}
+\footnotesize
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{llp{2.5cm}p{2.5cm}p{1.5cm}p{2cm}p{2.5cm}}
+\toprule
+\textbf{Sample name} & \textbf{Reference} & \textbf{Added genome} & \textbf{Similarity to reference (\%)} & \textbf{Reads (M)} & \textbf{Read \% MN090277} & \textbf{Read \% added genome} \\
+\midrule
+sample\_1 & MN090277.1 & MN090188.1 & 98.7 & 4 & 75 & 25 \\
+sample\_2 & MN090277.1 & MN090188.1 & 98.7 & 4 & 50 & 50 \\
+sample\_3 & MN090277.1 & MN090188.1 & 98.7 & 4 & 25 & 75 \\
+\cmidrule{1-7}
+sample\_4 & MN090277.1 & MN090240.1 & 96.7 & 4 & 75 & 25 \\
+sample\_5 & MN090277.1 & MN090240.1 & 96.7 & 4 & 50 & 50 \\
+sample\_6 & MN090277.1 & MN090240.1 & 96.7 & 4 & 25 & 75 \\
+\cmidrule{1-7}
+sample\_7 & MN090277.1 & MZ766668.1 & 83.5 & 4 & 75 & 25 \\
+sample\_8 & MN090277.1 & MZ766668.1 & 83.5 & 4 & 50 & 50 \\
+sample\_9 & MN090277.1 & MZ766668.1 & 83.5 & 4 & 25 & 75 \\
+\cmidrule{1-7}
+sample\_10 & MN090277.1 & MN090277.1 & 100.0 & 1 & 100 & 0 \\
+sample\_11 & MN090277.1 & MN090188.1 & 98.7 & 1 & 0 & 100 \\
+sample\_12 & MN090277.1 & MN090240.1 & 96.7 & 1 & 0 & 100 \\
+sample\_13 & MN090277.1 & MZ766668.1 & 83.5 & 1 & 0 & 100 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\newpage
