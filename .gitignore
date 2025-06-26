@@ -14,17 +14,15 @@
 docs/
 .DS_Store
 .nextflow
-nf-core-viralmetagenome/
 analysis/nf-core-viralmetagenome/*-virus/*/
-!analysis/nf-core-viralmetagenome/
 !analysis/nf-core-viralmetagenome/*-virus/
 !analysis/nf-core-viralmetagenome/*-virus/overview-tables/
 !analysis/nf-core-viralmetagenome/*-virus/multiqc/
+analysis/nf-core-viralmetagenome/plotting.ipynb
 
 
 multiqc_data/
 *.fastq.gz
-analysis/nf-core-viralmetagenome/plotting.ipynb
 *-vs-ref/
 
 ## Intermediate documents:
