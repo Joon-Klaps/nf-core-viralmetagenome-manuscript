@@ -25,6 +25,7 @@ analysis/nf-core-viralmetagenome/plotting.ipynb
 multiqc_data/
 *.fastq.gz
 *-vs-ref/
+cover-letter*
 
 ## Intermediate documents:
 *.dvi
