@@ -48,7 +48,7 @@ Pre-processing & Read trimming & fastp & A high-performance preprocessing soluti
 \cmidrule{2-5}
  & Complexity filtering & Bbduk & A high-performance, multi-threaded tool designed to combine various data-quality-related operations, including trimming, filtering, and masking, into a single pass. It is particularly effective for removing host and other contaminant DNA using k-mer matching strategies, which is crucial for accurate metagenomic analysis. & \cite{BushnellUnknown-qy} \\
 \cmidrule{3-5}
- &  & Prinseq++ & A C++ implementation that significantly improves upon its predecessor, prinseq-lite.pl, through improved computational efficiency. It offers extensive quality control features, including filtering by length, GC content, quality scores, N content, and sequence complexity (entropy/DUST score). & \cite{Cantu2019-vs} \\
+ &  & Prinseq++ & A C++ implementation that significantly improves upon its predecessor, prinseq-lite.pl, in terms of computational efficiency. It offers extensive quality control features, including filtering by length, GC content, quality scores, N content, and sequence complexity (entropy/DUST score). & \cite{Cantu2019-vs} \\
 \midrule
 
 Metagenomic diversity & Taxonomy classification & Kraken2 & An advanced taxonomic classification system with an improved k-mer-based approach through optimised memory usage and enhanced processing speed. Incorporates protein-level search capabilities for improved detection of divergent viral sequences, with a library of pre-built RefSeq indexes. & \cite{Wood2019-jl} \\
@@ -62,7 +62,7 @@ Assembly \& polishing & Assembly & SPAdes & A de Bruijn graph-based assembler de
 \cmidrule{3-5}
  &  & Trinity & A powerful modular transcriptome reconstruction tool, capable of fully reconstructing a large fraction of transcripts, including alternative splice isoforms and transcripts from recently duplicated genes, even in the absence of a reference genome. It partitions sequence data into individual de Bruijn graphs, processing each independently to extract full-length isoforms and resolve paralogous genes. & \cite{Grabherr2011-ef} \\
 \cmidrule{2-5}
- & Read alignment & BWAmem2 & An optimized version of the BWA-MEM algorithm enhanced with Intel-specific acceleration feature, providing approximately a 2x speedup in alignment throughput over BWA-MEM while ensuring identical SAM output. It is highly efficient for aligning short reads to large reference genomes. & \cite{Vasimuddin2019-rb} \\
+ & Read alignment & BWAmem2 & An optimized version of the BWA-MEM algorithm enhanced with Intel-specific acceleration feature, providing approximately a twofold speedup in alignment throughput over BWA-MEM while ensuring identical SAM output. It is highly efficient for aligning short reads to large reference genomes. & \cite{Vasimuddin2019-rb} \\
 \cmidrule{3-5}
  &  & BWA & A foundational and widely used Burrows-Wheeler Aligner (BWA-MEM variant) that efficiently maps short reads and long sequences to large reference genomes. It supports long gaps and dynamically adjusts error rates based on sequence length, making it robust to sequencing errors. & \cite{Li2013-pp} \\
 \cmidrule{3-5}
