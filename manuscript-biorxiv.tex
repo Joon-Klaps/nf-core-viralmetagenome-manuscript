@@ -54,12 +54,15 @@
 }
 \makeatother
 
+\bibpunct{(}{)}{, }{a}{ }{, }
+
 % bioRxiv specific formatting
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 
 % Bibliography style for bioRxiv
-\bibliographystyle{unsrt}
+\bibliographystyle{plainnat}
+
 
 % Document metadata
 \title{nf-core/viralmetagenome: A Novel Pipeline for Untargeted Viral Genome Reconstruction}
@@ -95,6 +98,6 @@
 \input{manuscript-content}
 
 % Bibliography
-\bibliography{reference}
+\bibliography{reference_converted}
 
 \end{document}
