@@ -1,0 +1,1779 @@
+@ARTICLE{Pedersen2018-mu,
+  title        = {Mosdepth: quick coverage calculation for genomes and exomes},
+  author       = {Pedersen, Brent S and Quinlan, Aaron R},
+  journal = {Bioinformatics},
+  publisher    = {Oxford Academic},
+  volume       = {34},
+  number = {5},
+  pages        = {867--868},
+  year = {2018},
+  doi          = {10.1093/bioinformatics/btx699},
+  abstract     = {Summary: Mosdepth is a new command-line tool for rapidly
+                  calculating genome-wide sequencing coverage. It measures depth
+                  from BAM or CRAM files at either each nucleotide position in a
+                  genome or for sets of genomic regions. Genomic regions may be
+                  specified as either a BED file to evaluate coverage across
+                  capture regions, or as a fixed-size window as required for
+                  copy-number calling. Mosdepth uses a simple algorithm that is
+                  computationally efficient and enables it to quickly produce
+                  coverage summaries. We demonstrate that mosdepth is faster
+                  than existing tools and provides flexibility in the types of
+                  coverage profiles produced. Availability and implementation:
+                  mosdepth is available from https://github.com/brentp/mosdepth
+                  under the MIT license. Contact: bpederse@gmail.com.
+                  Supplementary information: Supplementary data are available at
+                  Bioinformatics online.},
+  urlyear = {2018}
+}
+,
+@ARTICLE{Li2018-gi,
+  title        = {{Minimap2}: pairwise alignment for nucleotide sequences},
+  author       = {Li, Heng},
+  journal = {Bioinformatics},
+  volume       = {34},
+  number = {18},
+  pages        = {3094--3100},
+  year = {2018},
+  doi          = {10.1093/bioinformatics/bty191},
+  abstract     = {Recent advances in sequencing technologies promise ultra-long
+                  reads of ∼100 kb in average, full-length mRNA or cDNA reads in
+                  high throughput and genomic contigs over 100 Mb in length.
+                  Existing alignment programs are unable or inefficient to
+                  process such data at scale, which presses for the development
+                  of new alignment algorithms.Minimap2 is a general-purpose
+                  alignment program to map DNA or long mRNA sequences against a
+                  large reference database. It works with accurate short reads
+                  of ≥100 bp in length, ≥1 kb genomic reads at error rate ∼15\%,
+                  full-length noisy Direct RNA or cDNA reads and assembly
+                  contigs or closely related full chromosomes of hundreds of
+                  megabases in length. Minimap2 does split-read alignment,
+                  employs concave gap cost for long insertions and deletions and
+                  introduces new heuristics to reduce spurious alignments. It is
+                  3–4 times as fast as mainstream short-read mappers at
+                  comparable accuracy, and is ≥30 times faster than long-read
+                  genomic or cDNA mappers at higher accuracy, surpassing most
+                  aligners specialized in one type of
+                  alignment.https://github.com/lh3/minimap2Supplementary data
+                  are available at Bioinformatics online.},
+  urlyear = {2018}
+}
+,
+@ARTICLE{Katoh2002-ox,
+  title        = {{MAFFT}: a novel method for rapid multiple sequence alignment
+                  based on fast Fourier transform},
+  author       = {Katoh, Kazutaka and Misawa, Kazuharu and Kuma, Kei-Ichi and
+                  Miyata, Takashi},
+  journal = {Nucleic Acids Res.},
+  publisher    = {Oxford University Press (OUP)},
+  volume       = {30},
+  number = {14},
+  pages        = {3059--3066},
+  year = {2002},
+  doi          = {10.1093/nar/gkf436},
+  abstract     = {A multiple sequence alignment program, MAFFT, has been
+                  developed. The CPU time is drastically reduced as compared
+                  with existing methods. MAFFT includes two novel techniques.
+                  (i) Homo logous regions are rapidly identified by the fast
+                  Fourier transform (FFT), in which an amino acid sequence is
+                  converted to a sequence composed of volume and polarity values
+                  of each amino acid residue. (ii) We propose a simplified
+                  scoring system that performs well for reducing CPU time and
+                  increasing the accuracy of alignments even for sequences
+                  having large insertions or extensions as well as distantly
+                  related sequences of similar length. Two different heuristics,
+                  the progressive method (FFT-NS-2) and the iterative refinement
+                  method (FFT-NS-i), are implemented in MAFFT. The performances
+                  of FFT-NS-2 and FFT-NS-i were compared with other methods by
+                  computer simulations and benchmark tests; the CPU time of
+                  FFT-NS-2 is drastically reduced as compared with CLUSTALW with
+                  comparable accuracy. FFT-NS-i is over 100 times faster than
+                  T-COFFEE, when the number of input sequences exceeds 60,
+                  without sacrificing the accuracy.},
+  urlyear = {2002},
+  keywords     = {sequence alignment}
+}
+,
+@SOFTWARE{CantuUnknown-bx,
+  type        = {software},
+  title       = {{PRINSEQ}-plus-plus: parallel c prinseq},
+  author      = {Cantu, Adrian},
+  institution = {Github},
+  abstract    = {parallel c prinseq. Contribute to
+                 Adrian-Cantu/PRINSEQ-plus-plus development by creating an
+                 account on GitHub.},
+  urlyear = {2025}
+}
+,
+@ARTICLE{Li2025-uh,
+  title        = {Evaluation of metatranscriptomic sequencing protocols to
+                  obtain full-length {RNA} virus genomes from mammalian tissues},
+  author       = {Li, Yiqiao and Polychronopoulou, Mariana and Boonen, Ine and
+                  Fikatas, Antonios and Gryseels, Sophie and Laudisoit, Anne and
+                  de Bellocq, Joelle Gouy and Vrancken, Bram and Magiorkinis,
+                  Gkikas and Lemey, Philippe and Bletsa, Magda},
+  journal = {PLoS One},
+  publisher    = {Public Library of Science},
+  volume       = {20},
+  number = {5},
+  pages        = {e0324537},
+  year = {2025},
+  doi          = {10.1371/journal.pone.0324537},
+  abstract     = {High-throughput sequencing technologies have advanced RNA
+                  virus genomics, but recovering viral genomes from mammalian
+                  tissues remains challenging due to the predominance of host
+                  RNA. We evaluated two metatranscriptomic workflows to address
+                  these challenges. Our results demonstrate that the methods
+                  differed significantly in performance, with Method B achieving
+                  a 5-fold increase in RNA yield and improved RNA integrity over
+                  Method A. These differences resulted in the recovery of 4
+                  complete hepacivirus genomes with Method B compared to
+                  fragmented or incomplete genomes with Method A. Additionally,
+                  Method B's library preparation workflow, incorporating rRNA
+                  depletion, enhanced viral genome recovery by reducing host RNA
+                  background. Our novel approach integrates an optimized RNA
+                  purification protocol with a customized bioinformatics
+                  strategy for improved viral genome recovery. Overall, our
+                  findings highlight the critical role of optimized
+                  homogenization, RNA purification, and library preparation in
+                  metatranscriptomic workflows, facilitating the more effective
+                  RNA virus genome recovery from complex mammalian tissues.},
+  urlyear = {2025}
+}
+,
+@ARTICLE{Guo2021-rf,
+  title        = {{VirSorter2}: a multi-classifier, expert-guided approach to
+                  detect diverse {DNA} and {RNA} viruses},
+  author       = {Guo, Jiarong and Bolduc, Ben and Zayed, Ahmed A and Varsani,
+                  Arvind and Dominguez-Huerta, Guillermo and Delmont, Tom O and
+                  Pratama, Akbar Adjie and Gazitúa, M Consuelo and Vik, Dean and
+                  Sullivan, Matthew B and Roux, Simon},
+  journal = {Microbiome},
+  volume       = {9},
+  number = {1},
+  pages        = {37},
+  year = {2021},
+  doi          = {10.1186/s40168-020-00990-y},
+  abstract     = {BACKGROUND: Viruses are a significant player in many biosphere
+                  and human ecosystems, but most signals remain "hidden" in
+                  metagenomic/metatranscriptomic sequence datasets due to the
+                  lack of universal gene markers, database representatives, and
+                  insufficiently advanced identification tools. RESULTS: Here,
+                  we introduce VirSorter2, a DNA and RNA virus identification
+                  tool that leverages genome-informed database advances across a
+                  collection of customized automatic classifiers to improve the
+                  accuracy and range of virus sequence detection. When
+                  benchmarked against genomes from both isolated and
+                  uncultivated viruses, VirSorter2 uniquely performed
+                  consistently with high accuracy (F1-score > 0.8) across viral
+                  diversity, while all other tools under-detected viruses
+                  outside of the group most represented in reference databases
+                  (i.e., those in the order Caudovirales). Among the tools
+                  evaluated, VirSorter2 was also uniquely able to minimize
+                  errors associated with atypical cellular sequences including
+                  eukaryotic genomes and plasmids. Finally, as the virosphere
+                  exploration unravels novel viral sequences, VirSorter2's
+                  modular design makes it inherently able to expand to new types
+                  of viruses via the design of new classifiers to maintain
+                  maximal sensitivity and specificity. CONCLUSION: With
+                  multi-classifier and modular design, VirSorter2 demonstrates
+                  higher overall accuracy across major viral groups and will
+                  advance our knowledge of virus evolution, diversity, and
+                  virus-microbe interaction in various ecosystems. Source code
+                  of VirSorter2 is freely available (
+                  https://bitbucket.org/MAVERICLab/virsorter2 ), and VirSorter2
+                  is also available both on bioconda and as an iVirus app on
+                  CyVerse ( https://de.cyverse.org/de ). Video abstract.}
+}
+,
+@ARTICLE{Baaijens2017-hw,
+  title        = {De novo assembly of viral quasispecies using overlap graphs},
+  author       = {Baaijens, Jasmijn A and Aabidine, Amal Zine El and Rivals,
+                  Eric and Schönhuth, Alexander},
+  journal = {Genome Res.},
+  volume       = {27},
+  number = {5},
+  pages        = {835--848},
+  year = {2017},
+  doi          = {10.1101/gr.215038.116},
+  abstract     = {A viral quasispecies, the ensemble of viral strains populating
+                  an infected person, can be highly diverse. For optimal
+                  assessment of virulence, pathogenesis, and therapy selection,
+                  determining the haplotypes of the individual strains can play
+                  a key role. As many viruses are subject to high mutation and
+                  recombination rates, high-quality reference genomes are often
+                  not available at the time of a new disease outbreak. We
+                  present SAVAGE, a computational tool for reconstructing
+                  individual haplotypes of intra-host virus strains without the
+                  need for a high-quality reference genome. SAVAGE makes use of
+                  either FM-index-based data structures or ad hoc consensus
+                  reference sequence for constructing overlap graphs from
+                  patient sample data. In this overlap graph, nodes represent
+                  reads and/or contigs, while edges reflect that two
+                  reads/contigs, based on sound statistical considerations,
+                  represent identical haplotypic sequence. Following an
+                  iterative scheme, a new overlap assembly algorithm that is
+                  based on the enumeration of statistically well-calibrated
+                  groups of reads/contigs then efficiently reconstructs the
+                  individual haplotypes from this overlap graph. In benchmark
+                  experiments on simulated and on real deep-coverage data,
+                  SAVAGE drastically outperforms generic de novo assemblers as
+                  well as the only specialized de novo viral quasispecies
+                  assembler available so far. When run on ad hoc consensus
+                  reference sequence, SAVAGE performs very favorably in
+                  comparison with state-of-the-art reference genome-guided
+                  tools. We also apply SAVAGE on two deep-coverage samples of
+                  patients infected by the Zika and the hepatitis C virus,
+                  respectively, which sheds light on the genetic structures of
+                  the respective viral quasispecies.}
+}
+,
+@ARTICLE{Kieft2020-aq,
+  title        = {{VIBRANT}: automated recovery, annotation and curation of
+                  microbial viruses, and evaluation of viral community function
+                  from genomic sequences},
+  author       = {Kieft, Kristopher and Zhou, Zhichao and Anantharaman, Karthik},
+  journal = {Microbiome},
+  volume       = {8},
+  number = {1},
+  pages        = {90},
+  year = {2020},
+  doi          = {10.1186/s40168-020-00867-0},
+  abstract     = {BACKGROUND: Viruses are central to microbial community
+                  structure in all environments. The ability to generate large
+                  metagenomic assemblies of mixed microbial and viral sequences
+                  provides the opportunity to tease apart complex microbiome
+                  dynamics, but these analyses are currently limited by the
+                  tools available for analyses of viral genomes and assessing
+                  their metabolic impacts on microbiomes. DESIGN: Here we
+                  present VIBRANT, the first method to utilize a hybrid machine
+                  learning and protein similarity approach that is not reliant
+                  on sequence features for automated recovery and annotation of
+                  viruses, determination of genome quality and completeness, and
+                  characterization of viral community function from metagenomic
+                  assemblies. VIBRANT uses neural networks of protein signatures
+                  and a newly developed v-score metric that circumvents
+                  traditional boundaries to maximize identification of lytic
+                  viral genomes and integrated proviruses, including highly
+                  diverse viruses. VIBRANT highlights viral auxiliary metabolic
+                  genes and metabolic pathways, thereby serving as a
+                  user-friendly platform for evaluating viral community
+                  function. VIBRANT was trained and validated on reference virus
+                  datasets as well as microbiome and virome data. RESULTS:
+                  VIBRANT showed superior performance in recovering higher
+                  quality viruses and concurrently reduced the false
+                  identification of non-viral genome fragments in comparison to
+                  other virus identification programs, specifically VirSorter,
+                  VirFinder, and MARVEL. When applied to 120,834
+                  metagenome-derived viral sequences representing several human
+                  and natural environments, VIBRANT recovered an average of 94\%
+                  of the viruses, whereas VirFinder, VirSorter, and MARVEL
+                  achieved less powerful performance, averaging 48\%, 87\%, and
+                  71\%, respectively. Similarly, VIBRANT identified more total
+                  viral sequence and proteins when applied to real metagenomes.
+                  When compared to PHASTER, Prophage Hunter, and VirSorter for
+                  the ability to extract integrated provirus regions from host
+                  scaffolds, VIBRANT performed comparably and even identified
+                  proviruses that the other programs did not. To demonstrate
+                  applications of VIBRANT, we studied viromes associated with
+                  Crohn's disease to show that specific viral groups, namely
+                  Enterobacteriales-like viruses, as well as putative dysbiosis
+                  associated viral proteins are more abundant compared to
+                  healthy individuals, providing a possible viral link to
+                  maintenance of diseased states. CONCLUSIONS: The ability to
+                  accurately recover viruses and explore viral impacts on
+                  microbial community metabolism will greatly advance our
+                  understanding of microbiomes, host-microbe interactions, and
+                  ecosystem dynamics. Video Abstract.},
+  keywords     = {Auxiliary metabolism; Bacteriophage; Machine learning;
+                  Metagenome; Software; Virome; Virus}
+}
+,
+@ARTICLE{Grubaugh2019-xd,
+  title        = {An amplicon-based sequencing framework for accurately
+                  measuring intrahost virus diversity using {PrimalSeq} and
+                  {iVar}},
+  author       = {Grubaugh, Nathan D and Gangavarapu, Karthik and Quick, Joshua
+                  and Matteson, Nathaniel L and De Jesus, Jaqueline Goes and
+                  Main, Bradley J and Tan, Amanda L and Paul, Lauren M and
+                  Brackney, Doug E and Grewal, Saran and Gurfield, Nikos and Van
+                  Rompay, Koen K A and Isern, Sharon and Michael, Scott F and
+                  Coffey, Lark L and Loman, Nicholas J and Andersen, Kristian G},
+  journal = {Genome Biol.},
+  volume       = {20},
+  number = {1},
+  pages        = {8},
+  year = {2019},
+  doi          = {10.1186/s13059-018-1618-7},
+  abstract     = {How viruses evolve within hosts can dictate infection
+                  outcomes; however, reconstructing this process is challenging.
+                  We evaluate our multiplexed amplicon approach, PrimalSeq, to
+                  demonstrate how virus concentration, sequencing coverage,
+                  primer mismatches, and replicates influence the accuracy of
+                  measuring intrahost virus diversity. We develop an
+                  experimental protocol and computational tool, iVar, for using
+                  PrimalSeq to measure virus diversity using Illumina and
+                  compare the results to Oxford Nanopore sequencing. We
+                  demonstrate the utility of PrimalSeq by measuring Zika and
+                  West Nile virus diversity from varied sample types and show
+                  that the accumulation of genetic diversity is influenced by
+                  experimental and biological systems.},
+  keywords     = {Amplicon sequencing; Intrahost evolution; SNP calling; Viral
+                  sequencing; West Nile; Zika}
+}
+,
+@ARTICLE{Shepard2016-uh,
+  title        = {Viral deep sequencing needs an adaptive approach: {IRMA}, the
+                  iterative refinement meta-assembler},
+  author       = {Shepard, Samuel S and Meno, Sarah and Bahl, Justin and Wilson,
+                  Malania M and Barnes, John and Neuhaus, Elizabeth},
+  journal = {BMC Genomics},
+  volume       = {17},
+  number = {1},
+  pages        = {708},
+  year = {2016},
+  doi          = {10.1186/s12864-016-3030-6},
+  abstract     = {BACKGROUND: Deep sequencing makes it possible to observe
+                  low-frequency viral variants and sub-populations with greater
+                  accuracy and sensitivity than ever before. Existing platforms
+                  can be used to multiplex a large number of samples; however,
+                  analysis of the resulting data is complex and involves
+                  separating barcoded samples and various read manipulation
+                  processes ending in final assembly. Many assembly tools were
+                  designed with larger genomes and higher fidelity polymerases
+                  in mind and do not perform well with reads derived from highly
+                  variable viral genomes. Reference-based assemblers may leave
+                  gaps in viral assemblies while de novo assemblers may struggle
+                  to assemble unique genomes. RESULTS: The IRMA (iterative
+                  refinement meta-assembler) pipeline solves the problem of
+                  viral variation by the iterative optimization of read
+                  gathering and assembly. As with all reference-based assembly,
+                  reads are included in assembly when they match consensus
+                  template sets; however, IRMA provides for on-the-fly reference
+                  editing, correction, and optional elongation without the need
+                  for additional reference selection. This increases both read
+                  depth and breadth. IRMA also focuses on quality control, error
+                  correction, indel reporting, variant calling and variant
+                  phasing. In fact, IRMA's ability to detect and phase minor
+                  variants is one of its most distinguishing features. We have
+                  built modules for influenza and ebolavirus. We demonstrate
+                  usage and provide calibration data from mixture experiments.
+                  Methods for variant calling, phasing, and error
+                  estimation/correction have been redesigned to meet the needs
+                  of viral genomic sequencing. CONCLUSION: IRMA provides a
+                  robust next-generation sequencing assembly solution that is
+                  adapted to the needs and characteristics of viral genomes. The
+                  software solves issues related to the genetic diversity of
+                  viruses while providing customized variant calling, phasing,
+                  and quality control. IRMA is freely available for
+                  non-commercial use on Linux and Mac OS X and has been
+                  parallelized for high-throughput computing.},
+  keywords     = {Deep sequencing; Ebola; High throughput; Influenza; NGS;
+                  Public health; Surveillance}
+}
+,
+@ARTICLE{Vilsker2019-rf,
+  title        = {Genome Detective: an automated system for virus identification
+                  from high-throughput sequencing data},
+  author       = {Vilsker, Michael and Moosa, Yumna and Nooij, Sam and Fonseca,
+                  Vagner and Ghysens, Yoika and Dumon, Korneel and Pauwels, Raf
+                  and Alcantara, Luiz Carlos and Vanden Eynden, Ewout and
+                  Vandamme, Anne-Mieke and Deforche, Koen and de Oliveira, Tulio},
+  journal = {Bioinformatics},
+  volume       = {35},
+  number = {5},
+  pages        = {871--873},
+  year = {2019},
+  doi          = {10.1093/bioinformatics/bty695},
+  abstract     = {SUMMARY: Genome Detective is an easy to use web-based software
+                  application that assembles the genomes of viruses quickly and
+                  accurately. The application uses a novel alignment method that
+                  constructs genomes by reference-based linking of de novo
+                  contigs by combining amino-acids and nucleotide scores. The
+                  software was optimized using synthetic datasets to represent
+                  the great diversity of virus genomes. The application was then
+                  validated with next generation sequencing data of hundreds of
+                  viruses. User time is minimal and it is limited to the time
+                  required to upload the data. AVAILABILITY AND IMPLEMENTATION:
+                  Available online:
+                  http://www.genomedetective.com/app/typingtool/virus/.
+                  SUPPLEMENTARY INFORMATION: Supplementary data are available at
+                  Bioinformatics online.}
+}
+,
+@ARTICLE{Merkel2014-hn,
+  title        = {Docker: lightweight Linux containers for consistent
+                  development and deployment},
+  author       = {Merkel, D},
+  journal = {Linux Journal},
+  publisher    = {Belltown Media},
+  volume       = {2014},
+  number = {239},
+  pages        = {2},
+  year = {2014},
+  doi          = {10.5555/2600239.2600241},
+  abstract     = {Docker promises the ability to package applications and their
+                  dependencies into lightweight containers that move easily
+                  between different distros, start up quickly and are isolated
+                  from each other.},
+  urlyear = {2014}
+}
+,
+@ARTICLE{Kieft2022-km,
+  title        = {{vRhyme} enables binning of viral genomes from metagenomes},
+  author       = {Kieft, Kristopher and Adams, Alyssa and Salamzade, Rauf and
+                  Kalan, Lindsay and Anantharaman, Karthik},
+  journal = {Nucleic Acids Res.},
+  volume       = {50},
+  number = {14},
+  pages        = {e83},
+  year = {2022},
+  doi          = {10.1093/nar/gkac341},
+  abstract     = {Genome binning has been essential for characterization of
+                  bacteria, archaea, and even eukaryotes from metagenomes. Yet,
+                  few approaches exist for viruses. We developed vRhyme, a fast
+                  and precise software for construction of viral
+                  metagenome-assembled genomes (vMAGs). vRhyme utilizes single-
+                  or multi-sample coverage effect size comparisons between
+                  scaffolds and employs supervised machine learning to identify
+                  nucleotide feature similarities, which are compiled into
+                  iterations of weighted networks and refined bins. To refine
+                  bins, vRhyme utilizes unique features of viral genomes, namely
+                  a protein redundancy scoring mechanism based on the
+                  observation that viruses seldom encode redundant genes. Using
+                  simulated viromes, we displayed superior performance of vRhyme
+                  compared to available binning tools in constructing more
+                  complete and uncontaminated vMAGs. When applied to 10,601
+                  viral scaffolds from human skin, vRhyme advanced our
+                  understanding of resident viruses, highlighted by
+                  identification of a Herelleviridae vMAG comprised of 22
+                  scaffolds, and another vMAG encoding a nitrate reductase
+                  metabolic gene, representing near-complete genomes
+                  post-binning. vRhyme will enable a convention of binning
+                  uncultivated viral genomes and has the potential to transform
+                  metagenome-based viral ecology.}
+}
+,
+@ARTICLE{Forbes2025-mv,
+  title        = {Benchmarking of human read removal strategies for viral and
+                  microbial metagenomics},
+  author       = {Forbes, Matthew and Ng, Duncan Y K and Boggan, Roisin M and
+                  Frick-Kretschmer, Andrea and Durham, Jillian and Lorenz,
+                  Oliver and Dave, Bruhad and Lassalle, Florent and Scott, Carol
+                  and Wagner, Josef and Lignes, Adrianne and Noaves, Fernanda
+                  and Jackson, David K and Howe, Kevin and Harrison, Ewan},
+  journal = {bioRxiv},
+  pages        = {2025.03.21.644587},
+  year = {2025},
+  doi          = {10.1101/2025.03.21.644587},
+  abstract     = {Human reads are a key contaminant in microbial metagenomics
+                  and enrichment-based studies, requiring removal for
+                  computational efficiency, biological analysis, and privacy
+                  protection. Various in silico methods exist, but their
+                  effectiveness depends on the parameters and reference genomes
+                  used. Here, we assess different methods, including the impact
+                  of the updated T2T-CHM13 human genome versus GRCh38. Using a
+                  synthetic dataset of viral and human reads, we evaluated
+                  performance metrics for multiple approaches. We found that the
+                  usage of high-sensitivity configuration of Bowtie2 with the
+                  T2T-CHM13 reference assembly significantly improves human read
+                  removal with minimal loss of specificity, albeit at higher
+                  computational cost compared to other methods investigated.
+                  Applying this approach to a publicly available microbiome
+                  dataset, we effectively removed sex-determining SNPs with
+                  little impact on microbial assembly. Our results suggest that
+                  our high-sensitivity Bowtie2 approach with the T2T-CHM13 is
+                  the best method tested to minimise identifiability risks from
+                  residual human reads.},
+  urlyear = {2025}
+}
+,
+@ARTICLE{Smith2017-nk,
+  title        = {{UMI}-tools: modeling sequencing errors in Unique Molecular
+                  Identifiers to improve quantification accuracy},
+  author       = {Smith, Tom and Heger, Andreas and Sudbery, Ian},
+  journal = {Genome Res.},
+  volume       = {27},
+  number = {3},
+  pages        = {491--499},
+  year = {2017},
+  doi          = {10.1101/gr.209601.116},
+  abstract     = {Unique Molecular Identifiers (UMIs) are random oligonucleotide
+                  barcodes that are increasingly used in high-throughput
+                  sequencing experiments. Through a UMI, identical copies
+                  arising from distinct molecules can be distinguished from
+                  those arising through PCR amplification of the same molecule.
+                  However, bioinformatic methods to leverage the information
+                  from UMIs have yet to be formalized. In particular, sequencing
+                  errors in the UMI sequence are often ignored or else resolved
+                  in an ad hoc manner. We show that errors in the UMI sequence
+                  are common and introduce network-based methods to account for
+                  these errors when identifying PCR duplicates. Using these
+                  methods, we demonstrate improved quantification accuracy both
+                  under simulated conditions and real iCLIP and single-cell
+                  RNA-seq data sets. Reproducibility between iCLIP replicates
+                  and single-cell RNA-seq clustering are both improved using our
+                  proposed network-based method, demonstrating the value of
+                  properly accounting for errors in UMIs. These methods are
+                  implemented in the open source UMI-tools software package.}
+}
+,
+@ARTICLE{Li2016-sd,
+  title        = {{MEGAHIT} {v1}.0: A fast and scalable metagenome assembler
+                  driven by advanced methodologies and community practices},
+  author       = {Li, Dinghua and Luo, Ruibang and Liu, Chi-Man and Leung,
+                  Chi-Ming and Ting, Hing-Fung and Sadakane, Kunihiko and
+                  Yamashita, Hiroshi and Lam, Tak-Wah},
+  journal = {Methods},
+  volume       = {102},
+  pages        = {3--11},
+  year = {2016},
+  doi          = {10.1016/j.ymeth.2016.02.020},
+  abstract     = {The study of metagenomics has been much benefited from
+                  low-cost and high-throughput sequencing technologies, yet the
+                  tremendous amount of data generated make analysis like de novo
+                  assembly to consume too much computational resources. In late
+                  2014 we released MEGAHIT v0.1 (together with a brief note of
+                  Li et al. (2015) [1]), which is the first NGS metagenome
+                  assembler that can assemble genome sequences from metagenomic
+                  datasets of hundreds of Giga base-pairs (bp) in a time- and
+                  memory-efficient manner on a single server. The core of
+                  MEGAHIT is an efficient parallel algorithm for constructing
+                  succinct de Bruijn Graphs (SdBG), implemented on a graphical
+                  processing unit (GPU). The software has been well received by
+                  the assembly community, and there is interest in how to adapt
+                  the algorithms to integrate popular assembly practices so as
+                  to improve the assembly quality, as well as how to speed up
+                  the software using better CPU-based algorithms (instead of
+                  GPU). In this paper we first describe the details of the core
+                  algorithms in MEGAHIT v0.1, and then we show the new modules
+                  to upgrade MEGAHIT to version v1.0, which gives better
+                  assembly quality, runs faster and uses less memory. For the
+                  Iowa Prairie Soil dataset (252Gbp after quality trimming), the
+                  assembly quality of MEGAHIT v1.0, when compared with v0.1, has
+                  a significant improvement, namely, 36\% increase in assembly
+                  size and 23\% in N50. More interestingly, MEGAHIT v1.0 is no
+                  slower than before (even running with the extra modules). This
+                  is primarily due to a new CPU-based algorithm for SdBG
+                  construction that is faster and requires less memory. Using
+                  CPU only, MEGAHIT v1.0 can assemble the Iowa Prairie Soil
+                  sample in about 43h, reducing the running time of v0.1 by at
+                  least 25\% and memory usage by up to 50\%. MEGAHIT v1.0,
+                  exhibiting a smaller memory footprint, can process even larger
+                  datasets. The Kansas Prairie Soil sample (484Gbp), the largest
+                  publicly available dataset, can now be assembled using no more
+                  than 500GB of memory in 7.5days. The assemblies of these
+                  datasets (and other large metgenomic datasets), as well as the
+                  software, are available at the website
+                  https://hku-bal.github.io/megabox.},
+  keywords     = {Metagenome assembly; Parallel computing; Succinct data
+                  structure}
+}
+,
+@ARTICLE{Bolger2014-si,
+  title        = {Trimmomatic: a flexible trimmer for Illumina sequence data},
+  author       = {Bolger, Anthony M and Lohse, Marc and Usadel, Bjoern},
+  journal = {Bioinformatics},
+  volume       = {30},
+  number = {15},
+  pages        = {2114--2120},
+  year = {2014},
+  doi          = {10.1093/bioinformatics/btu170},
+  abstract     = {Motivation: Although many next-generation sequencing (NGS)
+                  read preprocessing tools already existed, we could not find
+                  any tool or combination of tools that met our requirements in
+                  terms of flexibility, correct handling of paired-end data and
+                  high performance. We have developed Trimmomatic as a more
+                  flexible and efficient preprocessing tool, which could
+                  correctly handle paired-end data. Results: The value of NGS
+                  read preprocessing is demonstrated for both reference-based
+                  and reference-free tasks. Trimmomatic is shown to produce
+                  output that is at least competitive with, and in many cases
+                  superior to, that produced by other tools, in all scenarios
+                  tested. Availability and implementation: Trimmomatic is
+                  licensed under GPL V3. It is cross-platform (Java 1.5+
+                  required) and available at
+                  http://www.usadellab.org/cms/index.php?page=trimmomaticContact:usadel@bio1.rwth-aachen.deSupplementary
+                  information:Supplementary data are available at Bioinformatics
+                  online.},
+  urlyear = {2014}
+}
+,
+@ARTICLE{Steinegger2017-ci,
+  title        = {{MMseqs2} enables sensitive protein sequence searching for the
+                  analysis of massive data sets},
+  author       = {Steinegger, Martin and Söding, Johannes},
+  journal = {Nat. Biotechnol.},
+  volume       = {35},
+  number = {11},
+  pages        = {1026--1028},
+  year = {2017},
+  doi          = {10.1038/nbt.3988},
+  urlyear = {2017}
+}
+,
+@ARTICLE{Zielezinski2025-vl,
+  title        = {Ultrafast and accurate sequence alignment and clustering of
+                  viral genomes},
+  author       = {Zielezinski, Andrzej and Gudyś, Adam and Barylski, Jakub and
+                  Siminski, Krzysztof and Rozwalak, Piotr and Dutilh, Bas E and
+                  Deorowicz, Sebastian},
+  journal = {Nat. Methods},
+  publisher    = {Springer Science and Business Media LLC},
+  volume       = {22},
+  number = {6},
+  pages        = {1191--1194},
+  year = {2025},
+  doi          = {10.1038/s41592-025-02701-7},
+  abstract     = {Viromics produces millions of viral genomes and fragments
+                  annually, overwhelming traditional sequence comparison
+                  methods. Here we introduce Vclust, an approach that determines
+                  average nucleotide identity by Lempel-Ziv parsing and clusters
+                  viral genomes with thresholds endorsed by authoritative viral
+                  genomics and taxonomy consortia. Vclust demonstrates superior
+                  accuracy and efficiency compared to existing tools, clustering
+                  millions of genomes in a few hours on a mid-range workstation.},
+  urlyear = {2025}
+}
+,
+@ARTICLE{Cantu2019-vs,
+  title        = {{PRINSEQ++}, a multi-threaded tool for fast and efficient
+                  quality control and preprocessing of sequencing datasets},
+  author       = {Cantu, Vito Adrian and Sadural, Jeffrey and Edwards, Robert},
+  journal = {PeerJ},
+  year = {2019},
+  doi          = {10.7287/peerj.preprints.27553v1},
+  abstract     = {PRINSEQ++ is a C++ implementation of the very popular software
+                  prinseq-lite for quality control and preprocessing of
+                  sequencing datasets. PRINSEQ++ can run multi-threaded
+                  processes, which makes it more than 10 times faster than the
+                  original version. It can read from, and write to, compressed
+                  files, drastically reducing the use of hard-drive. PRINSEQ++
+                  can filter, trim and reformat sequences by a variety of
+                  options to improve downstream analysis. PRINSEQ++ is freely
+                  available on GitHub
+                  (https://github.com/Adrian-Cantu/PRINSEQ-plus-plus) and runs
+                  on all Unix-like systems.}
+}
+,
+@ARTICLE{Rognes2016-ju,
+  title        = {{VSEARCH}: a versatile open source tool for metagenomics},
+  author       = {Rognes, Torbjørn and Flouri, Tomáš and Nichols, Ben and
+                  Quince, Christopher and Mahé, Frédéric},
+  journal = {PeerJ},
+  volume       = {4},
+  pages        = {e2584},
+  year = {2016},
+  doi          = {10.7717/peerj.2584},
+  abstract     = {BACKGROUND: VSEARCH is an open source and free of charge
+                  multithreaded 64-bit tool for processing and preparing
+                  metagenomics, genomics and population genomics nucleotide
+                  sequence data. It is designed as an alternative to the widely
+                  used USEARCH tool (Edgar, 2010) for which the source code is
+                  not publicly available, algorithm details are only
+                  rudimentarily described, and only a memory-confined 32-bit
+                  version is freely available for academic use. METHODS: When
+                  searching nucleotide sequences, VSEARCH uses a fast heuristic
+                  based on words shared by the query and target sequences in
+                  order to quickly identify similar sequences, a similar
+                  strategy is probably used in USEARCH. VSEARCH then performs
+                  optimal global sequence alignment of the query against
+                  potential target sequences, using full dynamic programming
+                  instead of the seed-and-extend heuristic used by USEARCH.
+                  Pairwise alignments are computed in parallel using
+                  vectorisation and multiple threads. RESULTS: VSEARCH includes
+                  most commands for analysing nucleotide sequences available in
+                  USEARCH version 7 and several of those available in USEARCH
+                  version 8, including searching (exact or based on global
+                  alignment), clustering by similarity (using length
+                  pre-sorting, abundance pre-sorting or a user-defined order),
+                  chimera detection (reference-based or de novo), dereplication
+                  (full length or prefix), pairwise alignment, reverse
+                  complementation, sorting, and subsampling. VSEARCH also
+                  includes commands for FASTQ file processing, i.e., format
+                  detection, filtering, read quality statistics, and merging of
+                  paired reads. Furthermore, VSEARCH extends functionality with
+                  several new commands and improvements, including shuffling,
+                  rereplication, masking of low-complexity sequences with the
+                  well-known DUST algorithm, a choice among different similarity
+                  definitions, and FASTQ file format conversion. VSEARCH is here
+                  shown to be more accurate than USEARCH when performing
+                  searching, clustering, chimera detection and subsampling,
+                  while on a par with USEARCH for paired-ends read merging.
+                  VSEARCH is slower than USEARCH when performing clustering and
+                  chimera detection, but significantly faster when performing
+                  paired-end reads merging and dereplication. VSEARCH is
+                  available at https://github.com/torognes/vsearch under either
+                  the BSD 2-clause license or the GNU General Public License
+                  version 3.0. DISCUSSION: VSEARCH has been shown to be a fast,
+                  accurate and full-fledged alternative to USEARCH. A free and
+                  open-source versatile tool for sequence analysis is now
+                  available to the metagenomics community.},
+  keywords     = {Alignment; Chimera detection; Clustering; Dereplication;
+                  Masking; Metagenomics; Parallellization; Searching; Sequences;
+                  Shuffling}
+}
+,
+@ARTICLE{Ondov2011-yp,
+  title        = {Interactive metagenomic visualization in a Web browser},
+  author       = {Ondov, Brian D and Bergman, Nicholas H and Phillippy, Adam M},
+  journal = {BMC Bioinformatics},
+  publisher    = {Springer Science and Business Media LLC},
+  volume       = {12},
+  number = {1},
+  pages        = {385},
+  year = {2011},
+  doi          = {10.1186/1471-2105-12-385},
+  abstract     = {BACKGROUND: A critical output of metagenomic studies is the
+                  estimation of abundances of taxonomical or functional groups.
+                  The inherent uncertainty in assignments to these groups makes
+                  it important to consider both their hierarchical contexts and
+                  their prediction confidence. The current tools for visualizing
+                  metagenomic data, however, omit or distort quantitative
+                  hierarchical relationships and lack the facility for
+                  displaying secondary variables. RESULTS: Here we present
+                  Krona, a new visualization tool that allows intuitive
+                  exploration of relative abundances and confidences within the
+                  complex hierarchies of metagenomic classifications. Krona
+                  combines a variant of radial, space-filling displays with
+                  parametric coloring and interactive polar-coordinate zooming.
+                  The HTML5 and JavaScript implementation enables fully
+                  interactive charts that can be explored with any modern Web
+                  browser, without the need for installed software or plug-ins.
+                  This Web-based architecture also allows each chart to be an
+                  independent document, making them easy to share via e-mail or
+                  post to a standard Web server. To illustrate Krona's utility,
+                  we describe its application to various metagenomic data sets
+                  and its compatibility with popular metagenomic analysis tools.
+                  CONCLUSIONS: Krona is both a powerful metagenomic
+                  visualization tool and a demonstration of the potential of
+                  HTML5 for highly accessible bioinformatic visualizations. Its
+                  rich and interactive displays facilitate more informed
+                  interpretations of metagenomic analyses, while its
+                  implementation as a browser-based application makes it
+                  extremely portable and easily adopted into existing analysis
+                  packages. Both the Krona rendering code and conversion tools
+                  are freely available under a BSD open-source license, and
+                  available from: http://krona.sourceforge.net.},
+  urlyear = {2011}
+}
+,
+@ARTICLE{Ondov2019-bo,
+  title        = {Mash Screen: high-throughput sequence containment estimation
+                  for genome discovery},
+  author       = {Ondov, Brian D and Starrett, Gabriel J and Sappington, Anna
+                  and Kostic, Aleksandra and Koren, Sergey and Buck, Christopher
+                  B and Phillippy, Adam M},
+  journal = {Genome Biol.},
+  volume       = {20},
+  number = {1},
+  pages        = {232},
+  year = {2019},
+  doi          = {10.1186/s13059-019-1841-x},
+  abstract     = {The MinHash algorithm has proven effective for rapidly
+                  estimating the resemblance of two genomes or metagenomes.
+                  However, this method cannot reliably estimate the containment
+                  of a genome within a metagenome. Here, we describe an online
+                  algorithm capable of measuring the containment of genomes and
+                  proteomes within either assembled or unassembled sequencing
+                  read sets. We describe several use cases, including
+                  contamination screening and retrospective analysis of
+                  metagenomes for novel genome discovery. Using this tool, we
+                  provide containment estimates for every NCBI RefSeq genome
+                  within every SRA metagenome and demonstrate the identification
+                  of a novel polyomavirus species from a public metagenome.},
+  keywords     = {Metagenomics; MinHash; Polyomavirus; SRA; Sequencing; Viral
+                  Discovery}
+}
+,
+@ARTICLE{Ewels2020-kk,
+  title        = {The nf-core framework for community-curated bioinformatics
+                  pipelines},
+  author       = {Ewels, Philip A and Peltzer, Alexander and Fillinger, Sven and
+                  Patel, Harshil and Alneberg, Johannes and Wilm, Andreas and
+                  Garcia, Maxime Ulysse and Di Tommaso, Paolo and Nahnsen, Sven},
+  journal = {Nat. Biotechnol.},
+  publisher    = {Springer Science and Business Media LLC},
+  volume       = {38},
+  number = {3},
+  pages        = {276--278},
+  year = {2020},
+  doi          = {10.1038/s41587-020-0439-x},
+  urlyear = {2020}
+}
+,
+@INPROCEEDINGS{Vasimuddin2019-rb,
+  title     = {Efficient Architecture-Aware Acceleration of {BWA}-{MEM} for
+               Multicore Systems},
+  author    = {Vasimuddin, Md and Misra, Sanchit and Li, Heng and Aluru,
+               Srinivas},
+  booktitle = {2019 IEEE International Parallel and Distributed Processing
+               Symposium (IPDPS)},
+  publisher = {IEEE},
+  pages     = {314--324},
+  year = {2019},
+  doi       = {10.1109/IPDPS.2019.00041},
+  abstract  = {Innovations in Next-Generation Sequencing are enabling generation
+               of DNA sequence data at ever faster rates and at very low cost.
+               For example, the Illumina NovaSeq 6000 sequencer can generate 6
+               Terabases of data in less than two days, sequencing nearly 20
+               Billion short DNA fragments called reads at the low cost of
+               \$1000 per human genome. Large sequencing centers typically
+               employ hundreds of such systems. Such highthroughput and low-cost
+               generation of data underscores the need for commensurate
+               acceleration in downstream computational analysis of the
+               sequencing data. A fundamental step in downstream analysis is
+               mapping of the reads to a long reference DNA sequence, such as a
+               reference human genome. Sequence mapping is a compute-intensive
+               step that accounts for more than 30\% of the overall time of the
+               GATK (Genome Analysis ToolKit) best practices workflow. BWA-MEM
+               is one of the most widely used tools for sequence mapping and has
+               tens of thousands of users. In this work, we focus on
+               accelerating BWA-MEM through an efficient architecture aware
+               implementation, while maintaining identical output. The volume of
+               data requires distributed computing and is usually processed on
+               clusters or cloud deployments with multicore processors usually
+               being the platform of choice. Since the application can be easily
+               parallelized across multiple sockets (even across distributed
+               memory systems) by simply distributing the reads equally, we
+               focus on performance improvements on a single socket multicore
+               processor. BWA-MEM run time is dominated by three kernels,
+               collectively responsible for more than 85\% of the overall
+               compute time. We improved the performance of the three kernels by
+               1) using techniques to improve cache reuse, 2) simplifying the
+               algorithms, 3) replacing many small memory allocations with a few
+               large contiguous ones to improve hardware prefetching of data, 4)
+               software prefetching of data, and 5) utilization of SIMD wherever
+               applicable and massive reorganization of the source code to
+               enable these improvements. As a result, we achieved nearly 2x,
+               183x, and 8x speedups on the three kernels, respectively,
+               resulting in up to 3.5x and 2.4x speedups on end-to-end compute
+               time over the original BWA-MEM on single thread and single socket
+               of Intel Xeon Skylake processor. To the best of our knowledge,
+               this is the highest reported speedup over BWA-MEM (running on a
+               single CPU) while using a single CPU or a single CPU-single
+               GPGPU/FPGA combination.}
+}
+,
+@ARTICLE{Bassano2022-cl,
+  title        = {Evaluation of variant calling algorithms for wastewater-based
+                  epidemiology using mixed populations of {SARS}-{CoV}-2
+                  variants in synthetic and wastewater samples},
+  author       = {Bassano, Irene and Ramachandran, Vinoy K and Khalifa, Mohammad
+                  S and Lilley, Chris J and Brown, Mathew R and van Aerle, Ronny
+                  and Denise, Hubert and Rowe, William and George, Airey and
+                  Cairns, Edward and Wierzbicki, Claudia and Pickwell, Natalie D
+                  and Wilson, Myles and Carlile, Matthew and Holmes, Nadine and
+                  Payne, Alexander and Loose, Matthew and Burke, Terry A and
+                  Paterson, Steve and Wade, Matthew J and Grimsley, Jasmine M S},
+  journal = {bioRxiv},
+  year = {2022},
+  doi          = {10.1101/2022.06.06.22275866},
+  abstract     = {AbstractWastewater-based epidemiology (WBE) has been used
+                  extensively throughout the COVID-19 pandemic to detect and
+                  monitor the spread and prevalence of SARS-CoV-2 and its
+                  variants. It has proven an excellent, complementary tool to
+                  clinical sequencing, supporting the insights gained and
+                  helping to make informed public health decisions.
+                  Consequently, many groups globally have developed
+                  bioinformatics pipelines to analyse sequencing data from
+                  wastewater. Accurate calling of mutations is critical in this
+                  process and in the assignment of circulating variants, yet, to
+                  date, the performance of variant-calling algorithms in
+                  wastewater samples has not been investigated. To address this,
+                  we compared the performance of six variant callers (VarScan,
+                  iVar, GATK, FreeBayes, LoFreq and BCFtools), used widely in
+                  bioinformatics pipelines, on 19 synthetic samples with known
+                  ratios of three different SARS-CoV-2 variants (Alpha, Beta and
+                  Delta), as well as 13 wastewater samples collected in London
+                  between the 15–18 December 2021. We used the fundamental
+                  parameters of recall (sensitivity) and precision (specificity)
+                  to confirm the presence of mutational profiles defining
+                  specific variants across the six variant callers.Our results
+                  show that BCFtools, FreeBayes and VarScan found the expected
+                  variants with higher precision and recall than GATK or iVar,
+                  although the latter identified more expected defining
+                  mutations than other callers. LoFreq gave the least reliable
+                  results due to the high number of false-positive mutations
+                  detected, resulting in lower precision. Similar results were
+                  obtained for both the synthetic and wastewater samples.}
+}
+,
+@ARTICLE{Sun2021-xs,
+  title        = {Challenges in benchmarking metagenomic profilers},
+  author       = {Sun, Zheng and Huang, Shi and Zhang, Meng and Zhu, Qiyun and
+                  Haiminen, Niina and Carrieri, Anna Paola and Vázquez-Baeza,
+                  Yoshiki and Parida, Laxmi and Kim, Ho-Cheol and Knight, Rob
+                  and Liu, Yang-Yu},
+  journal = {Nat. Methods},
+  volume       = {18},
+  number = {6},
+  pages        = {618--626},
+  year = {2021},
+  doi          = {10.1038/s41592-021-01141-3},
+  abstract     = {Accurate microbial identification and abundance estimation are
+                  crucial for metagenomics analysis. Various methods for
+                  classification of metagenomic data and estimation of taxonomic
+                  profiles, broadly referred to as metagenomic profilers, have
+                  been developed. Nevertheless, benchmarking of metagenomic
+                  profilers remains challenging because some tools are designed
+                  to report relative sequence abundance while others report
+                  relative taxonomic abundance. Here we show how misleading
+                  conclusions can be drawn by neglecting this distinction
+                  between relative abundance types when benchmarking metagenomic
+                  profilers. Moreover, we show compelling evidence that
+                  interchanging sequence abundance and taxonomic abundance will
+                  influence both per-sample summary statistics and cross-sample
+                  comparisons. We suggest that the microbiome research community
+                  pay attention to potentially misleading biological conclusions
+                  arising from this issue when benchmarking metagenomic
+                  profilers, by carefully considering the type of abundance data
+                  that were analyzed and interpreted and clearly stating the
+                  strategy used for metagenomic profiling.}
+}
+,
+@ARTICLE{Boetzer2011-dh,
+  title        = {Scaffolding pre-assembled contigs using {SSPACE}},
+  author       = {Boetzer, Marten and Henkel, Christiaan V and Jansen, Hans J
+                  and Butler, Derek and Pirovano, Walter},
+  journal = {Bioinformatics},
+  publisher    = {Oxford University Press (OUP)},
+  volume       = {27},
+  number = {4},
+  pages        = {578--579},
+  year = {2011},
+  doi          = {10.1093/bioinformatics/btq683},
+  abstract     = {SUMMARY: De novo assembly tools play a main role in
+                  reconstructing genomes from next-generation sequencing (NGS)
+                  data and usually yield a number of contigs. Using paired-read
+                  sequencing data it is possible to assess the order, distance
+                  and orientation of contigs and combine them into so-called
+                  scaffolds. Although the latter process is a crucial step in
+                  finishing genomes, scaffolding algorithms are often built-in
+                  functions in de novo assembly tools and cannot be
+                  independently controlled. We here present a new tool, called
+                  SSPACE, which is a stand-alone scaffolder of pre-assembled
+                  contigs using paired-read data. Main features are: a short
+                  runtime, multiple library input of paired-end and/or mate pair
+                  datasets and possible contig extension with unmapped sequence
+                  reads. SSPACE shows promising results on both prokaryote and
+                  eukaryote genomic testsets where the amount of initial contigs
+                  was reduced by at least 75\%.},
+  urlyear = {2011}
+}
+,
+@ARTICLE{Li2006-nj,
+  title        = {Cd-hit: a fast program for clustering and comparing large sets
+                  of protein or nucleotide sequences},
+  author       = {Li, Weizhong and Godzik, Adam},
+  journal = {Bioinformatics},
+  volume       = {22},
+  number = {13},
+  pages        = {1658--1659},
+  year = {2006},
+  doi          = {10.1093/bioinformatics/btl158},
+  abstract     = {MOTIVATION: In 2001 and 2002, we published two papers
+                  (Bioinformatics, 17, 282-283, Bioinformatics, 18, 77-82)
+                  describing an ultrafast protein sequence clustering program
+                  called cd-hit. This program can efficiently cluster a huge
+                  protein database with millions of sequences. However, the
+                  applications of the underlying algorithm are not limited to
+                  only protein sequences clustering, here we present several new
+                  programs using the same algorithm including cd-hit-2d,
+                  cd-hit-est and cd-hit-est-2d. Cd-hit-2d compares two protein
+                  datasets and reports similar matches between them; cd-hit-est
+                  clusters a DNA/RNA sequence database and cd-hit-est-2d
+                  compares two nucleotide datasets. All these programs can
+                  handle huge datasets with millions of sequences and can be
+                  hundreds of times faster than methods based on the popular
+                  sequence comparison and database search tools, such as BLAST.}
+}
+,
+@SOFTWARE{Tomkins-Tinch2017-qi,
+  type   = {software},
+  title  = {broadinstitute/viral-ngs: {v1}.14.0},
+  author = {Tomkins-Tinch, Christopher and Ye, Simon and Metsky, Hayden and
+            Jungreis, Irwin and Sealfon, Rachel and Yang, Xiao and Andersen,
+            Kristian and Lin, Michael and Park, Daniel},
+  year = {2017},
+  doi    = {10.5281/zenodo.252549}
+}
+,
+@ARTICLE{Wood2019-jl,
+  title        = {Improved metagenomic analysis with Kraken 2},
+  author       = {Wood, Derrick E and Lu, Jennifer and Langmead, Ben},
+  journal = {Genome Biol.},
+  volume       = {20},
+  number = {1},
+  pages        = {257},
+  year = {2019},
+  doi          = {10.1186/s13059-019-1891-0},
+  abstract     = {Although Kraken's k-mer-based approach provides a fast
+                  taxonomic classification of metagenomic sequence data, its
+                  large memory requirements can be limiting for some
+                  applications. Kraken 2 improves upon Kraken 1 by reducing
+                  memory usage by 85\%, allowing greater amounts of reference
+                  genomic data to be used, while maintaining high accuracy and
+                  increasing speed fivefold. Kraken 2 also introduces a
+                  translated search mode, providing increased sensitivity in
+                  viral metagenomics analysis.},
+  keywords     = {Alignment-free methods; Metagenomics; Metagenomics
+                  classification; Microbiome; Minimizers; Probabilistic data
+                  structures}
+}
+,
+@MISC{Wickham2019-vr,
+  title        = {Welcome to the tidyverse},
+  author       = {Wickham, Hadley and Averick, Mara and Bryan, Jennifer and
+                  Chang, Winston and McGowan, Lucy D'agostino and François,
+                  Romain and Grolemund, Garrett and Hayes, Alex and Henry,
+                  Lionel and Hester, Jim and Kuhn, Max and Pedersen, Thomas Lin
+                  and Miller, Evan and Bache, Stephan Milton and Müller, Kirill
+                  and Ooms, Jeroen and Robinson, David and Seidel, Dana Paige
+                  and Spinu, Vitalie and Takahashi, Kohske and Vaughan, Davis
+                  and Wilke, Claus and Woo, Kara and Yutani, Hiroaki},
+  journal = {Journal of Open Source Software},
+  volume       = {4},
+  number = {43},
+  pages        = {1686},
+  year = {2019},
+  doi          = {10.21105/joss.01686}
+}
+,
+@ARTICLE{Langmead2019-wx,
+  title        = {Scaling read aligners to hundreds of threads on
+                  general-purpose processors},
+  author       = {Langmead, Ben and Wilks, Christopher and Antonescu, Valentin
+                  and Charles, Rone},
+  journal = {Bioinformatics},
+  publisher    = {Oxford University Press (OUP)},
+  volume       = {35},
+  number = {3},
+  pages        = {421--432},
+  year = {2019},
+  doi          = {10.1093/bioinformatics/bty648},
+  abstract     = {Motivation: General-purpose processors can now contain many
+                  dozens of processor cores and support hundreds of simultaneous
+                  threads of execution. To make best use of these threads,
+                  genomics software must contend with new and subtle computer
+                  architecture issues. We discuss some of these and propose
+                  methods for improving thread scaling in tools that analyze
+                  each read independently, such as read aligners. Results: We
+                  implement these methods in new versions of Bowtie, Bowtie 2
+                  and HISAT. We greatly improve thread scaling in many
+                  scenarios, including on the recent Intel Xeon Phi
+                  architecture. We also highlight how bottlenecks are
+                  exacerbated by variable-record-length file formats like FASTQ
+                  and suggest changes that enable superior scaling. Availability
+                  and implementation: Experiments for this study:
+                  https://github.com/BenLangmead/bowtie-scaling. Bowtie:
+                  http://bowtie-bio.sourceforge.net. Bowtie 2:
+                  http://bowtie-bio.sourceforge.net/bowtie2. HISAT:
+                  http://www.ccb.jhu.edu/software/hisat. Supplementary
+                  information: Supplementary data are available at
+                  Bioinformatics online.}
+}
+,
+@ARTICLE{Goodacre2018-dw,
+  title        = {A Reference Viral Database ({RVDB}) To Enhance Bioinformatics
+                  Analysis of High-Throughput Sequencing for Novel Virus
+                  Detection},
+  author       = {Goodacre, Norman and Aljanahi, Aisha and Nandakumar, Subhiksha
+                  and Mikailov, Mike and Khan, Arifa S},
+  journal = {mSphere},
+  volume       = {3},
+  number = {2},
+  year = {2018},
+  doi          = {10.1128/mSphereDirect.00069-18},
+  abstract     = {Detection of distantly related viruses by high-throughput
+                  sequencing (HTS) is bioinformatically challenging because of
+                  the lack of a public database containing all viral sequences,
+                  without abundant nonviral sequences, which can extend runtime
+                  and obscure viral hits. Our reference viral database (RVDB)
+                  includes all viral, virus-related, and virus-like nucleotide
+                  sequences (excluding bacterial viruses), regardless of length,
+                  and with overall reduced cellular sequences. Semantic
+                  selection criteria (SEM-I) were used to select viral sequences
+                  from GenBank, resulting in a first-generation viral database
+                  (VDB). This database was manually and computationally
+                  reviewed, resulting in refined, semantic selection criteria
+                  (SEM-R), which were applied to a new download of updated
+                  GenBank sequences to create a second-generation VDB. Viral
+                  entries in the latter were clustered at 98\% by CD-HIT-EST to
+                  reduce redundancy while retaining high viral sequence
+                  diversity. The viral identity of the clustered representative
+                  sequences (creps) was confirmed by BLAST searches in NCBI
+                  databases and HMMER searches in PFAM and DFAM databases. The
+                  resulting RVDB contained a broad representation of viral
+                  families, sequence diversity, and a reduced cellular content;
+                  it includes full-length and partial sequences and endogenous
+                  nonretroviral elements, endogenous retroviruses, and
+                  retrotransposons. Testing of RVDBv10.2, with an in-house HTS
+                  transcriptomic data set indicated a significantly faster run
+                  for virus detection than interrogating the entirety of the
+                  NCBI nonredundant nucleotide database, which contains all
+                  viral sequences but also nonviral sequences. RVDB is
+                  publically available for facilitating HTS analysis,
+                  particularly for novel virus detection. It is meant to be
+                  updated on a regular basis to include new viral sequences
+                  added to GenBank. IMPORTANCE To facilitate bioinformatics
+                  analysis of high-throughput sequencing (HTS) data for the
+                  detection of both known and novel viruses, we have developed a
+                  new reference viral database (RVDB) that provides a broad
+                  representation of different virus species from eukaryotes by
+                  including all viral, virus-like, and virus-related sequences
+                  (excluding bacteriophages), regardless of their size. In
+                  particular, RVDB contains endogenous nonretroviral elements,
+                  endogenous retroviruses, and retrotransposons. Sequences were
+                  clustered to reduce redundancy while retaining high viral
+                  sequence diversity. A particularly useful feature of RVDB is
+                  the reduction of cellular sequences, which can enhance the run
+                  efficiency of large transcriptomic and genomic data analysis
+                  and increase the specificity of virus detection.},
+  keywords     = {RVDB; adventitious viruses; bioinformatics analysis;
+                  high-throughput sequencing; reference virus database; viral
+                  sequences; virus detection}
+}
+,
+@ARTICLE{Gurevich2013-by,
+  title        = {{QUAST}: quality assessment tool for genome assemblies},
+  author       = {Gurevich, Alexey and Saveliev, Vladislav and Vyahhi, Nikolay
+                  and Tesler, Glenn},
+  journal = {Bioinformatics},
+  volume       = {29},
+  number = {8},
+  pages        = {1072--1075},
+  year = {2013},
+  doi          = {10.1093/bioinformatics/btt086},
+  abstract     = {Summary: Limitations of genome sequencing techniques have led
+                  to dozens of assembly algorithms, none of which is perfect. A
+                  number of methods for comparing assemblers have been
+                  developed, but none is yet a recognized benchmark. Further,
+                  most existing methods for comparing assemblies are only
+                  applicable to new assemblies of finished genomes; the problem
+                  of evaluating assemblies of previously unsequenced species has
+                  not been adequately considered. Here, we present QUAST—a
+                  quality assessment tool for evaluating and comparing genome
+                  assemblies. This tool improves on leading assembly comparison
+                  software with new ideas and quality metrics. QUAST can
+                  evaluate assemblies both with a reference genome, as well as
+                  without a reference. QUAST produces many reports, summary
+                  tables and plots to help scientists in their research and in
+                  their publications. In this study, we used QUAST to compare
+                  several genome assemblers on three datasets. QUAST tables and
+                  plots for all of them are available in the Supplementary
+                  Material, and interactive versions of these reports are on the
+                  QUAST
+                  website.Availability:http://bioinf.spbau.ru/quastContact:gurevich@bioinf.spbau.ruSupplementary
+                  information:Supplementary data are available at Bioinformatics
+                  online.},
+  urlyear = {2013}
+}
+,
+@ARTICLE{Altschul1990-sy,
+  title        = {Basic local alignment search tool},
+  author       = {Altschul, S F and Gish, W and Miller, W and Myers, E W and
+                  Lipman, D J},
+  journal = {J. Mol. Biol.},
+  volume       = {215},
+  number = {3},
+  pages        = {403--410},
+  year = {1990},
+  doi          = {10.1016/S0022-2836(05)80360-2},
+  abstract     = {A new approach to rapid sequence comparison, basic local
+                  alignment search tool (BLAST), directly approximates
+                  alignments that optimize a measure of local similarity, the
+                  maximal segment pair (MSP) score. Recent mathematical results
+                  on the stochastic properties of MSP scores allow an analysis
+                  of the performance of this method as well as the statistical
+                  significance of alignments it generates. The basic algorithm
+                  is simple and robust; it can be implemented in a number of
+                  ways and applied in a variety of contexts including
+                  straightforward DNA and protein sequence database searches,
+                  motif searches, gene identification searches, and in the
+                  analysis of multiple regions of similarity in long DNA
+                  sequences. In addition to its flexibility and tractability to
+                  mathematical analysis, BLAST is an order of magnitude faster
+                  than existing sequence comparison tools of comparable
+                  sensitivity.}
+}
+,
+@ARTICLE{Traag2019-yd,
+  title        = {From Louvain to Leiden: guaranteeing well-connected
+                  communities},
+  author       = {Traag, V A and Waltman, L and van Eck, N J},
+  journal = {Sci. Rep.},
+  volume       = {9},
+  number = {1},
+  pages        = {5233},
+  year = {2019},
+  doi          = {10.1038/s41598-019-41695-z},
+  abstract     = {Community detection is often used to understand the structure
+                  of large and complex networks. One of the most popular
+                  algorithms for uncovering community structure is the so-called
+                  Louvain algorithm. We show that this algorithm has a major
+                  defect that largely went unnoticed until now: the Louvain
+                  algorithm may yield arbitrarily badly connected communities.
+                  In the worst case, communities may even be disconnected,
+                  especially when running the algorithm iteratively. In our
+                  experimental analysis, we observe that up to 25\% of the
+                  communities are badly connected and up to 16\% are
+                  disconnected. To address this problem, we introduce the Leiden
+                  algorithm. We prove that the Leiden algorithm yields
+                  communities that are guaranteed to be connected. In addition,
+                  we prove that, when the Leiden algorithm is applied
+                  iteratively, it converges to a partition in which all subsets
+                  of all communities are locally optimally assigned.
+                  Furthermore, by relying on a fast local move approach, the
+                  Leiden algorithm runs faster than the Louvain algorithm. We
+                  demonstrate the performance of the Leiden algorithm for
+                  several benchmark and real-world networks. We find that the
+                  Leiden algorithm is faster than the Louvain algorithm and
+                  uncovers better partitions, in addition to providing explicit
+                  guarantees.}
+}
+,
+@ARTICLE{Grabherr2011-ef,
+  title        = {Full-length transcriptome assembly from {RNA}-Seq data without
+                  a reference genome},
+  author       = {Grabherr, Manfred G and Haas, Brian J and Yassour, Moran and
+                  Levin, Joshua Z and Thompson, Dawn A and Amit, Ido and
+                  Adiconis, Xian and Fan, Lin and Raychowdhury, Raktima and
+                  Zeng, Qiandong and Chen, Zehua and Mauceli, Evan and Hacohen,
+                  Nir and Gnirke, Andreas and Rhind, Nicholas and di Palma,
+                  Federica and Birren, Bruce W and Nusbaum, Chad and
+                  Lindblad-Toh, Kerstin and Friedman, Nir and Regev, Aviv},
+  journal = {Nat. Biotechnol.},
+  volume       = {29},
+  number = {7},
+  pages        = {644--652},
+  year = {2011},
+  doi          = {10.1038/nbt.1883},
+  abstract     = {Massively parallel sequencing of cDNA has enabled deep and
+                  efficient probing of transcriptomes. Current approaches for
+                  transcript reconstruction from such data often rely on
+                  aligning reads to a reference genome, and are thus unsuitable
+                  for samples with a partial or missing reference genome. Here
+                  we present the Trinity method for de novo assembly of
+                  full-length transcripts and evaluate it on samples from
+                  fission yeast, mouse and whitefly, whose reference genome is
+                  not yet available. By efficiently constructing and analyzing
+                  sets of de Bruijn graphs, Trinity fully reconstructs a large
+                  fraction of transcripts, including alternatively spliced
+                  isoforms and transcripts from recently duplicated genes.
+                  Compared with other de novo transcriptome assemblers, Trinity
+                  recovers more full-length transcripts across a broad range of
+                  expression levels, with a sensitivity similar to methods that
+                  rely on genome alignments. Our approach provides a unified
+                  solution for transcriptome reconstruction in any sample,
+                  especially in the absence of a reference genome.}
+}
+,
+@ARTICLE{Chen2018-tu,
+  title        = {fastp: an ultra-fast all-in-one {FASTQ} preprocessor},
+  author       = {Chen, Shifu and Zhou, Yanqing and Chen, Yaru and Gu, Jia},
+  journal = {Bioinformatics},
+  volume       = {34},
+  number = {17},
+  pages        = {i884--i890},
+  year = {2018},
+  doi          = {10.1093/bioinformatics/bty560},
+  abstract     = {Motivation: Quality control and preprocessing of FASTQ files
+                  are essential to providing clean data for downstream analysis.
+                  Traditionally, a different tool is used for each operation,
+                  such as quality control, adapter trimming and quality
+                  filtering. These tools are often insufficiently fast as most
+                  are developed using high-level programming languages (e.g.
+                  Python and Java) and provide limited multi-threading support.
+                  Reading and loading data multiple times also renders
+                  preprocessing slow and I/O inefficient. Results: We developed
+                  fastp as an ultra-fast FASTQ preprocessor with useful quality
+                  control and data-filtering features. It can perform quality
+                  control, adapter trimming, quality filtering, per-read quality
+                  pruning and many other operations with a single scan of the
+                  FASTQ data. This tool is developed in C++ and has
+                  multi-threading support. Based on our evaluation, fastp is 2-5
+                  times faster than other FASTQ preprocessing tools such as
+                  Trimmomatic or Cutadapt despite performing far more operations
+                  than similar tools. Availability and implementation: The
+                  open-source code and corresponding instructions are available
+                  at https://github.com/OpenGene/fastp.}
+}
+,
+@ARTICLE{Meleshko2021-gb,
+  title        = {{coronaSPAdes}: from biosynthetic gene clusters to {RNA} viral
+                  assemblies},
+  author       = {Meleshko, Dmitry and Hajirasouliha, Iman and Korobeynikov,
+                  Anton},
+  journal = {Bioinformatics},
+  year = {2021},
+  doi          = {10.1093/bioinformatics/btab597},
+  abstract     = {MOTIVATION: The COVID-19 pandemic has ignited a broad
+                  scientific interest in viral research in general and
+                  coronavirus research in particular. The identification and
+                  characterization of viral species in natural reservoirs
+                  typically involves de novo assembly. However, existing genome,
+                  metagenome and transcriptome assemblers often are not able to
+                  assemble many viruses (including coronaviruses) into a single
+                  contig. Coverage variation between datasets and within
+                  dataset, presence of close strains, splice variants and
+                  contamination set a high bar for assemblers to process viral
+                  datasets with diverse properties. RESULTS: We developed
+                  coronaSPAdes, a novel assembler for RNA viral species recovery
+                  in general and coronaviruses in particular. coronaSPAdes
+                  leverages the knowledge about viral genome structures to
+                  improve assembly extending ideas initially implemented in
+                  biosyntheticSPAdes. We have shown that coronaSPAdes
+                  outperforms existing SPAdes modes and other popular short-read
+                  metagenome and viral assemblers in the recovery of full-length
+                  RNA viral genomes. AVAILABILITY: coronaSPAdes version used in
+                  this article is a part of SPAdes 3.15 release and is freely
+                  available at http://cab.spbu.ru/software/spades. SUPPLEMENTARY
+                  INFORMATION: Supplementary data are available at
+                  Bioinformatics.}
+}
+,
+@ARTICLE{Li2013-pp,
+  title        = {Aligning sequence reads, clone sequences and assembly contigs
+                  with {BWA}-{MEM}},
+  author       = {Li, Heng},
+  journal = {arXiv [q-bio.GN]},
+  year = {2013},
+  eprinttype   = {arXiv},
+  eprintclass  = {q-bio.GN},
+  abstract     = {Summary: BWA-MEM is a new alignment algorithm for aligning
+                  sequence reads or long query sequences against a large
+                  reference genome such as human. It automatically chooses
+                  between local and end-to-end alignments, supports paired-end
+                  reads and performs chimeric alignment. The algorithm is robust
+                  to sequencing errors and applicable to a wide range of
+                  sequence lengths from 70bp to a few megabases. For mapping
+                  100bp sequences, BWA-MEM shows better performance than several
+                  state-of-art read aligners to date. Availability and
+                  implementation: BWA-MEM is implemented as a component of BWA,
+                  which is available at http://github.com/lh3/bwa. Contact:
+                  hengli@broadinstitute.org}
+}
+,
+@ONLINE{R_Core_Team2021-ow,
+  title    = {{R}: A language and environment for statistical computing},
+  author   = {{R Core Team}},
+  location = {Vienna, Austria},
+  year = {2021}
+}
+,
+@ARTICLE{Menzel2016-tz,
+  title        = {Fast and sensitive taxonomic classification for metagenomics
+                  with Kaiju},
+  author       = {Menzel, Peter and Ng, Kim Lee and Krogh, Anders},
+  journal = {Nat. Commun.},
+  volume       = {7},
+  pages        = {11257},
+  year = {2016},
+  doi          = {10.1038/ncomms11257},
+  abstract     = {Metagenomics emerged as an important field of research not
+                  only in microbial ecology but also for human health and
+                  disease, and metagenomic studies are performed on increasingly
+                  larger scales. While recent taxonomic classification programs
+                  achieve high speed by comparing genomic k-mers, they often
+                  lack sensitivity for overcoming evolutionary divergence, so
+                  that large fractions of the metagenomic reads remain
+                  unclassified. Here we present the novel metagenome classifier
+                  Kaiju, which finds maximum (in-)exact matches on the
+                  protein-level using the Burrows-Wheeler transform. We show in
+                  a genome exclusion benchmark that Kaiju classifies reads with
+                  higher sensitivity and similar precision compared with current
+                  k-mer-based classifiers, especially in genera that are
+                  underrepresented in reference databases. We also demonstrate
+                  that Kaiju classifies up to 10 times more reads in real
+                  metagenomes. Kaiju can process millions of reads per minute
+                  and can run on a standard PC. Source code and web server are
+                  available at http://kaiju.binf.ku.dk.}
+}
+,
+@ONLINE{BushnellUnknown-qy,
+  title     = {{BBMap}},
+  author    = {Bushnell, Brian},
+  booktitle = {SourceForge},
+  abstract  = {Download BBMap for free. BBMap short read aligner, and other
+               bioinformatic tools. This package includes BBMap, a short read
+               aligner, as well as various other bioinformatic tools. It is
+               written in pure Java, can run on any platform, and has no
+               dependencies other than Java being installed (compiled for Java 6
+               and higher).},
+  urlyear = {2022}
+}
+,
+@ARTICLE{Di-Tommaso2017-nz,
+  title        = {Nextflow enables reproducible computational workflows},
+  author       = {Di Tommaso, Paolo and Chatzou, Maria and Floden, Evan W and
+                  Barja, Pablo Prieto and Palumbo, Emilio and Notredame, Cedric},
+  journal = {Nat. Biotechnol.},
+  publisher    = {Nature Publishing Group},
+  volume       = {35},
+  number = {4},
+  pages        = {316--319},
+  year = {2017},
+  doi          = {10.1038/nbt.3820},
+  urlyear = {2017}
+}
+,
+@ARTICLE{Gleizes2020-rq,
+  title        = {Virosaurus A Reference to Explore and Capture Virus Genetic
+                  Diversity},
+  author       = {Gleizes, Anne and Laubscher, Florian and Guex, Nicolas and
+                  Iseli, Christian and Junier, Thomas and Cordey, Samuel and
+                  Fellay, Jacques and Xenarios, Ioannis and Kaiser, Laurent and
+                  Mercier, Philippe Le},
+  journal = {Viruses},
+  volume       = {12},
+  number = {11},
+  year = {2020},
+  doi          = {10.3390/v12111248},
+  abstract     = {The huge genetic diversity of circulating viruses is a
+                  challenge for diagnostic assays for emerging or rare viral
+                  diseases. High-throughput technology offers a new opportunity
+                  to explore the global virome of patients without preconception
+                  about the culpable pathogens. It requires a solid reference
+                  dataset to be accurate. Virosaurus has been designed to offer
+                  a non-biased, automatized and annotated database for clinical
+                  metagenomics studies and diagnosis. Raw viral sequences have
+                  been extracted from GenBank, and cleaned up to remove
+                  potentially erroneous sequences. Complete sequences have been
+                  identified for all genera infecting vertebrates, plants and
+                  other eukaryotes (insect, fungus, etc.). To facilitate the
+                  analysis of clinically relevant viruses, we have annotated all
+                  sequences with official and common virus names, acronym,
+                  genotypes, and genomic features (linear, circular, DNA, RNA,
+                  etc.). Sequences have been clustered to remove redundancy at
+                  90\% or 98\% identity. The analysis of clustering results
+                  reveals the state of the virus genetic landscape knowledge.
+                  Because herpes and poxviruses were under-represented in
+                  complete genomes considering their potential diversity in
+                  nature, we used genes instead of complete genomes for those in
+                  Virosaurus.},
+  keywords     = {HTS; bioinformatics; complete genome; database; diagnostics;
+                  sequencing; viral infections; viruses}
+}
+,
+@ARTICLE{Ewels2016-hs,
+  title        = {{MultiQC}: summarize analysis results for multiple tools and
+                  samples in a single report},
+  author       = {Ewels, Philip and Magnusson, Måns and Lundin, Sverker and
+                  Käller, Max},
+  journal = {Bioinformatics},
+  publisher    = {Oxford Academic},
+  volume       = {32},
+  number = {19},
+  pages        = {3047--3048},
+  year = {2016},
+  doi          = {10.1093/bioinformatics/btw354},
+  abstract     = {MOTIVATION: Fast and accurate quality control is essential for
+                  studies involving next-generation sequencing data. Whilst
+                  numerous tools exist to quantify QC metrics, there is no
+                  common approach to flexibly integrate these across tools and
+                  large sample sets. Assessing analysis results across an entire
+                  project can be time consuming and error prone; batch effects
+                  and outlier samples can easily be missed in the early stages
+                  of analysis. RESULTS: We present MultiQC, a tool to create a
+                  single report visualising output from multiple tools across
+                  many samples, enabling global trends and biases to be quickly
+                  identified. MultiQC can plot data from many common
+                  bioinformatics tools and is built to allow easy extension and
+                  customization. AVAILABILITY AND IMPLEMENTATION: MultiQC is
+                  available with an GNU GPLv3 license on GitHub, the Python
+                  Package Index and Bioconda. Documentation and example reports
+                  are available at http://multiqc.info CONTACT:
+                  phil.ewels@scilifelab.se.},
+  urlyear = {2016}
+}
+,
+@ARTICLE{De_Vries2021-po,
+  title        = {Benchmark of thirteen bioinformatic pipelines for metagenomic
+                  virus diagnostics using datasets from clinical samples},
+  author       = {de Vries, Jutte J C and Brown, Julianne R and Fischer, Nicole
+                  and Sidorov, Igor A and Morfopoulou, Sofia and Huang, Jiabin
+                  and Munnink, Bas B Oude and Sayiner, Arzu and Bulgurcu, Alihan
+                  and Rodriguez, Christophe and Gricourt, Guillaume and
+                  Keyaerts, Els and Beller, Leen and Bachofen, Claudia and
+                  Kubacki, Jakub and Samuel, Cordey and Florian, Laubscher and
+                  Dennis, Schmitz and Beer, Martin and Hoeper, Dirk and Huber,
+                  Michael and Kufner, Verena and Zaheri, Maryam and Lebrand,
+                  Aitana and Papa, Anna and van Boheemen, Sander and Kroes,
+                  Aloys C M and Breuer, Judith and Lopez-Labrador, F Xavier and
+                  Claas, Eric C J},
+  journal = {J. Clin. Virol.},
+  volume       = {141},
+  pages        = {104908},
+  year = {2021},
+  doi          = {10.1016/j.jcv.2021.104908},
+  abstract     = {INTRODUCTION: Metagenomic sequencing is increasingly being
+                  used in clinical settings for difficult to diagnose cases. The
+                  performance of viral metagenomic protocols relies to a large
+                  extent on the bioinformatic analysis. In this study, the
+                  European Society for Clinical Virology (ESCV) Network on NGS
+                  (ENNGS) initiated a benchmark of metagenomic pipelines
+                  currently used in clinical virological laboratories. METHODS:
+                  Metagenomic datasets from 13 clinical samples from patients
+                  with encephalitis or viral respiratory infections
+                  characterized by PCR were selected. The datasets were analyzed
+                  with 13 different pipelines currently used in virological
+                  diagnostic laboratories of participating ENNGS members. The
+                  pipelines and classification tools were: Centrifuge, DAMIAN,
+                  DIAMOND, DNASTAR, FEVIR, Genome Detective, Jovian, MetaMIC,
+                  MetaMix, One Codex, RIEMS, VirMet, and Taxonomer. Performance,
+                  characteristics, clinical use, and user-friendliness of these
+                  pipelines were analyzed. RESULTS: Overall, viral pathogens
+                  with high loads were detected by all the evaluated metagenomic
+                  pipelines. In contrast, lower abundance pathogens and mixed
+                  infections were only detected by 3/13 pipelines, namely
+                  DNASTAR, FEVIR, and MetaMix. Overall sensitivity ranged from
+                  80\% (10/13) to 100\% (13/13 datasets). Overall positive
+                  predictive value ranged from 71-100\%. The majority of the
+                  pipelines classified sequences based on nucleotide similarity
+                  (8/13), only a minority used amino acid similarity, and 6 of
+                  the 13 pipelines assembled sequences de novo. No clear
+                  differences in performance were detected that correlated with
+                  these classification approaches. Read counts of target viruses
+                  varied between the pipelines over a range of 2-3 log,
+                  indicating differences in limit of detection. CONCLUSION: A
+                  wide variety of viral metagenomic pipelines is currently used
+                  in the participating clinical diagnostic laboratories.
+                  Detection of low abundant viral pathogens and mixed infections
+                  remains a challenge, implicating the need for standardization
+                  and validation of metagenomic analysis for clinical diagnostic
+                  use. Future studies should address the selective effects due
+                  to the choice of different reference viral databases.},
+  keywords     = {Benchmark; Bioinformatic pipelines; Viral metagenomics}
+}
+,
+@SOFTWARE{LarosUnknown-nx,
+  type        = {software},
+  title       = {{HUMID}: {HUMID}: reference free {FastQ} deduplication},
+  author      = {Laros, Jeroen F J},
+  institution = {Github},
+  abstract    = {HUMID: reference free FastQ deduplication. Contribute to
+                 jfjlaros/HUMID development by creating an account on GitHub.},
+  urlyear = {2025}
+}
+,
+@ARTICLE{Deng2021-nl,
+  title        = {Evaluating assembly and variant calling software for
+                  strain-resolved analysis of large {DNA} viruses},
+  author       = {Deng, Zhi-Luo and Dhingra, Akshay and Fritz, Adrian and
+                  Götting, Jasper and Münch, Philipp C and Steinbrück, Lars and
+                  Schulz, Thomas F and Ganzenmüller, Tina and McHardy, Alice C},
+  journal = {Brief. Bioinform.},
+  volume       = {22},
+  number = {3},
+  year = {2021},
+  doi          = {10.1093/bib/bbaa123},
+  abstract     = {Infection with human cytomegalovirus (HCMV) can cause severe
+                  complications in immunocompromised individuals and
+                  congenitally infected children. Characterizing heterogeneous
+                  viral populations and their evolution by high-throughput
+                  sequencing of clinical specimens requires the accurate
+                  assembly of individual strains or sequence variants and
+                  suitable variant calling methods. However, the performance of
+                  most methods has not been assessed for populations composed of
+                  low divergent viral strains with large genomes, such as HCMV.
+                  In an extensive benchmarking study, we evaluated 15 assemblers
+                  and 6 variant callers on 10 lab-generated benchmark data sets
+                  created with two different library preparation protocols, to
+                  identify best practices and challenges for analyzing such
+                  data. Most assemblers, especially metaSPAdes and IVA,
+                  performed well across a range of metrics in recovering
+                  abundant strains. However, only one, Savage, recovered low
+                  abundant strains and in a highly fragmented manner. Two
+                  variant callers, LoFreq and VarScan2, excelled across all
+                  strain abundances. Both shared a large fraction of false
+                  positive variant calls, which were strongly enriched in T to G
+                  changes in a 'G.G' context. The magnitude of this
+                  context-dependent systematic error is linked to the
+                  experimental protocol. We provide all benchmarking data,
+                  results and the entire benchmarking workflow named QuasiModo,
+                  Quasispecies Metric determination on omics, under the GNU
+                  General Public License v3.0
+                  (https://github.com/hzi-bifo/Quasimodo), to enable full
+                  reproducibility and further benchmarking on these and other
+                  data.},
+  keywords     = {HCMV; benchmark; genome assembly; strain mixtures; variant
+                  calling; virus}
+}
+,
+@ARTICLE{Nayfach2021-wl,
+  title        = {{CheckV} assesses the quality and completeness of
+                  metagenome-assembled viral genomes},
+  author       = {Nayfach, Stephen and Camargo, Antonio Pedro and Schulz,
+                  Frederik and Eloe-Fadrosh, Emiley and Roux, Simon and
+                  Kyrpides, Nikos C},
+  journal = {Nat. Biotechnol.},
+  volume       = {39},
+  number = {5},
+  pages        = {578--585},
+  year = {2021},
+  doi          = {10.1038/s41587-020-00774-7},
+  abstract     = {Millions of new viral sequences have been identified from
+                  metagenomes, but the quality and completeness of these
+                  sequences vary considerably. Here we present CheckV, an
+                  automated pipeline for identifying closed viral genomes,
+                  estimating the completeness of genome fragments and removing
+                  flanking host regions from integrated proviruses. CheckV
+                  estimates completeness by comparing sequences with a large
+                  database of complete viral genomes, including 76,262
+                  identified from a systematic search of publicly available
+                  metagenomes, metatranscriptomes and metaviromes. After
+                  validation on mock datasets and comparison to existing
+                  methods, we applied CheckV to large and diverse collections of
+                  metagenome-assembled viral sequences, including IMG/VR and the
+                  Global Ocean Virome. This revealed 44,652 high-quality viral
+                  genomes (that is, >90\% complete), although the vast majority
+                  of sequences were small fragments, which highlights the
+                  challenge of assembling viral genomes from short-read
+                  metagenomes. Additionally, we found that removal of host
+                  contamination substantially improved the accurate
+                  identification of auxiliary metabolic genes and interpretation
+                  of viral-encoded functions.}
+}
+,
+@ARTICLE{Rangel-Pineros2022-wv,
+  title        = {{VIRify}: an integrated detection, annotation and taxonomic
+                  classification pipeline using virus-specific protein profile
+                  hidden Markov models},
+  author       = {Rangel-Pineros, Guillermo and Almeida, Alexandre and
+                  Beracochea, Martin and Sakharova, Ekaterina and Marz, Manja
+                  and Muñoz, Alejandro Reyes and Hölzer, Martin and Finn, Robert
+                  D},
+  journal = {bioRxiv},
+  pages        = {2022.08.22.504484},
+  year = {2022},
+  doi          = {10.1101/2022.08.22.504484},
+  abstract     = {The study of viral communities has revealed the enormous
+                  diversity and impact these biological entities have on a range
+                  of different ecosystems. These observations have sparked
+                  widespread interest in developing computational strategies
+                  that support the comprehensive characterization of viral
+                  communities based on sequencing data. Here we introduce
+                  VIRify, a new computational pipeline designed to provide a
+                  user-friendly and accurate functional and taxonomic
+                  characterization of viral communities. VIRify identifies viral
+                  contigs and prophages from metagenomic assemblies and
+                  annotates them using a collection of viral profile hidden
+                  Markov models (HMMs). These include our manually-curated
+                  profile HMMs, which serve as specific taxonomic markers for a
+                  wide range of prokaryotic and eukaryotic viral taxa and are
+                  thus used to reliably classify viral contigs. We tested VIRify
+                  on assemblies from two microbial mock communities and a large
+                  metagenomics study. The results showed that VIRify was able to
+                  identify sequences from both prokaryotic and eukaryotic
+                  viruses, and provided taxonomic classifications from the genus
+                  to the family rank with an accuracy of at least 95.5\%. In
+                  addition, VIRify allowed the detection and taxonomic
+                  classification of a range of prokaryotic and eukaryotic
+                  viruses present in 243 marine metagenomic assemblies. Overall,
+                  we demonstrate that VIRify is a novel and powerful resource
+                  that offers an enhanced capability to detect a broad range of
+                  viral contigs and taxonomically classify them. \#\#\#
+                  Competing Interest Statement The authors have declared no
+                  competing interest.},
+  urlyear = {2022}
+}
+,
+@ARTICLE{Danecek2021-je,
+  title        = {Twelve years of {SAMtools} and {BCFtools}},
+  author       = {Danecek, Petr and Bonfield, James K and Liddle, Jennifer and
+                  Marshall, John and Ohan, Valeriu and Pollard, Martin O and
+                  Whitwham, Andrew and Keane, Thomas and McCarthy, Shane A and
+                  Davies, Robert M and Li, Heng},
+  journal = {Gigascience},
+  publisher    = {Oxford University Press (OUP)},
+  volume       = {10},
+  number = {2},
+  year = {2021},
+  doi          = {10.1093/gigascience/giab008},
+  abstract     = {BACKGROUND: SAMtools and BCFtools are widely used programs for
+                  processing and analysing high-throughput sequencing data. They
+                  include tools for file format conversion and manipulation,
+                  sorting, querying, statistics, variant calling, and effect
+                  analysis amongst other methods. FINDINGS: The first version
+                  appeared online 12 years ago and has been maintained and
+                  further developed ever since, with many new features and
+                  improvements added over the years. The SAMtools and BCFtools
+                  packages represent a unique collection of tools that have been
+                  used in numerous other software projects and countless genomic
+                  pipelines. CONCLUSION: Both SAMtools and BCFtools are freely
+                  available on GitHub under the permissive MIT licence, free for
+                  both non-commercial and commercial use. Both packages have
+                  been installed >1 million times via Bioconda. The source code
+                  and documentation are available from https://www.htslib.org.},
+  keywords     = {bcftools; data analysis; high-throughput sequencing; next
+                  generation sequencing; samtools; variant calling}
+}
+,
+@ARTICLE{Gourle2019-ox,
+  title        = {Simulating Illumina metagenomic data with {InSilicoSeq}},
+  author       = {Gourlé, Hadrien and Karlsson-Lindsjö, Oskar and Hayer,
+                  Juliette and Bongcam-Rudloff, Erik},
+  journal = {Bioinformatics},
+  publisher    = {Oxford University Press (OUP)},
+  volume       = {35},
+  number = {3},
+  pages        = {521--522},
+  year = {2019},
+  doi          = {10.1093/bioinformatics/bty630},
+  abstract     = {Motivation: The accurate in silico simulation of metagenomic
+                  datasets is of great importance for benchmarking
+                  bioinformatics tools as well as for experimental design. Users
+                  are dependant on large-scale simulation to not only design
+                  experiments and new projects but also for accurate estimation
+                  of computational needs within a project. Unfortunately, most
+                  current read simulators are either not suited for
+                  metagenomics, out of date or relatively poorly documented. In
+                  this article, we describe InSilicoSeq, a software package to
+                  simulate metagenomic Illumina sequencing data. InsilicoSeq has
+                  a simple command-line interface and extensive documentation.
+                  Results: InSilicoSeq is implemented in Python and capable of
+                  simulating realistic Illumina (meta) genomic data in a
+                  parallel fashion with sensible default parameters.
+                  Availability and implementation: Source code and documentation
+                  are available under the MIT license at
+                  https://github.com/HadrienG/InSilicoSeq and
+                  https://insilicoseq.readthedocs.io/. Supplementary
+                  information: Supplementary data are available at
+                  Bioinformatics online.},
+  urlyear = {2019}
+}
+,
+@MISC{Broad-Institute2019-rv,
+  title        = {Picard toolkit},
+  author       = {{Broad Institute}},
+  journal = {Broad Institute, GitHub repository},
+  year = {2019}
+}
+,
+@ARTICLE{Kurtzer2017-iw,
+  title        = {Singularity: Scientific containers for mobility of compute},
+  author       = {Kurtzer, Gregory M and Sochat, Vanessa and Bauer, Michael W},
+  journal = {PLoS One},
+  publisher    = {Public Library of Science (PLoS)},
+  volume       = {12},
+  number = {5},
+  pages        = {e0177459},
+  year = {2017},
+  doi          = {10.1371/journal.pone.0177459},
+  abstract     = {Here we present Singularity, software developed to bring
+                  containers and reproducibility to scientific computing. Using
+                  Singularity containers, developers can work in reproducible
+                  environments of their choosing and design, and these complete
+                  environments can easily be copied and executed on other
+                  platforms. Singularity is an open source initiative that
+                  harnesses the expertise of system and software engineers and
+                  researchers alike, and integrates seamlessly into common
+                  workflows for both of these groups. As its primary use case,
+                  Singularity brings mobility of computing to both users and HPC
+                  centers, providing a secure means to capture and distribute
+                  software and compute environments. This ability to create and
+                  deploy reproducible environments across these centers, a
+                  previously unmet need, makes Singularity a game changing
+                  development for computational science.},
+  urlyear = {2017}
+}
