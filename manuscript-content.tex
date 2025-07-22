@@ -18,10 +18,9 @@ To address these limitations, we developed nf-core/viralmetagenome, a comprehens
     \label{fig:pipeline-workflow}
 \end{figure*}
 
-
 \subsection{Read preprocessing}
 
-Input reads provided via sample sheets containing sample names and short-read FASTQ paths are   preprocessed using FastQC and have their adapter trimmed with Fastp \cite{Chen2018-tu} (default) or Trimmomatic \cite{Bolger2014-si}. Fastp is overall faster and has automated adapter detection and trimming \cite{Chen2018-tu}. UMI deduplication is implemented using HUMID \cite{LarosUnknown-nx} and UMI-tools \cite{Smith2017-nk} once reads are mapped to a reference. Multiple sequencing runs are merged after trimming by specifying merge group identifiers in the sample sheet. Complexity filtering with BBduk \cite{BushnellUnknown-qy} or prinseq++ \cite{Cantu2019-vs} removes low-complexity sequences containing repetitive elements. Host removal uses Kraken2 \cite{Wood2019-jl} against user-specified databases (default: human genome subset). However, users are encouraged to employ more comprehensive databases, including complete host genome and transcriptome (human and otherwise), common sequencer contaminants, and bacterial genomes, to ensure thorough decontamination \cite{Forbes2025-mv}.
+Input reads provided via sample sheets containing sample names and short-read FASTQ paths are preprocessed using FastQC and have their adapters trimmed with Fastp \cite{Chen2018-tu} (default) or Trimmomatic \cite{Bolger2014-si}. Fastp is overall faster and has automated adapter detection and trimming \cite{Chen2018-tu}. UMI deduplication is implemented using HUMID \cite{LarosUnknown-nx} and UMI-tools \cite{Smith2017-nk} once reads are mapped to a reference. Multiple sequencing runs are merged after trimming by specifying merge group identifiers in the sample sheet. Complexity filtering with BBduk \cite{BushnellUnknown-qy} or prinseq++ \cite{Cantu2019-vs} removes low-complexity sequences containing repetitive elements. Host removal uses Kraken2 \cite{Wood2019-jl} against user-specified databases (default: human genome subset). However, users are encouraged to employ more comprehensive databases, including complete host genome and transcriptome (human and otherwise), common sequencer contaminants, and bacterial genomes, to ensure thorough decontamination \cite{Forbes2025-mv}.
 
 \subsection{Metagenomic diversity assessment}
 
@@ -57,7 +56,7 @@ The refinement progression is evaluated through sequence alignment with MAFFT \c
 
 To assess the performance of nf-core/viralmetagenome under challenging scenarios, we simulated coinfection scenarios by mixing paired-end reads from public HIV-1 genomes with varying diversity (80-99\% similarity), resulting in 13 samples (See supplementary table 2). Nf-core/viralmetagenome successfully identified coinfections in all mixed samples when genetic similarity was low to moderate ($\leq$ 96.7\% ANI).
 
-We investigated how reference genome selection affects consensus accuracy. While similar references ($\geq$ 96\%) minimally impact consensus quality, divergent references introduce up to 187 nucleotide mismatches (Figure~\ref{fig:reference-influence}). These findings underscore the critical importance of appropriate reference selection for scaffolding and sequence alignment procedures. Nf-core/viralmetagenome addresses this challenge by automatically selecting the most appropriate reference genome based on sequence similarity; however, when no suitable genome is found in the supplied database, the contigs are scaffolded to a \textit{de novo} contig (specifically, the cluster representative), ensuring that the final consensus genomes are as accurate as possible.
+We investigated how reference genome selection affects consensus accuracy. While similar references ($\geq$96\%) minimally impact consensus quality, divergent references introduce up to 187 nucleotide mismatches (Figure~\ref{fig:reference-influence}). Nf-core/viralmetagenome addresses this challenge by automatically selecting the most appropriate reference genome based on sequence similarity; when no suitable genome is found in the supplied database, the contigs are scaffolded to a \textit{de novo} contig (specifically, the cluster representative), ensuring accurate final consensus genomes.
 
 \begin{figure}[htbp]
     \centering
@@ -66,9 +65,9 @@ We investigated how reference genome selection affects consensus accuracy. While
     \label{fig:reference-influence}
 \end{figure}
 
-We validated nf-core/viralmetagenome performance on real metagenomic samples spanning human and plant pathogens. Here, the pipeline successfully generated high-quality or near-complete genomes across viral families including segmented (Lassa virus, Orthonairovirus, Tomato spotted wilt tospovirus) and non-segmented viruses (SARS-CoV-2, West Nile virus, Potato virus Y,Youcai mosaic virus, and Monkeypox virus).
+We validated nf-core/viralmetagenome performance on real metagenomic samples spanning human and plant pathogens. Here, the pipeline successfully generated high-quality or near-complete genomes across viral families including segmented (Lassa virus, Orthonairovirus, Tomato spotted wilt tospovirus) and non-segmented viruses (SARS-CoV-2, West Nile virus, Potato virus Y, Youcai mosaic virus, and Monkeypox virus).
 
-Processing 28 samples (supplementary methods) required 412 CPU hours and a maximum of 79GB RAM on an HPC, excluding taxonomic classification steps. The automated reference selection during scaffolding offers substantial improvements over manual curation by reducing processing time while preserving reconstruction accuracy. Performance correlates strongly with reference database comprehensiveness as consensus genomes tended to be more complete and similar to the true consensus sequence when scaffolding reference was closer to the true viral genome. This emphasizes the need to keep databases like RVDB \cite{Goodacre2018-dw} and Virosaurus \cite{Gleizes2020-rq} up-to-date. Since nf-core/viralmetagenome is primarily designed for eukaryotic viruses, bacteriophage analysis requires different approaches and users are encouraged to explore pipelines targeting phages such as VIRify \cite{Rangel-Pineros2022-wv}, VIBRANT \cite{Kieft2020-aq}, VirSorter2 \cite{Guo2021-rf}.
+Processing 28 samples (supplementary methods) required 412 CPU hours and a maximum of 79GB RAM on an HPC, excluding taxonomic classification steps. The automated reference selection during scaffolding offers substantial improvements over manual curation by reducing processing time while preserving reconstruction accuracy. Performance correlates strongly with reference database comprehensiveness, as consensus genomes tended to be more complete and similar to the true consensus sequence when the scaffolding reference was closer to the true viral genome. This emphasizes the need to keep databases like RVDB \cite{Goodacre2018-dw} and Virosaurus \cite{Gleizes2020-rq} up-to-date. Since nf-core/viralmetagenome is primarily designed for eukaryotic viruses, bacteriophage analysis requires different approaches and users are encouraged to explore pipelines targeting phages such as VIRify \cite{Rangel-Pineros2022-wv}, VIBRANT \cite{Kieft2020-aq}, VirSorter2 \cite{Guo2021-rf}.
 
 
 \section{Conclusion}
@@ -85,10 +84,6 @@ As viral surveillance and outbreak response increasingly rely on metagenomic seq
 
 \section*{Author Contributions}
 J.K. designed and implemented the pipeline, performed validation analyses, and wrote the manuscript. P.L. and L.E.K. supervised the project and provided critical feedback. The nf-core community contributed to maintaining the pipeline. All authors reviewed and approved the final manuscript.
-
-\section*{Data Availability}
-The nf-core/viralmetagenome pipeline is freely available at https://github.com/nf-core/viralmetagenome.
-The raw data and analysis code is available on https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript/.
 
 \section*{Conflict of Interest}
 The authors declare no competing interests.
