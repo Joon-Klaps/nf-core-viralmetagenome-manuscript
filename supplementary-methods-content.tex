@@ -1,4 +1,3 @@
-% Supplementary Methods content
 % This file contains the detailed methods for the nf-core/viralmetagenome manuscript
 
 \section*{Data Availability}
@@ -6,13 +5,20 @@ The nf-core/viralmetagenome pipeline is freely available at https://github.com/n
 The raw data and analysis code is available on https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript/.
 
 \section*{Supplementary Methods}
-
-
 \subsection*{S1. Influence of Scaffold Reference on Consensus Genome}
 
-We simulated mixed  HIV-1 samples containing paired-end read data based on four genomes (MN090277.1, MN090188.1, MN090240.1, and MZ766668.1) spanning genetic diversity from 80–99\% average nucleotide identity (ANI). Thirteen sample configurations were created with varying abundance ratios to model both single-strain infections (100\% abundance) and coinfections with different abundance ratios (75:25, 50:50, 25:75) to reflect coinfections ( Supplementary table 1). Reads were generated using InSilisocoSeq v2.0.1 \cite{Gourle2019-ox} using ‘kde’ mode and ‘lognormal’ abundance for a ‘MiSeq’ model.
+We simulated mixed  HIV-1 samples containing paired-end read data based on four genomes (MN090277.1, MN090188.1, MN090240.1, and MZ766668.1) spanning genetic diversity from 80–99\% average nucleotide identity (ANI). Thirteen sample configurations were created with varying abundance ratios to model both single-strain infections (100\% abundance) and coinfections with different abundance ratios (75:25, 50:50, 25:75) to reflect coinfections ( Supplementary table 1). Reads were generated using InSilisocoSeq v2.0.1 \citep{Gourle2019-ox} using ‘kde’ mode and ‘lognormal’ abundance for a ‘MiSeq’ model.
 
-Sample mixtures were run with nf-core/viralmetagenome using default settings unless specified otherwise. Reference sequences used to compare the influence of the reference during scaffolding are the same sequences used for read generation, in addition to the databases, Virosaurus \cite{Gleizes2020-rq} and the Reference Viral Database \cite{Goodacre2018-dw}. Visualisation was done in R \cite{R_Core_Team2021-ow} using tidyverse \cite{Wickham2019-vr}.
+We investigated how reference genome selection affects consensus accuracy. While similar references ($\geq$ 96\%) minimally impact consensus quality, divergent references introduce up to 187 nucleotide mismatches (Supplementary Figure 1). Nf-core/viralmetagenome addresses this challenge by automatically selecting the most appropriate reference genome based on sequence similarity; when no suitable genome is found in the supplied database, the contigs are scaffolded to a \textit{de novo} contig (specifically, the cluster representative), ensuring accurate final consensus genomes.
+
+Sample mixtures were run with nf-core/viralmetagenome using default settings unless specified otherwise. Reference sequences used to compare the influence of the reference during scaffolding are the same sequences used for read generation, in addition to the databases, Virosaurus \citep{Gleizes2020-rq} and the Reference Viral Database \citep{Goodacre2018-dw}. Visualisation was done in R \citep{R_Core_Team2021-ow} using tidyverse \citep{Wickham2019-vr}.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Fig/fig2.png}
+    \caption{Boxplot of maximum observed differences between consensus sequences generated with different reference genomes during scaffolding. Mean highlighted by a diamond.}
+    \label{fig:reference-influence-supp}
+\end{figure}
 
 
 \subsubsection*{S2. Evaluation of nf-core/viralmetagenome on public data}
@@ -47,46 +53,46 @@ For plant pathogens, two samples were randomly selected from the SRA after query
 \bottomrule
 \endlastfoot
 
-Pre-processing & Read trimming & fastp & A high-performance preprocessing solution built in C++ that consolidates multiple quality control operations into a single workflow. Fastp delivers enhanced processing speed compared to traditional alternatives, like Trimmomatic, while handling adapter removal, quality assessment, base correction, read and filtering. Fastp also features automated adapter detection capabilities for various Illumina sequencing protocols. & \cite{Chen2018-tu} \\
+Pre-processing & Read trimming & fastp & A high-performance preprocessing solution built in C++ that consolidates multiple quality control operations into a single workflow. Fastp delivers enhanced processing speed compared to traditional alternatives, like Trimmomatic, while handling adapter removal, quality assessment, base correction, read and filtering. Fastp also features automated adapter detection capabilities for various Illumina sequencing protocols. & \citep{Chen2018-tu} \\
 \cmidrule{3-5}
- &  & Trimmomatic & A comprehensive preprocessing solution tailored for Illumina sequencing platforms with specialised paired-end read handling capabilities. Provides multiple pre-processing options, including adapter removal, quality-based trimming using sliding window approaches, and length-based filtering. & \cite{Bolger2014-si} \\
+ &  & Trimmomatic & A comprehensive preprocessing solution tailored for Illumina sequencing platforms with specialised paired-end read handling capabilities. Provides multiple pre-processing options, including adapter removal, quality-based trimming using sliding window approaches, and length-based filtering. & \citep{Bolger2014-si} \\
 \cmidrule{2-5}
- & Complexity filtering & Bbduk & A high-performance, multi-threaded tool designed to combine various data-quality-related operations, including trimming, filtering, and masking, into a single pass. It is particularly effective for removing host and other contaminant DNA using k-mer matching strategies, which is crucial for accurate metagenomic analysis. & \cite{BushnellUnknown-qy} \\
+ & Complexity filtering & Bbduk & A high-performance, multi-threaded tool designed to combine various data-quality-related operations, including trimming, filtering, and masking, into a single pass. It is particularly effective for removing host and other contaminant DNA using k-mer matching strategies, which is crucial for accurate metagenomic analysis. & \citep{BushnellUnknown-qy} \\
 \cmidrule{3-5}
- &  & Prinseq++ & A C++ implementation that significantly improves upon its predecessor, prinseq-lite.pl, in terms of computational efficiency. It offers extensive quality control features, including filtering by length, GC content, quality scores, N content, and sequence complexity (entropy/DUST score). & \cite{Cantu2019-vs} \\
+ &  & Prinseq++ & A C++ implementation that significantly improves upon its predecessor, prinseq-lite.pl, in terms of computational efficiency. It offers extensive quality control features, including filtering by length, GC content, quality scores, N content, and sequence complexity (entropy/DUST score). & \citep{Cantu2019-vs} \\
 \midrule
 
-Metagenomic diversity & Taxonomy classification & Kraken2 & An advanced taxonomic classification system with an improved k-mer-based approach through optimised memory usage and enhanced processing speed. Incorporates protein-level search capabilities for improved detection of divergent viral sequences, with a library of pre-built RefSeq indexes. & \cite{Wood2019-jl} \\
+Metagenomic diversity & Taxonomy classification & Kraken2 & An advanced taxonomic classification system with an improved k-mer-based approach through optimised memory usage and enhanced processing speed. Incorporates protein-level search capabilities for improved detection of divergent viral sequences, with a library of pre-built RefSeq indexes. & \citep{Wood2019-jl} \\
 \cmidrule{3-5}
- &  & Kaiju & A protein-level taxonomic classifier that employs exact matching algorithms on translated sequences using the Burrows-Wheeler transform. It can optionally allow amino acid substitutions and tends to have higher sensitivity and precision compared to k-mer-based classifiers (Kraken2). Kaiju is particularly effective for organisms with limited reference representation. & \cite{Menzel2016-tz} \\
+ &  & Kaiju & A protein-level taxonomic classifier that employs exact matching algorithms on translated sequences using the Burrows-Wheeler transform. It can optionally allow amino acid substitutions and tends to have higher sensitivity and precision compared to k-mer-based classifiers (Kraken2). Kaiju is particularly effective for organisms with limited reference representation. & \citep{Menzel2016-tz} \\
 \midrule
 
-Assembly \& polishing & Assembly & SPAdes & A de Bruijn graph-based assembler designed to overcome challenges in complex sequencing data, such as non-uniform coverage (using multisized de Bruijn graphs) and variable insert sizes. The Spades suite contains multiple specialised modes rnaSPAdes, coronaSPAdes, metaSPAdes for extra flexibility. & \cite{Meleshko2021-gb} \\
+Assembly \& polishing & Assembly & SPAdes & A de Bruijn graph-based assembler designed to overcome challenges in complex sequencing data, such as non-uniform coverage (using multisized de Bruijn graphs) and variable insert sizes. The Spades suite contains multiple specialised modes rnaSPAdes, coronaSPAdes, metaSPAdes for extra flexibility. & \citep{Meleshko2021-gb} \\
 \cmidrule{3-5}
- &  & MEGAHIT & A succinct de Bruijn graph-based assembler specifically designed for large and complex metagenomic datasets. MEGAHIT has demonstrated the ability to generate larger assemblies with longer contig N50 and average contig length. Its relatively low memory requirements make it well-suited for handling large datasets. & \cite{Li2016-sd} \\
+ &  & MEGAHIT & A succinct de Bruijn graph-based assembler specifically designed for large and complex metagenomic datasets. MEGAHIT has demonstrated the ability to generate larger assemblies with longer contig N50 and average contig length. Its relatively low memory requirements make it well-suited for handling large datasets. & \citep{Li2016-sd} \\
 \cmidrule{3-5}
- &  & Trinity & A powerful modular transcriptome reconstruction tool, capable of fully reconstructing a large fraction of transcripts, including alternative splice isoforms and transcripts from recently duplicated genes, even in the absence of a reference genome. It partitions sequence data into individual de Bruijn graphs, processing each independently to extract full-length isoforms and resolve paralogous genes. & \cite{Grabherr2011-ef} \\
+ &  & Trinity & A powerful modular transcriptome reconstruction tool, capable of fully reconstructing a large fraction of transcripts, including alternative splice isoforms and transcripts from recently duplicated genes, even in the absence of a reference genome. It partitions sequence data into individual de Bruijn graphs, processing each independently to extract full-length isoforms and resolve paralogous genes. & \citep{Grabherr2011-ef} \\
 \cmidrule{2-5}
- & Read alignment & BWAmem2 & An optimized version of the BWA-MEM algorithm enhanced with Intel-specific acceleration feature, providing approximately a twofold speedup in alignment throughput over BWA-MEM while ensuring identical SAM output. It is highly efficient for aligning short reads to large reference genomes. & \cite{Vasimuddin2019-rb} \\
+ & Read alignment & BWAmem2 & An optimized version of the BWA-MEM algorithm enhanced with Intel-specific acceleration feature, providing approximately a twofold speedup in alignment throughput over BWA-MEM while ensuring identical SAM output. It is highly efficient for aligning short reads to large reference genomes. & \citep{Vasimuddin2019-rb} \\
 \cmidrule{3-5}
- &  & BWA & A foundational and widely used Burrows-Wheeler Aligner (BWA-MEM variant) that efficiently maps short reads and long sequences to large reference genomes. It supports long gaps and dynamically adjusts error rates based on sequence length, making it robust to sequencing errors. & \cite{Li2013-pp} \\
+ &  & BWA & A foundational and widely used Burrows-Wheeler Aligner (BWA-MEM variant) that efficiently maps short reads and long sequences to large reference genomes. It supports long gaps and dynamically adjusts error rates based on sequence length, making it robust to sequencing errors. & \citep{Li2013-pp} \\
 \cmidrule{3-5}
- &  & Bowtie2 & A fast and memory-efficient alignment tool for aligning sequencing reads to long reference sequences, such as mammalian genomes. Bowtie2 supports gapped, local, and paired-end alignment modes, combining high speed, sensitivity, and accuracy. & \cite{Langmead2019-wx} \\
+ &  & Bowtie2 & A fast and memory-efficient alignment tool for aligning sequencing reads to long reference sequences, such as mammalian genomes. Bowtie2 supports gapped, local, and paired-end alignment modes, combining high speed, sensitivity, and accuracy. & \citep{Langmead2019-wx} \\
 \cmidrule{2-5}
- & Clustering & CD-HIT-EST & A highly efficient and widely used program for clustering large sets of protein or nucleotide sequences. Implementation constraints limit processing to genomes under 10Mbp with minimum 0.8. The program employs a greedy incremental algorithm. & \cite{Li2006-nj} \\
+ & Clustering & CD-HIT-EST & A highly efficient and widely used program for clustering large sets of protein or nucleotide sequences. Implementation constraints limit processing to genomes under 10Mbp with minimum 0.8. The program employs a greedy incremental algorithm. & \citep{Li2006-nj} \\
 \cmidrule{3-5}
- &  & MMSeqs & A powerful software suite for fast and sensitive deep clustering and searching of large protein sequence sets. It is significantly faster than other tools like BLASTclust and can cluster large databases down to low sequence identity thresholds. MMseqs offers a variety of clustering modes for a lot of flexibility. & \cite{Steinegger2017-ci} \\
+ &  & MMSeqs & A powerful software suite for fast and sensitive deep clustering and searching of large protein sequence sets. It is significantly faster than other tools like BLASTclust and can cluster large databases down to low sequence identity thresholds. MMseqs offers a variety of clustering modes for a lot of flexibility. & \citep{Steinegger2017-ci} \\
 \cmidrule{3-5}
- &  & VSEARCH & An open-source, versatile alternative for USEARCH. VSEARCH supports processing very large datasets, limited primarily by available memory. & \cite{Rognes2016-ju} \\
+ &  & VSEARCH & An open-source, versatile alternative for USEARCH. VSEARCH supports processing very large datasets, limited primarily by available memory. & \citep{Rognes2016-ju} \\
 \cmidrule{3-5}
- &  & Mash & A non-alignment based clustering technique that applies MinHash algorithms for rapid genome and metagenome distance estimation. It compresses large sequences into small, representative sketches, enabling ultra-fast estimations of global mutation distances. Mash creates compact sequence representations enabling ultra-fast similarity assessments and large-scale clustering operations, though accuracy decreases below 95\% genome similarity. & \cite{Ondov2019-bo} \\
+ &  & Mash & A non-alignment based clustering technique that applies MinHash algorithms for rapid genome and metagenome distance estimation. It compresses large sequences into small, representative sketches, enabling ultra-fast estimations of global mutation distances. Mash creates compact sequence representations enabling ultra-fast similarity assessments and large-scale clustering operations, though accuracy decreases below 95\% genome similarity. & \citep{Ondov2019-bo} \\
 \cmidrule{3-5}
- &  & vRhyme & A machine learning-based binning solution specifically developed for viral genome recovery from metagenomic datasets. VRhyme addresses the unique challenges of viral sequences, such as the lack of universal marker genes. Addresses unique viral sequence characteristics through supervised learning approaches combined with coverage-based analysis across multiple samples. Generates high-quality viral bins with minimal computational overhead, though it may produce empty results when insufficient viral evidence is detected. & \cite{Kieft2022-km} \\
+ &  & vRhyme & A machine learning-based binning solution specifically developed for viral genome recovery from metagenomic datasets. VRhyme addresses the unique challenges of viral sequences, such as the lack of universal marker genes. Addresses unique viral sequence characteristics through supervised learning approaches combined with coverage-based analysis across multiple samples. Generates high-quality viral bins with minimal computational overhead, though it may produce empty results when insufficient viral evidence is detected. & \citep{Kieft2022-km} \\
 \midrule
 
-Variant \& consensus calling & Variant \& consensus calling & iVar & A computational package specifically designed for viral amplicon-based sequencing, integrating functions like consensus and variant calling (including iSNVs and insertions/deletions). It is a key component of best-practice pipelines for reconstructing consensus genomes from viral sequencing data. & \cite{Grubaugh2019-xd} \\
+Variant \& consensus calling & Variant \& consensus calling & iVar & A computational package specifically designed for viral amplicon-based sequencing, integrating functions like consensus and variant calling (including iSNVs and insertions/deletions). It is a key component of best-practice pipelines for reconstructing consensus genomes from viral sequencing data. & \citep{Grubaugh2019-xd} \\
 \cmidrule{3-5}
- &  & BCFtools & A robust suite of utilities for manipulating variant calls in VCF and BCF formats. Provides extensive functionality for variant calling using multiallelic models, data filtering, file merging, and consensus sequence generation through variant application. & \cite{Danecek2021-je} \\
+ &  & BCFtools & A robust suite of utilities for manipulating variant calls in VCF and BCF formats. Provides extensive functionality for variant calling using multiallelic models, data filtering, file merging, and consensus sequence generation through variant application. & \citep{Danecek2021-je} \\
 
 \end{longtable}
 

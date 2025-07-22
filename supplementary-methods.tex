@@ -33,6 +33,11 @@
     bottom=1.2in
 }
 
+% Citation style configuration for New Hart's Rules
+% Use bibpunct to set proper punctuation for New Hart's Rules format
+% Format: (author year, author year)
+\bibpunct{(}{)}{, }{a}{ }{, }
+
 % Line numbers for preprint
 \linenumbers
 \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
@@ -63,9 +68,6 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 
-% Bibliography style for bioRxiv
-\bibliographystyle{abbrvnat}
-
 % Document metadata
 \title{Supplementary Methods \& Tables - nf-core/viralmetagenome: A Novel Pipeline for Untargeted Viral Genome Reconstruction}
 
@@ -88,6 +90,8 @@
 \input{supplementary-methods-content}
 
 % Bibliography
-\bibliography{reference}
+\bibliographystyle{plainnat}
+\bibliography{reference_converted}
+
 
 \end{document}
