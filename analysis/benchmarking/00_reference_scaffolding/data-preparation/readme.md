@@ -17,4 +17,4 @@ Then I selected the following viruses:
 
 Downloaded either all sequences or a random subset of 2000 sequences (if more than 2k available). Downloaded in FASTA format with Accession, GenBank, Segment headers.
 
-Next I selected a random representative sequence based on
+Next for each species segment combination I chose a representative sequence, and searched against all other sequences of the same species using mmseqs2. From these results, I selected a set of references that cover a range of sequence identities to the representative sequence (in 2% windows from 80% to 100% identity). These selected references were used for the reference-based scaffolding benchmarking.
