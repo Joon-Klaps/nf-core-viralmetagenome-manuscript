@@ -22,11 +22,10 @@ analysis/nf-core-viralmetagenome/plotting.ipynb
 !analysis/nf-core-viralmetagenome/*-virus/pipeline_info/
 
 *_plan.md
-
+*.err
 tmp/
 .vscode/
 multiqc_data/
-*.fastq.gz
 *-vs-ref/
 cover-letter*
 
