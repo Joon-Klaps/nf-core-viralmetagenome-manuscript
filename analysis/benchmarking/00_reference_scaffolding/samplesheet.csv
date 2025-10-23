@@ -1,4 +1,4 @@
-sample,fastq1,fastq2
+sample,fastq_1,fastq_2
 CCHF,data-preparation/simulated-reads/CCHF_R1.fastq.gz,data-preparation/simulated-reads/CCHF_R2.fastq.gz
 EBOV,data-preparation/simulated-reads/EBOV_R1.fastq.gz,data-preparation/simulated-reads/EBOV_R2.fastq.gz
 FLU,data-preparation/simulated-reads/FLU_R1.fastq.gz,data-preparation/simulated-reads/FLU_R2.fastq.gz
