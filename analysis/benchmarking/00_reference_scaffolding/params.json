@@ -1,0 +1,16 @@
+{
+    "input": "/lustre1/project/stg_00132/jklaps/nf-core-viralmetagenome-manuscript/analysis/benchmarking/00_reference_scaffolding/samplesheet.csv",
+    "outdir": "/lustre1/project/stg_00132/jklaps/nf-core-viralmetagenome-manuscript/analysis/benchmarking/00_reference_scaffolding/pipeline-results",
+    "reference_pools":"/lustre1/project/stg_00132/jklaps/nf-core-viralmetagenome-manuscript/analysis/benchmarking/00_reference_scaffolding/reference_pools.csv",
+
+    "reference_pool": "/lustre1/project/stg_00132/databases/RVDB/U-RVDBv29.0.fasta",
+    "annotation_db": "/lustre1/project/stg_00132/databases/virosaurus/virosaurus98_vertebrate-20200330.fas",
+    "checkv_db": "/lustre1/project/stg_00132/databases/checkv/checkv-db-v1.5",
+
+    "skip_read_classification":true,
+    "skip_preprocessing": true,
+    "skip_precluster": true,
+
+    "save_intermediate_polishing": true,
+    "arguments_extract_precluster": "--keep-unclassified true --merge-strategy lca --simplification-level genus"
+}

@@ -20,7 +20,7 @@ analysis/nf-core-viralmetagenome/*-virus/*/
 !analysis/nf-core-viralmetagenome/*-virus/multiqc/
 analysis/nf-core-viralmetagenome/plotting.ipynb
 !analysis/nf-core-viralmetagenome/*-virus/pipeline_info/
-
+pipeline-results/
 *_plan.md
 *.err
 tmp/
@@ -38,6 +38,7 @@ cover-letter*
 # *.eps
 # *.pdf
 
+nf-*.tsv
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
 
