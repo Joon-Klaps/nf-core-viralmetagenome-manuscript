@@ -49,7 +49,7 @@ IFS=',' read -r ID SAMPLE REFERENCE_POOL < <(
     awk -F',' -v line="${LINE_NUMBER}" 'NR==line {print $1","$2","$3}' "${REFERENCE_POOLS_CSV}"
 )
 
-OUTDIR="${SAMPLE}/${ID}"
+OUTDIR="viralmetagenome-out/${SAMPLE}/${ID}"
 mkdir -p "${OUTDIR}"
 
 JOB_SAMPLESHEET="${OUTDIR}/samplesheet.${SAMPLE}.csv"
