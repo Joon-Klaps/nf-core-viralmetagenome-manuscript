@@ -15,7 +15,7 @@ Sample mixtures were run with nf-core/viralmetagenome using default settings unl
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\textwidth]{Fig/fig2.png}
+    \includegraphics[width=0.8\textwidth]{Fig/suppl_fig1.png}
     \caption{Boxplot of maximum observed differences between consensus sequences generated with different reference genomes during scaffolding. Mean highlighted by a diamond.}
     \label{fig:reference-influence-supp}
 \end{figure}
@@ -23,9 +23,9 @@ Sample mixtures were run with nf-core/viralmetagenome using default settings unl
 
 \subsubsection*{S2. Evaluation of nf-core/viralmetagenome on public data}
 
-A public metagenomic dataset was constructed by selecting a randomized subset of 2,000 records from the NCBI Virus database, targeting the following viruses: '\textit{Orthonairovirus haemorrhagiae}', '\textit{Mammarenavirus lassaense}', '\textit{Zika virus}', '\textit{West Nile virus}', '\textit{Monkeypox virus}', '\textit{Influenza A virus}', '\textit{Severe acute respiratory syndrome coronavirus 2}', and '\textit{Human respiratory syncytial virus A}'. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than ‘Amplicon’. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, \texttt{--keep\_unclassified false} and \texttt{--skip\_read\_classification} to speed up the analysis.
+A public metagenomic dataset was constructed by selecting a randomized subset of 2,000 records from the NCBI Virus database, targeting the following viruses: '\textit{Orthonairovirus haemorrhagiae}', '\textit{Mammarenavirus lassaense}', '\textit{Zika virus}', '\textit{West Nile virus}', '\textit{Monkeypox virus}', '\textit{Influenza A virus}', '\textit{Severe acute respiratory syndrome coronavirus 2}', and '\textit{Human respiratory syncytial virus A}'. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than ‘Amplicon’. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using default options with the exception of \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, and \texttt{--skip\_read\_classification} to speed up the analysis.
 
-For plant pathogens, two samples were randomly selected from the SRA after querying for the following viruses: '\textit{Tobacco mosaic virus}', '\textit{Tomato spotted wilt virus}', '\textit{Cucumber mosaic virus}', and '\textit{Potato virus Y}'. These were also downloaded using nf-core/fetchngs and processed with viralmetagenome using the same parameters, with the addition of the Virosaurus plant virus database as annotation database and reference database.
+For plant pathogens, two samples were randomly selected from the SRA after querying for the following viruses: ``\textit{Tobacco mosaic virus}'', ``\textit{Tomato spotted wilt virus}'', ``\textit{Cucumber mosaic virus}'', and ``\textit{Potato virus Y}''. These were also downloaded using nf-core/fetchngs and processed with viralmetagenome using the same parameters (default options with \texttt{--cluster\_method 'mmseqs-cluster'} and \texttt{--skip\_read\_classification}), with the addition of the Virosaurus plant virus database as annotation database (\texttt{--annotation\_db} \href{https://ftp.expasy.org/databases/viralzone/2020_4/virosaurus98_plant-20200330.fas.gz}{\url{https://ftp.expasy.org/databases/viralzone/2020_4/virosaurus98_plant-20200330.fas.gz}}) and RVDB's v29.0 unclustered database as reference pool (\texttt{--reference\_pool} \href{https://rvdb.dbi.udel.edu/download/U-RVDBv29.0.fasta.gz}{\url{https://rvdb.dbi.udel.edu/download/U-RVDBv29.0.fasta.gz}}).
 
 \newpage
 
@@ -75,8 +75,6 @@ Assembly \& polishing & Assembly & SPAdes & A de Bruijn graph-based assembler de
 \cmidrule{2-5}
  & Read alignment & BWA-MEM2 & An optimized version of the BWA-MEM algorithm enhanced with Intel-specific acceleration feature, providing approximately a twofold speedup in alignment throughput over BWA-MEM while ensuring identical SAM output. It is highly efficient for aligning short reads to large reference genomes. & \citep{Vasimuddin2019-rb} \\
 \cmidrule{3-5}
- &  & BWA & A foundational and widely used Burrows-Wheeler Aligner (BWA-MEM variant) that efficiently maps short reads and long sequences to large reference genomes. It supports long gaps and dynamically adjusts error rates based on sequence length, making it robust to sequencing errors. & \citep{Li2013-pp} \\
-\cmidrule{3-5}
  &  & Bowtie2 & A fast and memory-efficient alignment tool for aligning sequencing reads to long reference sequences, such as mammalian genomes. Bowtie2 supports gapped, local, and paired-end alignment modes, combining high speed, sensitivity, and accuracy. & \citep{Langmead2019-wx} \\
 \cmidrule{2-5}
  & Clustering & CD-HIT-EST & A highly efficient and widely used program for clustering large sets of protein or nucleotide sequences. Implementation constraints limit processing to genomes under 10Mbp with minimum 0.8. The program employs a greedy incremental algorithm. & \citep{Li2006-nj} \\
@@ -107,7 +105,7 @@ Variant \& consensus calling & Variant \& consensus calling & iVar & A computati
 \begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{llp{2.5cm}p{2.5cm}p{1.5cm}p{2cm}p{2.5cm}}
 \toprule
-\textbf{Sample name} & \textbf{Reference} & \textbf{Added genome} & \textbf{Similarity to reference (\%)} & \textbf{Reads (M)} & \textbf{Read \% MN090277} & \textbf{Read \% added genome} \\
+\textbf{Sample name} & \textbf{Genome 1} & \textbf{Genome 2} & \textbf{Similarity to reference (\%)} & \textbf{Reads (M)} & \textbf{Read \% genome 1} & \textbf{Read \% genome 2} \\
 \midrule
 sample\_1 & MN090277.1 & MN090188.1 & 98.7 & 4 & 75 & 25 \\
 sample\_2 & MN090277.1 & MN090188.1 & 98.7 & 4 & 50 & 50 \\

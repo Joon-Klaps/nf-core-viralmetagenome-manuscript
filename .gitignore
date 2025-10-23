@@ -21,6 +21,7 @@ analysis/nf-core-viralmetagenome/*-virus/*/
 analysis/nf-core-viralmetagenome/plotting.ipynb
 !analysis/nf-core-viralmetagenome/*-virus/pipeline_info/
 pipeline-results/
+runs-indiv/
 *_plan.md
 *.err
 tmp/
@@ -28,6 +29,8 @@ tmp/
 multiqc_data/
 *-vs-ref/
 cover-letter*
+
+archive/
 
 ## Intermediate documents:
 *.dvi
