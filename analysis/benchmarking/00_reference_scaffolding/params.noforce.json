@@ -6,6 +6,5 @@
     "skip_preprocessing": true,
     "skip_precluster": true,
 
-    "arguments_extract_cluster": "--perc_reads_contig 5 --force-external-centroid",
     "save_intermediate_polishing": true
 }

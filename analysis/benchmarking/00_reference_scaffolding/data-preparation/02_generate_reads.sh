@@ -13,7 +13,7 @@ set -euo pipefail
 mkdir -p simulated-reads simulated-reads/logs
 
 # Define species array
-species=("CCHF" "EBOV" "FLU" "HIV1" "LASV" "MPX" "RSV" "SARS2" "WNV" "ZKV")
+species=("CCHF" "EBOV" "FLU" "HIV" "LASV" "MPX" "RSV" "SARS2" "WNV" "ZKV")
 
 # Determine which species to process
 if [[ -n "${SLURM_ARRAY_TASK_ID:-}" ]]; then
