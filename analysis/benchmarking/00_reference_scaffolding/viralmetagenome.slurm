@@ -79,6 +79,20 @@ nextflow run Joon-Klaps/viralmetagenome -r force-external-ref-centroid  \
     --reference_pool "${REFERENCE_POOL}" \
     --outdir "${OUTDIR}"
 
+# After Nextflow completes, remove all BAM files in the run's output directory to save space
+echo "Cleaning up BAM files under ${OUTDIR}..." >&2
+# Don't fail the entire job if no files are found or a file cannot be deleted
+set +e
+BAM_COUNT=$(find "${OUTDIR}" -type f -name "*.bam" | wc -l | tr -d ' ')
+if [ "${BAM_COUNT}" -gt 0 ]; then
+    # Print the files being deleted for logging, then delete
+    find "${OUTDIR}" -type f -name "*.bam" -print -delete
+    echo "Deleted ${BAM_COUNT} BAM file(s) in ${OUTDIR}" >&2
+else
+    echo "No BAM files found in ${OUTDIR}" >&2
+fi
+set -e
+
 # write some cluster metadata to the error and output files
 printf END >&2; uptime >&2
 
