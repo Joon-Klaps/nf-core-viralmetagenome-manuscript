@@ -29,7 +29,7 @@ tmp/
 multiqc_data/
 *-vs-ref/
 cover-letter*
-
+work/
 archive/
 
 ## Intermediate documents:
