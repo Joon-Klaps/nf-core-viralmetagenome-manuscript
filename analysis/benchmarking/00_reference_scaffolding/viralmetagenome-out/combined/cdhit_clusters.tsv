@@ -1,79 +1,79 @@
 cluster_id	centroid	members	reference_distance	member_count	source_file
-cl0		k141_3;k141_2;k141_7	LVE00050-7880	3	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3		k141_5	LVE00050-7880	1	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4			LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl5	k141_0		LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	MK107897.1	k141_3;k141_2;k141_7;NODE_5_length_601_cov_4.740506;NODE_6_length_570_cov_14.550790;NODE_9_length_398_cov_12.103321	LVE00050-7880	6	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-7880	2	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-7880	1	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-7880	1	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	NODE_7_length_548_cov_10.040380		LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl5	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-7880	1	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl6	k141_4		LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl7			LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0	k141_7		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3	k141_2		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4		k141_5	LVE00050-9496	1	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl5	k141_3		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6	k141_0		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl7	NODE_10_length_205_cov_54.820513		LVE00050-7880	0	LVE00050/LVE00050-7880/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	k141_7	NODE_6_length_570_cov_14.550790	LVE00050-9496	1	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-9496	2	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-9496	1	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	k141_2	NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-9496	2	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-9496	1	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl5	k141_3	NODE_5_length_601_cov_4.740506	LVE00050-9496	1	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-9496	1	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl7	k141_4		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl8			LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0		k141_3;k141_2;k141_7	LVE00050-8082	3	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-8082	0	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-8082	0	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3		k141_5	LVE00050-8082	1	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4	k141_0		LVE00050-8082	0	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl8	NODE_10_length_205_cov_54.820513		LVE00050-9496	0	LVE00050/LVE00050-9496/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	KM822072.1	k141_3;k141_2;k141_7;NODE_5_length_601_cov_4.740506;NODE_6_length_570_cov_14.550790;NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-8082	7	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-8082	2	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-8082	1	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-8082	1	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-8082	1	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl5	k141_4		LVE00050-8082	0	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6			LVE00050-8082	0	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0		k141_0;k141_4;k141_5;k141_1;k141_6	LVE00050-RVDB	5	LVE00050/LVE00050-RVDB/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1		k141_3;k141_2;k141_7	LVE00050-RVDB	3	LVE00050/LVE00050-RVDB/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2			LVE00050-RVDB	0	LVE00050/LVE00050-RVDB/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0	k141_7		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3	k141_2		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4		k141_5	LVE00050-8890	1	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl5	k141_3		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6	k141_0		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	NODE_10_length_205_cov_54.820513		LVE00050-8082	0	LVE00050/LVE00050-8082/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	acc-NEIGHBOR-KM822040.1-Lassa	k141_0;k141_4;k141_5;k141_1;k141_6;NODE_1_length_1102_cov_15.092308;NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909;NODE_4_length_844_cov_20.463040;NODE_8_length_525_cov_35.208543;acc-NEIGHBOR-GU481077.1-Lassa;acc-NEIGHBOR-MH053494.1-Mammarenavirus;acc-GENBANK-MH887935.1-Mammarenavirus;acc-GENBANK-MK117920.1-Mammarenavirus;acc-GENBANK-MK117940.1-Mammarenavirus;acc-NEIGHBOR-KM821962.1-Lassa;acc-NEIGHBOR-KM821970.1-Lassa;acc-NEIGHBOR-KM821983.1-Lassa;acc-NEIGHBOR-KM822028.1-Lassa;acc-NEIGHBOR-KM822050.1-Lassa;acc-NEIGHBOR-KM822052.1-Lassa;acc-NEIGHBOR-KM822075.1-Lassa;acc-NEIGHBOR-KM822096.1-Lassa;acc-NEIGHBOR-KM822104.1-Lassa	LVE00050-RVDB	24	LVE00050/LVE00050-RVDB/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	acc-NEIGHBOR-KM821953.1-Lassa	k141_3;k141_2;k141_7;NODE_5_length_601_cov_4.740506;NODE_6_length_570_cov_14.550790;NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321;acc-NEIGHBOR-MH053557.1-Mammarenavirus;acc-GENBANK-MH887782.1-Mammarenavirus;acc-GENBANK-MH887861.1-Mammarenavirus;acc-GENBANK-MK118028.1-Mammarenavirus;acc-NEIGHBOR-KM821925.1-Lassa;acc-NEIGHBOR-KM821971.1-Lassa;acc-NEIGHBOR-KM822059.1-Lassa;acc-NEIGHBOR-KM822076.1-Lassa;acc-NEIGHBOR-KM822084.1-Lassa;acc-NEIGHBOR-KM822089.1-Lassa	LVE00050-RVDB	17	LVE00050/LVE00050-RVDB/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	NODE_10_length_205_cov_54.820513		LVE00050-RVDB	0	LVE00050/LVE00050-RVDB/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	k141_7	NODE_6_length_570_cov_14.550790;PP431208.1	LVE00050-8890	2	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-8890	2	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-8890	1	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	k141_2	NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-8890	2	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-8890	1	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl5	k141_3	NODE_5_length_601_cov_4.740506	LVE00050-8890	1	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-8890	1	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl7	k141_4		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl8			LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0		k141_3;k141_2;k141_7	LVE00050-9092	3	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-9092	0	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-9092	0	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3		k141_5	LVE00050-9092	1	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4	k141_0		LVE00050-9092	0	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl8	NODE_10_length_205_cov_54.820513		LVE00050-8890	0	LVE00050/LVE00050-8890/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	MK117963.1	k141_3;k141_2;k141_7;NODE_5_length_601_cov_4.740506;NODE_6_length_570_cov_14.550790;NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-9092	7	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-9092	2	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-9092	1	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-9092	1	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-9092	1	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl5	k141_4		LVE00050-9092	0	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6			LVE00050-9092	0	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0	k141_7		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3	k141_2		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4		k141_5	LVE00050-8688	1	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl5	k141_3		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6	k141_0		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	NODE_10_length_205_cov_54.820513		LVE00050-9092	0	LVE00050/LVE00050-9092/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	k141_7	NODE_6_length_570_cov_14.550790;PP431167.1	LVE00050-8688	2	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-8688	2	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-8688	1	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	k141_2	NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-8688	2	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-8688	1	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl5	k141_3	NODE_5_length_601_cov_4.740506	LVE00050-8688	1	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-8688	1	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl7	k141_4		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl8			LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0		k141_3;k141_2;k141_7	LVE00050-9294	3	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-9294	0	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-9294	0	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3		k141_5	LVE00050-9294	1	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4	k141_0		LVE00050-9294	0	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl8	NODE_10_length_205_cov_54.820513		LVE00050-8688	0	LVE00050/LVE00050-8688/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	KM821971.1	k141_3;k141_2;k141_7;NODE_5_length_601_cov_4.740506;NODE_6_length_570_cov_14.550790;NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-9294	7	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-9294	2	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-9294	1	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-9294	1	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-9294	1	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl5	k141_4		LVE00050-9294	0	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6			LVE00050-9294	0	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0			LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_7		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_6		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3	k141_1		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4	k141_2		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl5		k141_5	LVE00050-7476	1	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6	k141_3		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl7	k141_0		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	NODE_10_length_205_cov_54.820513		LVE00050-9294	0	LVE00050/LVE00050-9294/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	MP226842.1		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_7	NODE_6_length_570_cov_14.550790	LVE00050-7476	1	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-7476	2	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-7476	1	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	k141_2	NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-7476	2	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl5	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-7476	1	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	k141_3	NODE_5_length_601_cov_4.740506	LVE00050-7476	1	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl7	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-7476	1	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl8	k141_4		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl9			LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl0	k141_7		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl1	k141_6		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl2	k141_1		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl3	k141_2		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl4		k141_5	LVE00050-7678	1	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl5	k141_3		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl6	k141_0		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl9	NODE_10_length_205_cov_54.820513		LVE00050-7476	0	LVE00050/LVE00050-7476/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl0	k141_7	NODE_6_length_570_cov_14.550790	LVE00050-7678	1	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl1	k141_6	NODE_2_length_985_cov_16.273893;NODE_3_length_952_cov_15.890909	LVE00050-7678	2	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl2	k141_1	NODE_1_length_1102_cov_15.092308	LVE00050-7678	1	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl3	k141_2	NODE_7_length_548_cov_10.040380;NODE_9_length_398_cov_12.103321	LVE00050-7678	2	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl4	NODE_4_length_844_cov_20.463040	k141_5	LVE00050-7678	1	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl5	k141_3	NODE_5_length_601_cov_4.740506	LVE00050-7678	1	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl6	k141_0	NODE_8_length_525_cov_35.208543	LVE00050-7678	1	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
 cl7	k141_4		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
-cl8			LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr
+cl8	NODE_10_length_205_cov_54.820513		LVE00050-7678	0	LVE00050/LVE00050-7678/assembly/polishing/cdhitest/LVE00050/clusters/LVE00050_cdhit.fa.clstr

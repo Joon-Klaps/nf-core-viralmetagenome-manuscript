@@ -74,7 +74,7 @@ def parse_cdhit_cluster(clstr_file: str) -> pd.DataFrame:
                 current_centroid = None
             else:
                 # Extract the sequence name between '>' and '...'
-                m = re.search(r">([^\.]+)\.\.\.", line)
+                m = re.search(r">([A-z0-9\-\_\.]+)\.\.\.", line)
                 if not m:
                     continue
                 member_name = m.group(1)
