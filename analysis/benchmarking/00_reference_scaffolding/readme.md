@@ -21,3 +21,5 @@ LVE00045, LVE00140, LVE00167
 
 Went to ncbi & downloaded all [available viruses under the name of 'Mammarenavirus Lassaense'](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=Mammarenavirus%20lassaense,%20taxid:3052310)
 Then for each sequence, I ran mmseqs2 against all other sequences to find similarity values, check [notebook for complete workflow](./00_reference_selection.ipynb)
+
+Once we had a range (based on ANI) of suitable references, we specified them as scaffolding references for viralmetagenome and ran them for our selected samples.
