@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH --clusters=wice
-#SBATCH --partition=batch
+#SBATCH --partition=batch_sapphirerapids
 #SBATCH --account="lp_phylogeo_inf_gpu"
 #SBATCH --nodes="1"
 #SBATCH --ntasks="2"
@@ -52,7 +52,7 @@ IFS=',' read -r ID SAMPLE REFERENCE_POOL < <(
 OUTDIR="viralmetagenome-out/${SAMPLE}/${ID}"
 mkdir -p "${OUTDIR}"
 
-JOB_SAMPLESHEET="${OUTDIR}/samplesheet.${SAMPLE}.csv"
+JOB_SAMPLESHEET="viralmetagenome-out/${SAMPLE}/samplesheet.${SAMPLE}.csv"
 { head -n 1 "${SAMPLESHEET_CSV}"; awk -F',' -v sample="${SAMPLE}" 'NR>1 && $1==sample' "${SAMPLESHEET_CSV}"; } > "${JOB_SAMPLESHEET}" || exit 1
 
 if [[ $(wc -l < "${JOB_SAMPLESHEET}") -lt 2 ]]; then
@@ -60,28 +60,24 @@ if [[ $(wc -l < "${JOB_SAMPLESHEET}") -lt 2 ]]; then
     exit 1
 fi
 
-echo "Task ${TASK_ID}: sample=${SAMPLE}, id=${ID}, reference_pool=${REFERENCE_POOL}" >&2
+PARAM="params.force.json"
 if [[ "${REFERENCE_POOL}" == *"RVDB"* ]]; then
-    extract_cluster_args="--perc_reads_contig 5"
-else
-    extract_cluster_args="--perc_reads_contig 5 --force-external-centroid"
+    PARAM="params.noforce.json"
 fi
 
+echo "Task ${TASK_ID}: sample=${SAMPLE}, id=${ID}, reference_pool=${REFERENCE_POOL}, PARAM=${PARAM}" >&2
 # run the nextflow analysis, when running with tower make sure to have /bin/bash -l to load the .bashrc
 # Local config doesn't contain cleanup= true
 export NXF_OPTS="-Xms500M -Xmx4G -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8"
 nextflow run Joon-Klaps/viralmetagenome -r force-external-ref-centroid  \
     -ansi-log false \
-    -with-tower \
     -resume \
-    -c resource.config \
+    -c resources.config \
     -profile singularity \
-    -params-file params.json \
+    -params-file "${PARAM}" \
     --input "${JOB_SAMPLESHEET}" \
     --reference_pool "${REFERENCE_POOL}" \
-    --outdir "${OUTDIR}" \
-    --arguments_extract_cluster ${extract_cluster_args} \
-    $ARGS
+    --outdir "${OUTDIR}"
 
 # write some cluster metadata to the error and output files
 printf END >&2; uptime >&2
