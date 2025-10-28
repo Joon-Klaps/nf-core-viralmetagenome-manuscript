@@ -1,13 +1,9 @@
-#! /usr/bin/env python
+#!/Users/joonklaps/opt/anaconda3/envs/nf-core/bin/python3
 
-import rich_click as click
+import argparse
 import pandas as pd
 
-
-@click.command()
-@click.option('--table', required=True, type=click.Path(exists=True), help='Path to contig table TSV file.')
-@click.option('--out', required=True, type=click.Path(), help='Path to output filtered contig table TSV file.')
-def main(table, out):
+def main(table: str, out: str) -> None:
     """
     Filter contig table to retain only the best contig per sample and segment.
 
@@ -15,6 +11,7 @@ def main(table, out):
         table (str): Path to contig table TSV file.
         out (str): Path to output filtered contig table TSV file.
     """
+
     # Read the contig table
     df = pd.read_csv(table, sep='\t')
 
@@ -33,3 +30,11 @@ def main(table, out):
     columns = ['index', 'sample', '(annotation) segment','(checkv) completeness', '(cluster) centroid', 'reference_distance']
     df_filtered = df[columns]
     df_filtered.to_csv(out, sep='\t', index=False)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Filter contig table to retain only the best contig per sample and segment.")
+    parser.add_argument('--table', required=True, help='Path to contig table TSV file.')
+    parser.add_argument('--out', required=True, help='Path to output filtered contig table TSV file.')
+    args = parser.parse_args()
+    main(args.table, args.out)
