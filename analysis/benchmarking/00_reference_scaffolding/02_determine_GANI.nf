@@ -23,9 +23,9 @@ workflow {
 		.combine(channel.fromPath(params.seq_L, checkIfExists: true))
 		.combine(channel.fromPath(params.seq_S, checkIfExists: true))
 		.branch { meta, seq, L, S ->
-			l : meta.seg == "L"
+			l : meta.segment == "L"
 				return [meta, seq, L]
-			s : meta.seg == "S"
+			s : meta.segment == "S"
 				return [meta, seq, S]
 		}.set { ch_seqs_by_segment }
 
