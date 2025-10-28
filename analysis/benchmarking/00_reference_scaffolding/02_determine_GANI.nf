@@ -13,7 +13,7 @@ params.outdir      = "./data-preparation/global-alignment/"
 workflow {
     // read in combined contig overview
 	contig_table = CONTIG_SELECTION(channel.fromPath(params.samplesheet, checkIfExists: true))
-	    .splitCsv(header:['index', 'sample', 'seg', 'completeness', 'centroid', 'reference_distance'], skip:1, sep:"\t")
+	    .splitCsv(header:['index', 'sample', 'segment', 'completeness', 'centroid', 'reference_distance'], skip:1, sep:"\t")
 		.map { row ->
 			def id = "${row.reference_distance}_${row.index}"
 			[[id:id]+ row, id]
@@ -74,7 +74,7 @@ process MAFFT_ALIGN {
 	set -euo pipefail
 
 	# Prepare two-sequence input for MAFFT
-	{ cat ${seq1}; seqtk subseq "${seq2_file}" <(echo "${meta.sample}"); } > input.two.fa
+	{ cat ${seq1}; seqtk subseq "${seq2_file}" <(echo "${meta.sample}_${meta.segment}"); } > input.two.fa
 
 	# Run MAFFT (global alignment for two sequences)
 	mafft --adjustdirection input.two.fa | gzip > ${prefix}.aln.fasta.gz
