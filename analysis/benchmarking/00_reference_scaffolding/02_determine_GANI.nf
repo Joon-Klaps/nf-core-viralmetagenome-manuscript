@@ -5,8 +5,6 @@ nextflow.enable.dsl=2
 */
 
 params.samplesheet = "./viralmetagenome-out/combined/contigs_overview.tsv"
-params.seq_L       = "./data-preparation/consensus/LASV_L.fasta"
-params.seq_S       = "./data-preparation/consensus/LASV_S.fasta"
 params.consensus   = "./viralmetagenome-out/combined/all_consensus.fasta"
 params.outdir      = "./data-preparation/global-alignment/"
 
@@ -19,19 +17,24 @@ workflow {
 			[[id:id]+ row, id]
 		}
 
-	EXTRACT_SEQ( contig_table, Channel.fromPath(params.consensus, checkIfExists: true).collect())
-		.combine(channel.fromPath(params.seq_L, checkIfExists: true))
-		.combine(channel.fromPath(params.seq_S, checkIfExists: true))
-		.branch { meta, seq, L, S ->
-			l : meta.segment == "L"
-				return [meta, seq, L]
-			s : meta.segment == "S"
-				return [meta, seq, S]
-		}.set { ch_seqs_by_segment }
+	ch_seqs = EXTRACT_SEQ( contig_table, Channel.fromPath(params.consensus, checkIfExists: true).collect())
+		.map { meta, seq -> [[meta.segment, meta.sample], meta, seq] }
 
-	mafft_in = ch_seqs_by_segment.l.mix( ch_seqs_by_segment.s )
+	// extract sequences for L and S segments if reference_distance contain "RVDB"
+	ch_ref = ch_seqs
+		.filter { _id, meta, _seq -> meta.reference_distance.contains("RVDB")}
 
-	aln = MAFFT_ALIGN(mafft_in)
+	// ch_ref.view{ id, meta, _seq -> "Reference sequence selected: ${id} - ${meta.sample} - ${meta.segment} (ref_distance: ${meta.reference_distance})" }
+
+	ch_seqs_with_ref = ch_seqs
+		.combine(ch_ref, by: 0)
+		.tap {log1}
+		.map{ _id, meta, seq, _meta_RVDB, seq_RVDB  -> [meta, seq, seq_RVDB] }
+
+	// log1.view{id, meta, seq, meta_RVDB, seq_RVDB -> "Preparing alignment for: ${id} - ${seq} - ${seq_RVDB})" }
+
+
+	aln = MAFFT_ALIGN(ch_seqs_with_ref)
 
 	stats = ALIGNMENT_STATS(aln)
 
@@ -63,7 +66,7 @@ process MAFFT_ALIGN {
 	publishDir "${params.outdir}/alignments", mode: 'copy'
 
 	input:
-	tuple val(meta), val(seq1), path(seq2_file)
+	tuple val(meta), val(seq1), path(seq2)
 
 	output:
 	tuple val(meta), path("*.aln.fasta.gz")
@@ -74,7 +77,7 @@ process MAFFT_ALIGN {
 	set -euo pipefail
 
 	# Prepare two-sequence input for MAFFT
-	{ cat ${seq1}; seqtk subseq "${seq2_file}" <(echo "${meta.sample}_${meta.segment}"); } > input.two.fa
+	cat ${seq1} ${seq2} > input.two.fa
 
 	# Run MAFFT (global alignment for two sequences)
 	mafft --adjustdirection input.two.fa | gzip > ${prefix}.aln.fasta.gz

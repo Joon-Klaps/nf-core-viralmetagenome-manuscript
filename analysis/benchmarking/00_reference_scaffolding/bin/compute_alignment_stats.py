@@ -69,7 +69,7 @@ def read_fasta_two_sequences(path: Path) -> List[Tuple[str, str]]:
 
 
 def compute_stats(seq1: str, seq2: str) -> dict:
-    valid = {"A", "C", "G", "T"}
+    valid = {"A", "C", "G", "T", "N"}
 
     aln_len = len(seq1)
     comparable = 0
@@ -78,9 +78,12 @@ def compute_stats(seq1: str, seq2: str) -> dict:
 
     for a, b in zip(seq1, seq2):
         if a in valid and b in valid:
-            comparable += 1
-            if a == b:
+            if a == b and a != "N":
                 matches += 1
+                comparable += 1
+                continue
+            elif a == "N" or b == "N":
+                comparable += 1
             else:
                 mismatches += 1
 
