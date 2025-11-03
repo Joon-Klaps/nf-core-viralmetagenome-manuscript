@@ -1,13 +1,13 @@
 #!/bin/bash -l
 #SBATCH --clusters=wice
-#SBATCH --partition=batch_sapphirerapids
+#SBATCH --partition=batch_icelake
 #SBATCH --account="lp_phylogeo_inf_gpu"
 #SBATCH --nodes="1"
 #SBATCH --ntasks="2"
 #SBATCH --cpus-per-task="36"
 #SBATCH --mem-per-cpu="2000M"
 #SBATCH --time="72:00:00"
-#SBATCH --array=1-11%1
+#SBATCH --array=1-133%1
 
 ####################################
 ##### Run a nextflow analysis ######
@@ -40,7 +40,7 @@ printf START >&2; uptime >&2
 date >&2
 
 # Define variables
-REFERENCE_POOLS_CSV="reference_pools.csv"
+REFERENCE_POOLS_CSV="reference_pools.retry.csv"
 SAMPLESHEET_CSV="samplesheet.csv"
 TASK_ID=${SLURM_ARRAY_TASK_ID:-1}
 LINE_NUMBER=$((TASK_ID + 1))

@@ -13,5 +13,7 @@
     "skip_precluster": true,
 
     "save_intermediate_polishing": true,
+    "intermediate_consensus_caller": "ivar",
+    "consensus_caller": "ivar",
     "arguments_extract_cluster": "--perc_reads_contig 5 --force-external-centroid"
 }

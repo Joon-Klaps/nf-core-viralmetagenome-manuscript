@@ -12,5 +12,7 @@
     "skip_read_classification":true,
     "skip_precluster": true,
 
+    "intermediate_consensus_caller": "ivar",
+    "consensus_caller": "ivar",
     "save_intermediate_polishing": true
 }

@@ -2,7 +2,7 @@
 
 import glob
 import os
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Set
 import pandas as pd
 import rich_click as click
 import re
@@ -97,7 +97,7 @@ def parse_cdhit_cluster(clstr_file: str) -> pd.DataFrame:
 
 def extract_reference_distance(path: str) -> str | None:
     """Extract LVExxxxx-#### or LVExxxxx-RVDB token from a path."""
-    m = re.search(r"(LVE\d{5}-(?:\d{4}|RVDB))", path)
+    m = re.search(r"(LVE\d{5}-(?:\d{4,5}|RVDB))", path)
     return m.group(1) if m else None
 
 
@@ -163,6 +163,36 @@ def group_single_file_by_reference_regex(input_dir: str, include_regex: re.Patte
     return single
 
 
+def report_missing_ids(
+    label: str,
+    allowed_ids: Optional[Set[str]],
+    discovered_keys: Set[str],
+    final_keys: Set[str],
+) -> None:
+    """Emit debug information about missing or excluded IDs."""
+    if allowed_ids is None:
+        excluded = sorted(discovered_keys - final_keys)
+        if excluded:
+            click.echo(f"[debug] {label}: excluded IDs: {', '.join(excluded)}")
+        else:
+            click.echo(f"[debug] {label}: no IDs were excluded.")
+        return
+
+    missing_allowed = sorted(allowed_ids - discovered_keys)
+    excluded_present = sorted(discovered_keys - final_keys)
+
+    if missing_allowed:
+        click.echo(
+            f"[debug] {label}: allowed IDs with no matching files: {', '.join(missing_allowed)}"
+        )
+    if excluded_present:
+        click.echo(
+            f"[debug] {label}: excluded IDs (files present but not in allow-list): {', '.join(excluded_present)}"
+        )
+    if not missing_allowed and not excluded_present:
+        click.echo(f"[debug] {label}: all allowed IDs included.")
+
+
 def combine_clusters(files: dict[str, List[str]], output_file: str, base_dir: str) -> None:
     """Combine multiple CD-HIT cluster files into a single TSV summary.
 
@@ -200,7 +230,18 @@ def combine_clusters(files: dict[str, List[str]], output_file: str, base_dir: st
 @click.command()
 @click.argument("input_dir", type=click.Path(exists=True), default=".")
 @click.argument("ref_pool_csv", type=click.Path(exists=True), default="../reference_pools.csv")
-def main(input_dir: str = ".", ref_pool_csv: str = "../reference_pools.csv") -> None:
+@click.option(
+    "--debug",
+    "debug",
+    is_flag=True,
+    default=False,
+    help="Print IDs that were excluded or missing from combined outputs.",
+)
+def main(
+    input_dir: str = ".",
+    ref_pool_csv: str = "../reference_pools.csv",
+    debug: bool = False,
+) -> None:
     """Combine outputs across pools under INPUT_DIR.
 
     INPUT_DIR: base directory containing per-pool outputs.
@@ -212,6 +253,9 @@ def main(input_dir: str = ".", ref_pool_csv: str = "../reference_pools.csv") -> 
     try:
         ref_df = pd.read_csv(ref_pool_csv)
         allowed_ids = set(ref_df["id"].astype(str).unique())
+        click.echo(f"Filtering to {len(allowed_ids)} allowed reference pool IDs from {ref_pool_csv}")
+        if debug:
+            click.echo(f"[debug] Allowed IDs: {', '.join(sorted(allowed_ids))}")
     except (FileNotFoundError, pd.errors.EmptyDataError, KeyError) as e:
         click.echo(f"Warning: failed to read {ref_pool_csv}: {e}. Proceeding without filtering.")
         allowed_ids = None
@@ -221,8 +265,16 @@ def main(input_dir: str = ".", ref_pool_csv: str = "../reference_pools.csv") -> 
 
     # 1) Combine consensus FASTA sequences
     cons_map = group_files_by_reference_regex(input_dir, PATH_REGEX["consensus_seqs"])
+    cons_discovered = set(cons_map.keys())
     if allowed_ids is not None:
         cons_map = {k: v for k, v in cons_map.items() if k in allowed_ids}
+    if debug:
+        report_missing_ids(
+            "consensus FASTA",
+            allowed_ids,
+            cons_discovered,
+            set(cons_map.keys()),
+        )
     if cons_map:
         combine_fasta(cons_map, os.path.join(out_dir, "all_consensus.fasta"))
         click.echo(f"Wrote combined consensus FASTA for {len(cons_map)} pools")
@@ -231,8 +283,16 @@ def main(input_dir: str = ".", ref_pool_csv: str = "../reference_pools.csv") -> 
 
     # 2) Combine contigs overview tables
     contig_map = group_single_file_by_reference_regex(input_dir, PATH_REGEX["contigs_summary"])
+    contig_discovered = set(contig_map.keys())
     if allowed_ids is not None:
         contig_map = {k: v for k, v in contig_map.items() if k in allowed_ids}
+    if debug:
+        report_missing_ids(
+            "contigs overview",
+            allowed_ids,
+            contig_discovered,
+            set(contig_map.keys()),
+        )
     if contig_map:
         combine_tables(contig_map, os.path.join(out_dir, "contigs_overview.tsv"))
         click.echo(f"Wrote combined contigs overview for {len(contig_map)} pools")
@@ -241,8 +301,16 @@ def main(input_dir: str = ".", ref_pool_csv: str = "../reference_pools.csv") -> 
 
     # 3) Combine CD-HIT cluster summaries
     clstr_map = group_files_by_reference_regex(input_dir, PATH_REGEX["cdhit_results"])
+    clstr_discovered = set(clstr_map.keys())
     if allowed_ids is not None:
         clstr_map = {k: v for k, v in clstr_map.items() if k in allowed_ids}
+    if debug:
+        report_missing_ids(
+            "CD-HIT clusters",
+            allowed_ids,
+            clstr_discovered,
+            set(clstr_map.keys()),
+        )
     if clstr_map:
         combine_clusters(clstr_map, os.path.join(out_dir, "cdhit_clusters.tsv"), base_dir=input_dir)
         click.echo(f"Wrote combined CD-HIT clusters for {len(clstr_map)} pools")
@@ -251,8 +319,16 @@ def main(input_dir: str = ".", ref_pool_csv: str = "../reference_pools.csv") -> 
 
     # 4) Combine centroid sequences from CD-HIT
     centroid_map = group_files_by_reference_regex(input_dir, PATH_REGEX["centroid_sequences"])
+    centroid_discovered = set(centroid_map.keys())
     if allowed_ids is not None:
         centroid_map = {k: v for k, v in centroid_map.items() if k in allowed_ids}
+    if debug:
+        report_missing_ids(
+            "CD-HIT centroids",
+            allowed_ids,
+            centroid_discovered,
+            set(centroid_map.keys()),
+        )
     if centroid_map:
         combine_fasta(centroid_map, os.path.join(out_dir, "cdhit_centroids.fasta"))
         click.echo(f"Wrote combined CD-HIT centroids for {len(centroid_map)} pools")
