@@ -56,7 +56,7 @@ process EXTRACT_SEQ {
 	"""
 	set -euo pipefail
 
-	seqtk subseq ${fasta} <(echo "${seq_name}.consensus_bcftools") > ${seq_name}.fa
+	seqtk subseq ${fasta} <(echo "${seq_name}.consensus_ivar") > ${seq_name}.fa
 	"""
 }
 
