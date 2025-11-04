@@ -23,7 +23,7 @@ def main(table: str, out: str) -> None:
 
     # group by sample,'(annotation) segment', reference_distance,
     # and select the contig with the minimum distance to theoretical length, but reads most reads mapped
-    df = df.sort_values(by=['distance_to_theoretical', 'reads_mapped'], ascending=[True, False])
+    df = df.sort_values(by=['reads_mapped', 'distance_to_theoretical'], ascending=[False, True])
     df = df.drop_duplicates(subset=['sample', '(annotation) segment', 'reference_distance'], keep='first')
 
     # Subset the number of columns to make manegeable in nextflow
