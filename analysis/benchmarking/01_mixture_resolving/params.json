@@ -1,0 +1,15 @@
+{
+    "skip_preprocessing": true,
+    "skip_read_classification": true,
+    "skip_precluster": true,
+
+    "cluster_method": "mmseqs-cluster",
+    "assemblers": "megahit,spades",
+    "min_contig_size": 500,
+    "save_intermediate_polishing": true,
+    "get_intermediate_stats": false,
+
+    "checkv_db": "/lustre1/project/stg_00132/databases/checkv/checkv-db-v1.5",
+    "annotation_db": "/lustre1/project/stg_00132/databases/virosaurus/virosaurus98_vertebrate-20200330.lasv-lineages.fas"
+}
+

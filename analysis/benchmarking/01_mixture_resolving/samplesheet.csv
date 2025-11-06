@@ -1,0 +1,14 @@
+sample,fastq_1,fastq_2
+Eddard,data-preparation/combinations/Eddard_R1.fastq.gz,data-preparation/combinations/Eddard_R2.fastq.gz
+Catelyn,data-preparation/combinations/Catelyn_R1.fastq.gz,data-preparation/combinations/Catelyn_R2.fastq.gz
+Robb,data-preparation/combinations/Robb_R1.fastq.gz,data-preparation/combinations/Robb_R2.fastq.gz
+Jon,data-preparation/combinations/Jon_R1.fastq.gz,data-preparation/combinations/Jon_R2.fastq.gz
+Sansa,data-preparation/combinations/Sansa_R1.fastq.gz,data-preparation/combinations/Sansa_R2.fastq.gz
+Arya,data-preparation/combinations/Arya_R1.fastq.gz,data-preparation/combinations/Arya_R2.fastq.gz
+Daenerys,data-preparation/combinations/Daenerys_R1.fastq.gz,data-preparation/combinations/Daenerys_R2.fastq.gz
+Tyrion,data-preparation/combinations/Tyrion_R1.fastq.gz,data-preparation/combinations/Tyrion_R2.fastq.gz
+Jaime,data-preparation/combinations/Jaime_R1.fastq.gz,data-preparation/combinations/Jaime_R2.fastq.gz
+Bran,data-preparation/combinations/Bran_R1.fastq.gz,data-preparation/combinations/Bran_R2.fastq.gz
+Rickon,data-preparation/combinations/Rickon_R1.fastq.gz,data-preparation/combinations/Rickon_R2.fastq.gz
+Theon,data-preparation/combinations/Theon_R1.fastq.gz,data-preparation/combinations/Theon_R2.fastq.gz
+Jorah,data-preparation/combinations/Jorah_R1.fastq.gz,data-preparation/combinations/Jorah_R2.fastq.gz
