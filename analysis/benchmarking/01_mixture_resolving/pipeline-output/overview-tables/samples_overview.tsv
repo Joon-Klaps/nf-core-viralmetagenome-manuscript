@@ -1,0 +1,14 @@
+"sample"	"Quast (Spades). Assembly Length (Mbp)"	"Quast (Spades). N50 (Kbp)"	"Quast (Megahit). Assembly Length (Mbp)"	"Quast (Megahit). N50 (Kbp)"	"Cluster Summary. # Clusters"	"Cluster Summary. # Removed clusters"	"Cluster Summary. Average cluster size"	"Cluster Summary. Number of singletons"	"Consensus Count. # Final denovo clusters"
+"Daenerys"	21955.0	9010.0	308469.0	301.0	4	9	86.75	0	1.0
+"Tyrion"	22025.0	9009.0	375914.0	304.0	2	12	298.0	0	2.0
+"Eddard"	12347.0	9052.0	1361136.0	301.0	2	45	1767.5	0	2.0
+"Sansa"	12149.0	9059.0	6302790.0	292.0	4	189	4033.0	0	3.0
+"Catelyn"	12627.0	9055.0	934878.0	309.0	4	37	510.75	0	4.0
+"Rickon"	9526.0	9053.0	9055.0	9055.0	1	0	2.0	0	""
+"Jaime"	20726.0	9008.0	1420235.0	301.0	2	51	2073.0	0	2.0
+"Theon"	9898.0	9012.0	9014.0	9014.0	1	0	4.0	0	1.0
+"Bran"	9948.0	9052.0	12842.0	9202.0	1	1	14.0	0	1.0
+"Jon"	12623.0	9052.0	4631910.0	301.0	3	145	3609.6666666666665	0	3.0
+"Jorah"	9608.0	9010.0	9010.0	9010.0	1	0	2.0	0	1.0
+"Arya"	11745.0	9059.0	3268750.0	301.0	3	123	882.0	0	2.0
+"Robb"	12690.0	9052.0	990788.0	301.0	1	39	2914.0	0	1.0

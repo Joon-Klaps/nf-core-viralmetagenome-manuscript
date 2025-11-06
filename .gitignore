@@ -14,12 +14,7 @@
 docs/
 .DS_Store
 .nextflow
-analysis/nf-core-viralmetagenome/*-virus/*/
-!analysis/nf-core-viralmetagenome/*-virus/
-!analysis/nf-core-viralmetagenome/*-virus/overview-tables/
-!analysis/nf-core-viralmetagenome/*-virus/multiqc/
-analysis/nf-core-viralmetagenome/plotting.ipynb
-!analysis/nf-core-viralmetagenome/*-virus/pipeline_info/
+
 pipeline-results/
 runs-indiv/
 *_plan.md
@@ -31,6 +26,9 @@ multiqc_data/
 cover-letter*
 work/
 archive/
+
+**/01_mixture_resolving/**/*.fastq.gz
+**/checkv/
 
 ## Intermediate documents:
 *.dvi
