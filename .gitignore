@@ -132,6 +132,14 @@ analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/*
 !analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/
 !analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/combine-results.py
 !analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/combined
+
+analysis/benchmarking/01_mixture_resolving/pipeline-output/*
+!analysis/benchmarking/01_mixture_resolving/pipeline-output/
+!analysis/benchmarking/01_mixture_resolving/pipeline-output/overview-tables
+!analysis/benchmarking/01_mixture_resolving/pipeline-output/pipeline_info
+!analysis/benchmarking/01_mixture_resolving/pipeline-output/consensus/
+analysis/benchmarking/01_mixture_resolving/pipeline-output/consensus/*
+!analysis/benchmarking/01_mixture_resolving/pipeline-output/consensus/seq
 # glossaries
 *.acn
 *.acr

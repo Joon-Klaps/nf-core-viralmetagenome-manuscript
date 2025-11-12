@@ -7,7 +7,7 @@
 #SBATCH --nodes="1"
 #SBATCH --ntasks="2"
 #SBATCH --cpus-per-task="36"
-#SBATCH --mem-per-cpu="2000M"
+#SBATCH --mem-per-cpu="2500M"
 #SBATCH --time="72:00:00"
 
 ####################################
@@ -42,15 +42,15 @@ printf START >&2; uptime >&2
 date >&2
 
 # run the nextflow analysis, when running with tower make sure to have /bin/bash -l to load the .bashrc
-# Local config doesn't contain cleanup= true
 nextflow run nf-core/viralmetagenome \
-    -r dev \
+    -r 1.0.0 \
     -ansi-log false \
     -with-tower \
+    -resume \
     -profile singularity \
+    -c ./nextflow.config \
     -params-file ./params.json \
     --input ./samplesheet.csv \
-    --reference_pool /lustre1/project/stg_00132/databases/RVDB/U-RVDBv29.0.fasta \
     --outdir pipeline-output \
 
 # write some cluster metadata to the error and output files
