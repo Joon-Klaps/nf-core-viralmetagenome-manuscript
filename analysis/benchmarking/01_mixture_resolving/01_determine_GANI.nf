@@ -4,7 +4,7 @@ nextflow.enable.dsl=2
   nextflow run ./02_determine_GANI.nf -with-conda
 */
 
-params.consensus      = "./pipeline-output/consensus/seq/it2/all_consensus.fasta"
+params.consensus      = "./pipeline-output/consensus/seq/it2/*/*.fasta"
 params.outdir         = "./data-preparation/global-alignment/"
 params.references_seq = "./data-preparation/references/references.fa"
 
@@ -35,8 +35,6 @@ workflow {
 		.map{ file -> [ [id: file.baseName],  file ]}
 
 	ch_seqs = channel.fromPath(params.consensus, checkIfExists: true)
-		.splitFasta(record: [id:true, sequence:true])
-		.collectFile{ record -> [record.id, ">${record.id}\n${record.sequence}"] }
 		.map { file ->
 			def id_parts = file.baseName.tokenize("_")
 			[ [id: "${id_parts[0]}_${id_parts[1]}", got: id_parts[0] ],  file ]
