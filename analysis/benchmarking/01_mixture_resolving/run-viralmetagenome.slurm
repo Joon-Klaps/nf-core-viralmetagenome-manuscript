@@ -15,7 +15,7 @@
 ####################################
 
 #### How to run: ####
-# sbatch --export=ALL,ARGS='--input ../samplesheets/samplesheet.csv --outdir ../results/' run-viralmetagenome.slurm
+# sbatch run-viralmetagenome.slurm
 
 # write a function that catches any errors
 abort()
