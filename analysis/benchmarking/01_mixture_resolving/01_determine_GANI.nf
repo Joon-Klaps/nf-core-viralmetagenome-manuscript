@@ -24,9 +24,9 @@ workflow {
 		"Tyrion": ["MZ766668", "MN090277"],
 		"Jaime": ["MZ766668", "MN090277"],
 		"Bran": ["MN090277"],
-		"Rickon": ["MN090188"],
-		"Theon": ["MN090240"],
-		"Jorah": ["MZ766668"]
+		"Rickon": ["MN090188","MN090277"],
+		"Theon": ["MN090240","MN090277"],
+		"Jorah": ["MZ766668","MN090277"]
 	]
 
 	ch_ref = channel.fromPath(params.references_seq, checkIfExists: true)
