@@ -10,11 +10,11 @@ params.outdir         = "./data-preparation/global-alignment/"
 params.selected_ref   = "./data-preparation/selected-references/selected_references.tsv"
 params.references_seq = "./data-preparation/ncbi-virus-fasta/sequences_20251024_LASV.fasta"
 
-include { EXTRACT_SEQ as EXTRACT_REF_SEQ } from './bin/modules.nf'
-include { EXTRACT_SEQ as EXTRACT_CONS_SEQ } from './bin/modules.nf'
-include { MAFFT_ALIGN } from './bin/modules.nf'
-include { ALIGNMENT_STATS } from './bin/modules.nf'
-include { CONTIG_SELECTION } from './bin/modules.nf'
+include { EXTRACT_SEQ as EXTRACT_REF_SEQ  } from '../../bin/modules.nf'
+include { EXTRACT_SEQ as EXTRACT_CONS_SEQ } from '../../bin/modules.nf'
+include { MAFFT_ALIGN 				      } from '../../bin/modules.nf'
+include { ALIGNMENT_STATS 				  } from '../../bin/modules.nf'
+include { CONTIG_SELECTION				  } from '../../bin/modules.nf'
 
 workflow {
     // read in combined contig overview
