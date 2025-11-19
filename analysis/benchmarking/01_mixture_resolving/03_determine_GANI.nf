@@ -22,6 +22,15 @@ workflow {
 			[ [id: "${id_parts[0]}_${id_parts[1]}", refs: [id_parts[0].tokenize(".")[0], "MN090277" ]],  file ]
 		}
 
+	ch_refvref = ch_ref
+		.filter{meta, _file -> meta.id == "MN090277"}
+		.combine(ch_ref)
+		.map { meta1, file1, meta2, file2 ->
+			[ meta2 + [ id: "${meta2.id}_${meta1.id}", reference: meta1.id, isrefvref: true ], file1, file2 ]
+		}
+
+	// ch_refvref.view()
+
 	ch_seqs_with_ref = ch_seqs
 		.flatMap { meta, seq_file ->
 			def refs = meta.refs ?: []
@@ -35,18 +44,19 @@ workflow {
 			ref_meta.id == ref_id
 		}
 		.map { meta, ref_id, seq_file, _ref_meta, ref_file ->
-			[ meta + [id: "${meta.id}_${ref_id}", reference:ref_id], seq_file, ref_file ]
+			[ meta + [id: "${meta.id}_${ref_id}", reference:ref_id, isrefvref: false], seq_file, ref_file ]
 		}
 
 	// log1.view()
 	// ch_seqs_with_ref.view()
 
-	aln = MAFFT_ALIGN(ch_seqs_with_ref)
+	aln = MAFFT_ALIGN(ch_seqs_with_ref.mix(ch_refvref))
 
 	stats = ALIGNMENT_STATS(aln)
 
 	stats.collectFile(keepHeader: true, skip: 1, storeDir: params.outdir){ meta, stats_file ->
-		[ "global_alignment_stats.tsv", stats_file ]
+		def ref = meta.isrefvref ? "refvref_" : ""
+		[ "${ref}global_alignment_stats.tsv", stats_file ]
 	}
 
 }
