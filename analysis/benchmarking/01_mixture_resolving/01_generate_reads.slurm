@@ -1,11 +1,14 @@
 #!/bin/bash -l
+#SBATCH --clusters=wice
+#SBATCH --partition=batch_sapphirerapids
+#SBATCH --account="lp_phylogeo_inf_gpu"
 #SBATCH --job-name=generate_reads
 #SBATCH --array=0-37
 #SBATCH --time=02:00:00
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=1
 #SBATCH --mem=16G
-#SBATCH --output=simulated-reads/logs/generate_reads_%A_%a.out
-#SBATCH --error=simulated-reads/logs/generate_reads_%A_%a.err
+#SBATCH --output=data-preparation/simulated-reads/logs/generate_reads_%A_%a.out
+#SBATCH --error=data-preparation/simulated-reads/logs/generate_reads_%A_%a.err
 
 set -euo pipefail
 
@@ -23,7 +26,7 @@ abort()
 trap 'abort' 0
 
 # Create output and log directories
-mkdir -p simulated-reads simulated-reads/logs truth-references
+mkdir -p data-preparation/simulated-reads data-preparation/simulated-reads/logs data-preparation/simulated-reads/coverages data-preparation/tmp
 
 # Read selected references from TSV
 selected_refs="data-preparation/selected_references.tsv"
@@ -55,7 +58,7 @@ IFS=$'\t' read -r id target ref <<< "${mixture_line}"
 echo "Processing mixture: ${id} (target: ${target}, ref: ${ref})"
 
 # Build coverage file (50X per sequence)
-coverage_file="simulated-reads/logs/${id}_coverage.txt"
+coverage_file="data-preparation/simulated-reads/coverages/${id}_coverage.txt"
 cat > "${coverage_file}" <<EOF
 ${target}	50
 ${ref}	50
@@ -64,7 +67,7 @@ EOF
 echo "Coverage file ready: ${coverage_file}"
 
 # Create combined reference FASTA for this mixture
-combined_ref="truth-references/${id}.fasta"
+combined_ref="data-preparation/tmp/${id}.fasta"
 target_file="data-preparation/references/${target}.fasta"
 ref_file="data-preparation/references/${ref}.fasta"
 cat "${ref_file}" "${target_file}" > "${combined_ref}"
@@ -84,10 +87,10 @@ singularity exec \
     iss generate \
         --genomes "${combined_ref}" \
         --seed 42 \
-        --output "simulated-reads/${id}" \
+        --output "data-preparation/simulated-reads/${id}" \
         --mode kde \
         --coverage_file "${coverage_file}" \
-        --cpus 4 \
+        --cpus 1 \
         --model MiSeq \
         --compress
 

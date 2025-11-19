@@ -27,7 +27,6 @@ cover-letter*
 work/
 archive/
 
-**/01_mixture_resolving/**/*.fastq.gz
 **/checkv/
 
 ## Intermediate documents:
