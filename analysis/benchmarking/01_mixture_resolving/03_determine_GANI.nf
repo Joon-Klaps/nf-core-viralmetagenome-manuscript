@@ -6,43 +6,25 @@ nextflow.enable.dsl=2
 
 params.consensus      = "./pipeline-output/consensus/seq/it2/*/*.fasta"
 params.outdir         = "./data-preparation/global-alignment/"
-params.references_seq = "./data-preparation/references/references.fa"
+params.references_seq = "./data-preparation/references/*.fasta"
 
 include { MAFFT_ALIGN 				      } from '../../bin/modules.nf'
 include { ALIGNMENT_STATS 				  } from '../../bin/modules.nf'
 
 workflow {
 
-	got_dict = [
-		"Eddard": ["MN090188", "MN090277"],
-		"Catelyn": ["MN090188", "MN090277"],
-		"Robb": ["MN090188", "MN090277"],
-		"Jon": ["MN090240", "MN090277"],
-		"Sansa": ["MN090240", "MN090277"],
-		"Arya": ["MN090240", "MN090277"],
-		"Daenerys": ["MZ766668", "MN090277"],
-		"Tyrion": ["MZ766668", "MN090277"],
-		"Jaime": ["MZ766668", "MN090277"],
-		"Bran": ["MN090277"],
-		"Rickon": ["MN090188","MN090277"],
-		"Theon": ["MN090240","MN090277"],
-		"Jorah": ["MZ766668","MN090277"]
-	]
-
 	ch_ref = channel.fromPath(params.references_seq, checkIfExists: true)
-		.splitFasta(record: [id:true, sequence:true])
-		.collectFile{ record -> [record.id, ">${record.id}\n${record.sequence}"] }
-		.map{ file -> [ [id: file.baseName],  file ]}
+		.map{ file -> [ [id: file.baseName.tokenize(".")[0]],  file ]}
 
 	ch_seqs = channel.fromPath(params.consensus, checkIfExists: true)
 		.map { file ->
 			def id_parts = file.baseName.tokenize("_")
-			[ [id: "${id_parts[0]}_${id_parts[1]}", got: id_parts[0] ],  file ]
+			[ [id: "${id_parts[0]}_${id_parts[1]}", refs: [id_parts[0].tokenize(".")[0], "MN090277" ]],  file ]
 		}
 
 	ch_seqs_with_ref = ch_seqs
 		.flatMap { meta, seq_file ->
-			def refs = got_dict[meta.got] ?: []
+			def refs = meta.refs ?: []
 			return refs.collect { ref_id ->
 				[meta, ref_id, seq_file]
 			}
