@@ -1,15 +1,33 @@
-# Manuscript of nf-core/viralmetagenome
+# Supplementary Data for nf-core/viralmetagenome Manuscript
 
-Jupyter Notebooks can be found in the `analysis` directory, which contains a subset of the pipeline output and the analysis results.
 
-- [analysis/benchmarking/pairwise-globalalignment.ipynb](analysis/benchmarking/pairwise-globalalignment.ipynb)
-- [analysis/benchmarking/visualisation.ipynb](analysis/benchmarking/visualisation.ipynb)
-- [analysis/nf-core-viralmetagenome/resources.ipynb](analysis/nf-core-viralmetagenome/resources.ipynb)
-- [analysis/sequence-download/selection.ipynb](analysis/sequence-download/selection.ipynb)
+## S1. Sample mixture resolution
 
-For reproducibility purposes, run them in a devcontainer.
+We evaluated the pipeline's resolution sensitivity across a continuous spectrum of genetic diversity by simulating HIV-1 coinfections. We identified three distinct performance zones based on empirical ANI thresholds: Unresolved Zone, Interference Zone, and High-Fidelity Resolution.
 
-# Compile latex
+![Mixture resolution dynamics](analysis/benchmarking/S1_mixture_resolving/images/reference_impact_zones.png)
+
+**Supplementary Figure 1:** Mixture resolution dynamics across a genetic diversity gradient.
+
+For more details and scripts, see [analysis/benchmarking/S1_mixture_resolving/](analysis/benchmarking/S1_mixture_resolving/).
+
+## S2. Evaluation of nf-core/viralmetagenome on public data
+
+We constructed a public metagenomic dataset targeting various human and plant viruses to evaluate the pipeline's performance on real-world data. Samples were processed using `nf-core/viralmetagenome` with specific parameters for clustering and database selection.
+
+For more details and scripts, see [analysis/benchmarking/S2_performance_on_public_data/](analysis/benchmarking/S2_performance_on_public_data/).
+
+## S3. Influence of scaffolding reference
+
+We investigated the influence of scaffolding references on consensus genome completeness using a subset of LASV samples. We compared consensus genomes generated with different scaffolding references spanning a range of nucleotide similarities to determine the impact on genome reconstruction quality.
+
+![Influence of scaffolding reference](analysis/benchmarking/S3_reference_scaffolding/images/recovery.png)
+
+**Supplementary Figure 2:** Jitter-boxplot for scaffolding reference genomes considered in the sample setup for determining the influence of the scaffolding reference.
+
+For more details and scripts, see [analysis/benchmarking/S3_reference_scaffolding/](analysis/benchmarking/S3_reference_scaffolding/).
+
+## Compile latex
 
 ```bash
 make all
