@@ -127,18 +127,18 @@ acs-*.bib
 *.eledsec[1-9][0-9]R
 *.eledsec[1-9][0-9][0-9]
 *.eledsec[1-9][0-9][0-9]R
-analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/*
-!analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/
-!analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/combine-results.py
-!analysis/benchmarking/00_reference_scaffolding/viralmetagenome-out/combined
+analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/*
+!analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/
+!analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/combine-results.py
+!analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/combined
 
-analysis/benchmarking/01_mixture_resolving/pipeline-output/*
-!analysis/benchmarking/01_mixture_resolving/pipeline-output/
-!analysis/benchmarking/01_mixture_resolving/pipeline-output/overview-tables
-!analysis/benchmarking/01_mixture_resolving/pipeline-output/pipeline_info
-!analysis/benchmarking/01_mixture_resolving/pipeline-output/consensus/
-analysis/benchmarking/01_mixture_resolving/pipeline-output/consensus/*
-!analysis/benchmarking/01_mixture_resolving/pipeline-output/consensus/seq
+analysis/benchmarking/S1_mixture_resolving/pipeline-output/*
+!analysis/benchmarking/S1_mixture_resolving/pipeline-output/
+!analysis/benchmarking/S1_mixture_resolving/pipeline-output/overview-tables
+!analysis/benchmarking/S1_mixture_resolving/pipeline-output/pipeline_info
+!analysis/benchmarking/S1_mixture_resolving/pipeline-output/consensus/
+analysis/benchmarking/S1_mixture_resolving/pipeline-output/consensus/*
+!analysis/benchmarking/S1_mixture_resolving/pipeline-output/consensus/seq
 # glossaries
 *.acn
 *.acr
