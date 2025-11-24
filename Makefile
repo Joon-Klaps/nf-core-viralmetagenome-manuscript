@@ -10,7 +10,7 @@ SUPP_METHODS = supplementary-methods
 BIBFILE = reference.bib
 
 # Default target
-all: biorxiv oxford supplementary
+all: biorxiv oxford supplementary diff-biorxiv diff-oxford diff-supplementary
 
 # bioRxiv version
 biorxiv: $(BIORXIV_MAIN).pdf
@@ -47,15 +47,53 @@ clean:
 cleanall: clean
 	rm -f $(BIORXIV_MAIN).pdf $(OXFORD_MAIN).pdf $(SUPP_METHODS).pdf
 
-# Open PDFs (macOS)
-view-biorxiv: $(BIORXIV_MAIN).pdf
-	open $(BIORXIV_MAIN).pdf
 
-view-oxford: $(OXFORD_MAIN).pdf
-	open $(OXFORD_MAIN).pdf
+# Diff generation
+diff: diff-biorxiv diff-oxford diff-supplementary
 
-view-supplementary: $(SUPP_METHODS).pdf
-	open $(SUPP_METHODS).pdf
+diff-biorxiv:
+	$(LATEX) manuscript-biorxiv-old
+	-$(BIBTEX) manuscript-biorxiv-old
+	$(LATEX) manuscript-biorxiv-old
+	$(LATEX) manuscript-biorxiv
+	-$(BIBTEX) manuscript-biorxiv
+	$(LATEX) manuscript-biorxiv
+	latexdiff -p preamble.tex --flatten manuscript-biorxiv-old.tex manuscript-biorxiv.tex > manuscript-biorxiv-diff.tex
+	$(LATEX) manuscript-biorxiv-diff
+	-$(BIBTEX) manuscript-biorxiv-diff
+	$(LATEX) manuscript-biorxiv-diff
+	$(LATEX) manuscript-biorxiv-diff
+
+diff-oxford:
+	$(LATEX) manuscript-oxford-old
+	-$(BIBTEX) manuscript-oxford-old
+	$(LATEX) manuscript-oxford-old
+	$(LATEX) manuscript-oxford
+	-$(BIBTEX) manuscript-oxford
+	$(LATEX) manuscript-oxford
+	latexdiff -p preamble.tex --flatten --append-textcmd="abstract" manuscript-oxford-old.tex manuscript-oxford.tex > manuscript-oxford-diff.tex
+	$(LATEX) manuscript-oxford-diff
+	-$(BIBTEX) manuscript-oxford-diff
+	$(LATEX) manuscript-oxford-diff
+	$(LATEX) manuscript-oxford-diff
+
+diff-supplementary:
+	$(LATEX) supplementary-methods-old
+	-$(BIBTEX) supplementary-methods-old
+	$(LATEX) supplementary-methods-old
+	$(LATEX) supplementary-methods
+	-$(BIBTEX) supplementary-methods
+	$(LATEX) supplementary-methods
+	latexdiff -p preamble.tex --flatten --exclude-textcmd="citep,cite" supplementary-methods-old.tex supplementary-methods.tex > supplementary-methods-diff.tex
+	$(LATEX) supplementary-methods-diff
+	-$(BIBTEX) supplementary-methods-diff
+	$(LATEX) supplementary-methods-diff
+	$(LATEX) supplementary-methods-diff
+
+# Word count
+wordcount:
+	@echo "Word count from PDF (includes references, captions, etc.):"
+	@pdftotext $(OXFORD_MAIN).pdf - | wc -w
 
 # Help
 help:
@@ -71,4 +109,4 @@ help:
 	@echo "  view-supplementary - Open Supplementary Methods PDF"
 	@echo "  help         - Show this help"
 
-.PHONY: all biorxiv oxford supplementary clean cleanall view-biorxiv view-oxford view-supplementary help
+.PHONY: all biorxiv oxford supplementary clean cleanall view-biorxiv view-oxford view-supplementary help diff diff-biorxiv diff-oxford
