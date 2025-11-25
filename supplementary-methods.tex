@@ -8,10 +8,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage[labelfont=bf]{caption}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{lineno}
@@ -38,16 +39,22 @@
 % Citation style configuration for New Hart's Rules
 % Use bibpunct to set proper punctuation for New Hart's Rules format
 % Format: (author year, author year)
-\bibpunct{(}{)}{, }{a}{ }{, }
+\bibpunct{[}{]}{, }{n}{,}{,}
 
 % Line numbers for preprint
-\linenumbers
-\renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
+% \linenumbers
+% \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
 
 % Header/footer setup
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Supplementary Methods \& Tables - nf-core/viralmetagenome}
+
+% Rename figures and tables for supplementary
+\renewcommand{\figurename}{Supplementary Fig.}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\tablename}{Supplementary Table}
+\renewcommand{\thetable}{S\arabic{table}}
 \fancyhead[R]{\small \today}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -92,8 +99,8 @@
 \input{supplementary-methods-content}
 
 % Bibliography
-\bibliographystyle{plainnat}
-\bibliography{reference_converted}
+\bibliographystyle{custom-plainnat}
+\bibliography{reference}
 
 
 \end{document}
