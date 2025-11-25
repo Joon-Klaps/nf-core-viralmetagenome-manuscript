@@ -58,6 +58,7 @@ ENTRY
     institution
     isbn
     issn
+    issue
     journal
     journaltitle
     key
@@ -554,7 +555,16 @@ FUNCTION {format.eid}
 FUNCTION {format.vol.num.pages}
 { volume field.or.null
   number empty$
-    'skip$
+    { issue empty$
+        'skip$
+        { "\penalty0 (" issue * ")" * *
+          volume empty$
+            { "there's an issue but no volume in " cite$ * warning$ }
+            'skip$
+          if$
+        }
+      if$
+    }
     { "\penalty0 (" number * ")" * *
       volume empty$
         { "there's a number but no volume in " cite$ * warning$ }
@@ -575,7 +585,16 @@ FUNCTION {format.vol.num.pages}
 FUNCTION {format.vol.num.eid}
 { volume field.or.null
   number empty$
-    'skip$
+    { issue empty$
+        'skip$
+        { "\penalty0 (" issue * ")" * *
+          volume empty$
+            { "there's an issue but no volume in " cite$ * warning$ }
+            'skip$
+          if$
+        }
+      if$
+    }
     { "\penalty0 (" number * ")" * *
       volume empty$
         { "there's a number but no volume in " cite$ * warning$ }
@@ -1217,7 +1236,15 @@ FUNCTION {calc.label}
   short.list
   "("
   *
-  year duplicate$ empty$
+  year empty$
+    { date empty$
+        { "" }
+        { date #1 #4 substring$ }
+      if$
+    }
+    { year }
+  if$
+  duplicate$ empty$
   short.list key field.or.null = or
      { pop$ "" }
      'skip$
@@ -1353,7 +1380,15 @@ FUNCTION {presort}
   if$
   "    "
   *
-  year field.or.null sortify
+  year empty$
+    { date empty$
+        { "" }
+        { date #1 #4 substring$ }
+      if$
+    }
+    { year }
+  if$
+  sortify
   *
   "    "
   *
