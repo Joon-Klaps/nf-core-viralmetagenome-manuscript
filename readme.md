@@ -9,7 +9,7 @@ For more details and scripts, see [analysis/benchmarking/S1_performance_on_publi
 
 ## S2. Sample mixture resolution
 
-We evaluated the pipeline's resolution sensitivity across a continuous spectrum of genetic diversity by simulating HIV-1 coinfections. We identified three distinct performance zones based on empirical ANI thresholds: Unresolved Zone, Interference Zone, and High-Fidelity Resolution.
+We evaluated the pipeline's resolution sensitivity across a continuous spectrum of genetic diversity by simulating HIV-1 co-infections. We identified three distinct performance zones based on empirical ANI thresholds: Unresolved Zone, Interference Zone, and High-Fidelity Resolution.
 
 **Supplementary Figure 1:** Mixture resolution dynamics across a genetic diversity gradient.
 

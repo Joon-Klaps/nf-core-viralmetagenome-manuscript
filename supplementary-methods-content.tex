@@ -7,36 +7,45 @@ Scripts used to generate the results as well as parts of the results are availab
 \section*{Supplementary Methods}
 
 \subsection*{S1. Evaluation of nf-core/viralmetagenome on public data}
-A public metagenomic dataset was constructed by selecting a random subset of 2,000 records from the NCBI Virus database, targeting the following viruses: \textit{Orthonairovirus haemorrhagiae}, \textit{Mammarenavirus lassaense}, \textit{Zika virus}, \textit{West Nile virus}, \textit{Monkeypox virus}, \textit{Influenza A virus}, \textit{Severe acute respiratory syndrome coronavirus 2}, and \textit{Human respiratory syncytial virus A}. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than `Amplicon'. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using default options with the exception of \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, and \texttt{--skip\_read\_classification} to speed up the analysis.
+A metagenomic dataset was constructed from publically available data by selecting a random subset of 2,000 records from the NCBI Virus database, targeting the following viruses: \textit{Orthonairovirus haemorrhagiae}, \textit{Mammarenavirus lassaense}, \textit{Zika virus}, \textit{West Nile virus}, \textit{Monkeypox virus}, \textit{Influenza A virus}, \textit{Severe acute respiratory syndrome coronavirus 2}, and \textit{Human respiratory syncytial virus A}. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than `Amplicon'. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using default options with the exception of \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, and \texttt{--skip\_read\_classification} to speed up the analysis.
 
 For plant pathogens, two samples were randomly selected from the SRA at every query: \textit{Tobacco mosaic virus}, \textit{Tomato spotted wilt virus}, \textit{Cucumber mosaic virus}, and \textit{Potato virus Y}. These were also downloaded using nf-core/fetchngs and processed with viralmetagenome using the same parameters (\texttt{--cluster\_method 'mmseqs-cluster'}, \texttt{--skip\_read\_classification}), with the addition of the Virosaurus plant virus database as annotation database (\texttt{--annotation\_db} \url{https://ftp.expasy.org/databases/viralzone/2020_4/virosaurus98_plant-20200330.fas.gz}) and RVDB's v29.0 unclustered database as reference pool (\texttt{--reference\_pool} \url{https://rvdb.dbi.udel.edu/download/U-RVDBv29.0.fasta.gz}).
 
 \subsection*{S2. Sample mixture resolution}
-To evaluate the pipeline's ability to distinguish viral genomes from the same species in mixed samples, we simulated a set of HIV-1 coinfections. We retrieved a random subset of 2,000 HIV-1 genomes from NCBI Virus (taxid: 11676) and selected MN090277.1 as the constant representative genome. We then calculated the pairwise Average Nucleotide Identity (ANI) between all 2,000 genomes and the representative using MMseqs2 \citep{Steinegger2017-ci}. Based on these ANI values, we binned the genomes into 0.5\% intervals (ranging from 74\% to 100\%) and selected one target genome from each bin (n=38). Synthetic paired-end reads were generated for both the selected target genome and the representative genome using InSilicoSeq v2.0.1 \citep{Gourle2019-ox} in 'kde' mode with the 'MiSeq' error model. Mixtures were simulated at a 50:50 abundance ratio with 50x coverage for each genome.
+To evaluate the pipeline's ability to distinguish viral genomes from the same species in mixed samples, we simulated a set of HIV-1 co-infections. We retrieved a random subset of 2,000 HIV-1 genomes from NCBI Virus (taxid: 11676) and selected MN090277.1 as the constant representative genome. We then calculated the pairwise Average Nucleotide Identity (ANI) between all 2,000 genomes and the representative using MMseqs2 \citep{Steinegger2017-ci}. Based on these ANI values, we binned the genomes into 0.5\% intervals (ranging from 74\% to 100\%) and selected one target genome from each bin (n=38). Synthetic paired-end reads were generated for both the selected target genome and the representative genome using InSilicoSeq v2.0.1 \citep{Gourle2019-ox} in 'kde' mode with the 'MiSeq' error model. Mixtures were simulated at a 50:50 abundance ratio with 50x coverage for each genome.
 
 The simulated mixtures were analyzed using viralmetagenome with the parameters \texttt{--skip\_preprocessing}, \texttt{--skip\_read\_classification}, and with U-RVDBv29.0 as a reference pool. We characterised the pipeline's performance by comparing the reconstructed consensus genomes to the original target genomes, defining three distinct performance zones based on empirical ANI thresholds (Supplementary Fig. S1):
 \begin{itemize}
-    \item \textbf{Unresolved Zone (>88.7\%):} At relatively high genetic similarity between target genomes in the mixture, the pipeline is unable to distinguish between the coinfecting strains, collapsing the mixture into a single consensus sequence per reference bin.
+    \item \textbf{Unresolved Zone (>88.7\%):} At relatively high genetic similarity between target genomes in the mixture, the pipeline is unable to distinguish between the co-infecting strains, collapsing the mixture into a single consensus sequence per reference bin.
     \item \textbf{Ambiguous Zone (85.8\% – 88.7\%):} In this intermediate transition window, the pipeline successfully identifies multiple strains; however, the relatively high sequence similarity still permits reads to cross-map between references. This causes the reconstructed consensus sequences to accumulate mismatches in shared regions, resulting in lower fidelity to the original genomes despite initial separation by the assemblers.
     \item \textbf{High-Fidelity Resolution (< 85.8\%):} Below this similarity threshold, the strains are sufficiently divergent to minimize cross-mapping interference, allowing for the accurate reconstruction of distinct, high-quality consensus genomes.
 \end{itemize}
 
+\subsection*{S3. Influence of scaffolding reference}
+The choice of scaffolding reference can considerably influence the completeness of the reconstructed genome. To quantify this effect, we analysed a subset of 7 Lassa virus samples from our own sequencing efforts (Lassa virus - Illumina Miseq data with UMIs). Samples were randomly selected based on their measured viral load during diagnostic testing, ensuring that the dataset encompassed different viral load categories (Supplementary Fig. S2). We compared consensus genomes generated using a gradient of scaffolding reference sequences ranging from 64\% to 100\% Average Nucleotide Identity (ANI) relative to the sample's baseline consensus.
+
+To establish this gradient, we first generated a baseline consensus for each sample using the unclustered RVDB (U-RVDB) as the reference pool. We then retrieved all \textit{Mammarenavirus lassaense} (taxid: 3052310) sequences from NCBI and calculated their ANI against these baseline consensus genomes using MMseqs2 \citep{Steinegger2017-ci}. From this pool, we selected one scaffolding reference genome at every 2\% ANI interval for each sample (Supplementary Fig. S3). The Lassa virus samples exhibited differential coverage between segments (S segment mean ~231X, L segment mean ~68X; Supplementary Fig. S4), allowing us to evaluate scaffolding performance on both complete and fragmented assemblies.
+
+By default, nf-core/viralmetagenome selects the cluster centroid as a scaffolding reference. To assess the reference influence, the pipeline’s code needed to be slightly modified to force the specified genomes as scaffolding reference. This version of the code repository is available in the branch \url{https://github.com/Joon-Klaps/viralmetagenome/tree/force-external-ref-centroid}.
+
+The pipeline was then run with the following non-default parameters: \texttt{--with\_umi}, \texttt{--umi\_deduplicate both}, \texttt{--skip\_read\_classification}, \texttt{--skip\_precluster}, \texttt{--intermediate\_consensus\_caller ivar}, \texttt{--consensus\_caller ivar}.
+
+To quantify the impact of the scaffolding reference on the final output, we compared the consensus genomes generated with the specifically supplied scaffold reference genomes against the baseline consensus genomes generated when the U-RVDB was supplied (without scaffold reference forcing, allowing automatic centroid and reference selection). We evaluated the sequence similarity as plotted in Figure 2, where we observe an almost linear correlation for the L segment when references were forced. For the S segment, this pattern is less apparent as \textit{de novo} assemblers could reconstruct near-complete genomes for most samples. In the L segment, where coverage was lower, nf-core/viralmetagenome excelled by connecting individual contigs to improve completeness.
+
+% Start a new page
+\newpage
+\section*{Supplementary Figures}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{supplfig1}
-    \caption{\textbf{Mixture resolution dynamics across a genetic diversity gradient.} This scatter plot characterises nf-core/viralmetagenome’s ability to resolve coinfections of varying genetic similarity. The Y-axis represents the Average Nucleotide Identity (ANI) between the two target genomes present in the simulated mixture (Target vs. Representative), while the X-axis indicates the ANI of the reconstructed consensus genomes compared to the constant target genome.}
+    \caption{\textbf{Mixture resolution dynamics across a genetic diversity gradient.} This scatter plot characterises nf-core/viralmetagenome’s ability to resolve co-infections of varying genetic similarity. The Y-axis represents the Average Nucleotide Identity (ANI) between the two target genomes present in the simulated mixture (Target vs. Representative), while the X-axis indicates the ANI of the reconstructed consensus genomes compared to the constant target genome.}
     \label{fig:supp-fig1}
 \end{figure}
 
-\subsection*{S3. Influence of scaffolding reference}
-The choice of scaffolding reference can considerably influence the completeness of the reconstructed genome. To quantify this effect, we analysed a subset of 7 Lassa virus samples from our own sequencing efforts (Lassa virus - Illumina Miseq data with UMIs). We compared consensus genomes generated using a gradient of scaffolding reference sequences ranging from 64\% to 100\% Average Nucleotide Identity (ANI) relative to the sample's baseline consensus.
-To establish this gradient, we first generated a baseline consensus for each sample using the unclustered RVDB (U-RVDB) as the reference pool. We then retrieved all \textit{Mammarenavirus lassaense} (taxid: 3052310) sequences from NCBI and calculated their ANI against these baseline consensus genomes using MMseqs2 \citep{Steinegger2017-ci}. From this pool, we selected one scaffolding reference genome at every 2\% ANI interval for each sample (Supplementary Fig. S2). The Lassa virus samples exhibited differential coverage between segments (S segment mean ~231X, L segment mean ~68X; Supplementary Fig. S3), allowing us to evaluate scaffolding performance on both complete and fragmented assemblies.
-
-
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{supplfig2}
-    \caption{\textbf{Selection of scaffolding reference genomes across a similarity gradient.} To assess how reference divergence affects scaffolding, we compared all available NCBI \textit{Mammarenavirus lassaense} genomes against the baseline consensus (generated with U-RVDB as a reference library supplied with \texttt{--reference\_pool}) for 7 Lassa virus samples. The y-axis displays the similarity (\% ANI) of these candidate references towards the baseline consensus. For the benchmarking experiment, specific references were selected at $\sim$2\% ANI intervals, highlighted in full dots, to establish a gradient of similarity ranging from 64\% to 100\%.}
+    \includegraphics[width=0.5\textwidth]{supplfig2}
+    \caption{\textbf{Distribution of diagnostic viral loads.} The distribution of diagnostic PCR Ct values for the available Lassa virus samples. Samples are classified into empirical categories (Super low, Low, Mid, High, Super high) based on their Ct values. Up to 3 random samples were selected from each category to ensure a diverse representation of viral loads.}
     \label{fig:supp-fig2}
 \end{figure}
 
@@ -47,12 +56,14 @@ To establish this gradient, we first generated a baseline consensus for each sam
     \label{fig:supp-fig3}
 \end{figure}
 
-By default, nf-core/viralmetagenome selects the cluster centroid as a scaffolding reference. To assess the reference influence, the pipeline’s code needed to be slightly modified to force the specified genomes as scaffolding reference. This version of the code repository is available in the branch \url{https://github.com/Joon-Klaps/viralmetagenome/tree/force-external-ref-centroid}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{supplfig4}
+    \caption{\textbf{Selection of scaffolding reference genomes across a similarity gradient.} To assess how reference divergence affects scaffolding, we compared all available NCBI \textit{Mammarenavirus lassaense} genomes against the baseline consensus (generated with U-RVDB as a reference library supplied with \texttt{--reference\_pool}) for 7 Lassa virus samples. The y-axis displays the similarity (\% ANI) of these candidate references towards the baseline consensus. For the benchmarking experiment, specific references were selected at $\sim$2\% ANI intervals, highlighted in full dots, to establish a gradient of similarity ranging from 64\% to 100\%.}
+    \label{fig:supp-fig4}
+\end{figure}
 
-The pipeline was then run with the following non-default parameters: \texttt{--with\_umi}, \texttt{--umi\_deduplicate both}, \texttt{--skip\_read\_classification}, \texttt{--skip\_precluster}, \texttt{--intermediate\_consensus\_caller ivar}, \texttt{--consensus\_caller ivar}.
-
-To quantify the impact of the scaffolding reference on the final output, we compared the consensus genomes generated with the specifically supplied scaffold reference genomes against the consensus genomes generated when the U-RVDB was supplied (without scaffold reference forcing, allowing automatic centroid and reference selection). We evaluated the sequence similarity as plotted in Figure 2, where we observe an almost linear correlation for the L segment when references were forced. For the S segment, this pattern is less apparent as de novo assemblers could reconstruct near-complete genomes for most samples. In the L segment, where coverage was lower, nf-core/viralmetagenome excelled by connecting individual contigs to improve completeness.
-
+\newpage
 \section*{Supplementary Tables}
 
 \begin{longtable}{p{2cm}p{1.8cm}p{1.8cm}p{8.3cm}p{1cm}}

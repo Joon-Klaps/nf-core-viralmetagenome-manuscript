@@ -10,7 +10,7 @@ SUPP_METHODS = supplementary-methods
 BIBFILE = reference.bib
 
 # Default target
-all: biorxiv oxford supplementary diff-biorxiv diff-oxford diff-supplementary
+all: biorxiv oxford supplementary diff-biorxiv diff-oxford diff-supplementary submission
 
 # bioRxiv version
 biorxiv: $(BIORXIV_MAIN).pdf
@@ -94,6 +94,26 @@ diff-supplementary:
 wordcount:
 	@echo "Word count from PDF (includes references, captions, etc.):"
 	@pdftotext $(OXFORD_MAIN).pdf - | wc -w
+
+# Submission archive
+submission:
+	mkdir -p submission
+	cp manuscript-oxford.tex submission/
+	cp manuscript-content.tex submission/
+	cp reference.bib submission/
+	cp oup-authoring-template.cls submission/
+	cp custom-plainnat.bst submission/
+	mkdir -p submission/Fig
+	cp Fig/fig1.png submission/Fig/
+	cp Fig/fig2.png submission/Fig/
+	cp supplementary-methods.tex submission/
+	cp supplementary-methods-content.tex submission/
+	cp Fig/supplfig1.png submission/Fig/
+	cp Fig/supplfig2.png submission/Fig/
+	cp Fig/supplfig3.png submission/Fig/
+	cp Fig/supplfig4.png submission/Fig/
+	zip -r submission-latex.zip submission
+	rm -rf submission
 
 # Help
 help:

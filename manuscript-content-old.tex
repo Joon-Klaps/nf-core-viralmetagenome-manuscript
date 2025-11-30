@@ -20,7 +20,7 @@ To address these limitations, we developed \href{https://github.com/nf-core/vira
 
 \subsection{Read preprocessing}
 
-Input reads provided via sample sheets containing sample names and short-read FASTQ paths are preprocessed using FastQC and have their adapters trimmed with fastp \citep{Chen2018-tu} (default) or Trimmomatic \citep{Bolger2014-si}. Fastp is overall faster and has automated adapter detection and trimming \citep{Chen2018-tu}. UMI deduplication is implemented using HUMID \citep{LarosUnknown-nx} and once reads are mapped to a reference with UMI-tools \citep{Smith2017-nk}. Multiple sequencing runs are merged after trimming by specifying merge group identifiers in the sample sheet. Complexity filtering with bbduk \citep{Bushnell2014-qy} or PRINSEQ++ \citep{Cantu2019-vs} removes low-complexity sequences containing repetitive elements where host reads are removed with Kraken2 \citep{Wood2019-jl}.
+Input reads provided via sample sheets containing sample names and short-read FASTQ paths are preprocessed using FastQC and have their adapters trimmed with fastp \citep{Chen2018-tu} (default) or Trimmomatic \citep{Bolger2014-si}. Fastp is overall faster and has automated adapter detection and trimming \citep{Chen2018-tu}. UMI deduplication is implemented using HUMID \citep{Laros2024-nx} and once reads are mapped to a reference with UMI-tools \citep{Smith2017-nk}. Multiple sequencing runs are merged after trimming by specifying merge group identifiers in the sample sheet. Complexity filtering with bbduk \citep{Bushnell2014-qy} or PRINSEQ++ \citep{Cantu2019-vs} removes low-complexity sequences containing repetitive elements where host reads are removed with Kraken2 \citep{Wood2019-jl}.
 
 \subsection{Metagenomic diversity assessment}
 

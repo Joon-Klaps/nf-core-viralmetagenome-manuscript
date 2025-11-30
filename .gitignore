@@ -137,6 +137,8 @@ analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/*
 !analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/combine-results.py
 !analysis/benchmarking/S3_reference_scaffolding/viralmetagenome-out/combined
 
+submission-latex.zip
+
 analysis/benchmarking/S2_mixture_resolving/pipeline-output/*
 !analysis/benchmarking/S2_mixture_resolving/pipeline-output/
 !analysis/benchmarking/S2_mixture_resolving/pipeline-output/overview-tables
