@@ -8,11 +8,10 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{graphicx}
-\usepackage[labelfont=bf]{caption}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage[numbers]{natbib}
+\usepackage{natbib}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{lineno}
@@ -39,22 +38,16 @@
 % Citation style configuration for New Hart's Rules
 % Use bibpunct to set proper punctuation for New Hart's Rules format
 % Format: (author year, author year)
-\bibpunct{[}{]}{, }{n}{,}{,}
+\bibpunct{(}{)}{, }{a}{ }{, }
 
 % Line numbers for preprint
-% \linenumbers
-% \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
+\linenumbers
+\renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
 
 % Header/footer setup
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Supplementary Methods \& Tables - nf-core/viralmetagenome}
-
-% Rename figures and tables for supplementary
-\renewcommand{\figurename}{Supplementary Fig.}
-\renewcommand{\thefigure}{S\arabic{figure}}
-\renewcommand{\tablename}{Supplementary Table}
-\renewcommand{\thetable}{S\arabic{table}}
 \fancyhead[R]{\small \today}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -81,10 +74,9 @@
 \title{Supplementary Methods \& Tables - nf-core/viralmetagenome: A Novel Pipeline for Untargeted Viral Genome Reconstruction}
 
 \author{%
-    Joon Klaps$^{1,*}$, Philippe Lemey$^{1}$, Magdalini Bletsa$^{1}$, nf-core community$^{2}$, Liana Eleni Kafetzopoulou$^{1,3}$ \\[0.5em]
+    Joon Klaps$^{1,*}$, Philippe Lemey$^{1}$, nf-core community$^{2}$, Liana Eleni Kafetzopoulou$^{1}$ \\[0.5em]
     \small $^1$Rega Institute for Medical Research, Department of Microbiology, Immunology and Transplantation, KU Leuven, Belgium \\[0.5em]
     \small $^2$A full list of contributors can be found at https://nf-co.re/community. \\[0.5em]
-    \small $^3$Leiden University Center of Infectious Diseases (LUCID), Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, the Netherlands \\[0.5em]
     \small $^*$Correspondence: joon.klaps@kuleuven.be
 }
 
@@ -97,11 +89,11 @@
 \vskip 1em
 
 % Include the supplementary methods content
-\input{supplementary-methods-content}
+\input{supplementary-methods-content-old}
 
 % Bibliography
-\bibliographystyle{custom-plainnat}
-\bibliography{reference}
+\bibliographystyle{plainnat}
+\bibliography{reference_converted}
 
 
 \end{document}

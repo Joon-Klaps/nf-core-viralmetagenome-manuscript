@@ -119,6 +119,7 @@ submission:
 help:
 	@echo "Available targets:"
 	@echo "  all          - Build all versions"
+	@echo "  diff          - Generate diffs for all versions"
 	@echo "  biorxiv      - Build bioRxiv version"
 	@echo "  oxford       - Build Oxford Bioinformatics version"
 	@echo "  supplementary - Build supplementary methods"

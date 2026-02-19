@@ -83,41 +83,41 @@
 
 \author[1,$\ast$]{Joon Klaps\ORCID{0000-0002-2507-0430}}
 \author[1]{Philippe Lemey\ORCID{0000-0003-2826-5353}}
-\author[1]{Magdalini Bletsa\ORCID{0000-0003-3184-6618}}
 \author[2]{nf-core community}
-\author[1,3]{Liana Eleni Kafetzopoulou\ORCID{0000-0003-4531-1374}}
+\author[1]{Liana Eleni Kafetzopoulou\ORCID{0000-0003-4531-1374}}
 
 \authormark{Joon Klaps et al.}
 
 \address[1]{\orgdiv{Rega Institute for Medical Research, Department of Microbiology, Immunology and Transplantation}, \orgname{KU Leuven}, \orgaddress{\street{Herestraat 49}, \postcode{3000}, \state{Leuven}, \country{Belgium}}}
 \address[2]{A full list of contributors can be found at https://nf-co.re/community.}
-\address[3]{ \orgdiv{Leiden University Center of Infectious Diseases (LUCID), Leiden University Medical Center}, \orgaddress{\street{Albinusdreef 2}, \postcode{2333 ZA}, \state{Leiden}, \country{the Netherlands}}
-}
+% \address[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \postcode{Postcode}, \state{State}, \country{Country}}}
+% \address[4]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \postcode{Postcode}, \state{State}, \country{Country}}}
 
 \corresp[$\ast$]{Corresponding author. \href{email:joon.klaps@kuleuven.be}{joon.klaps@kuleuven.be}}
+
 
 \received{Date}{0}{Year}
 \revised{Date}{0}{Year}
 \accepted{Date}{0}{Year}
 
 \abstract{
-\textbf{Motivation:} Reconstructing eukaryotic viral genomes from metagenomic data is challenging due to their extensive diversity and potential genome segmentation. Current approaches often rely on labor-intensive manual curation for reference selection and scaffolding, limiting scalability for large studies or rapid outbreak response. We address the critical need for an automated, scalable pipeline for efficient viral metagenomic analysis without manual intervention. \\
-\textbf{Results:} We present nf-core/viralmetagenome, a comprehensive Nextflow pipeline for the untargeted reconstruction and variant analysis of eukaryotic DNA and RNA viruses from short-read metagenomic or hybridisation capture enriched samples. The pipeline automates the entire process from read preprocessing to consensus generation, integrating multiple \textit{de novo} assemblers, automated reference selection, and iterative consensus refinement. It features robust quality control, extensive documentation, and seamless portability via Docker and Singularity. We validated the pipeline on diverse simulated and real datasets, demonstrating its ability to recover high-quality genomes from complex metagenomic samples and resolve co-infections, making it a powerful tool for viral surveillance. \\
-\textbf{Availability:} nf-core/viralmetagenome is freely available at \href{https://github.com/nf-core/viralmetagenome}{https://github.com/nf-core/viralmetagenome} with comprehensive documentation at \href{https://nf-co.re/viralmetagenome}{https://nf-co.re/viralmetagenome}. Archival code repository snapshots are published at zenodo with doi: \href{10.5281/zenodo.17524074}{https://doi.org/10.5281/zenodo.17524074}.\\
+\textbf{Motivation:} Eukaryotic viruses present significant challenges for genome reconstruction and variant analysis due to their extensive diversity and potential genome segmentation. While de novo assembly followed by reference database matching and scaffolding is a commonly used approach, the manual execution of this workflow is extremely time-consuming, particularly due to the extensive reference curation required. Here, we address the critical need for an automated, scalable pipeline that can efficiently handle viral metagenomic analysis without manual intervention.\\
+\textbf{Results:} We present nf-core/viralmetagenome, a comprehensive viral metagenomic pipeline for untargeted genome reconstruction and variant analysis of eukaryotic DNA and RNA viruses. Viralmetagenome is implemented as a Nextflow workflow that processes short-read metagenomic samples to automatically detect and assemble viral genomes, while also performing variant analysis. The pipeline features automated reference selection, consensus quality control metrics, comprehensive documentation, and seamless integration with containerization technologies, including Docker and Singularity. We demonstrate the utility and accuracy of our approach through validation on both simulated and real datasets, showing robust performance across diverse viral families in metagenomic samples.\\
+\textbf{Availability:} nf-core/viralmetagenome is freely available at \href{https://github.com/nf-core/viralmetagenome}{https://github.com/nf-core/viralmetagenome} with comprehensive documentation at \href{https://nf-co.re/viralmetagenome}{https://nf-co.re/viralmetagenome}\\
 \textbf{Contact:} \href{joon.klaps@kuleuven.be}{joon.klaps@kuleuven.be}\\
 \textbf{Supplementary information:} Supplementary data are available at \href{https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript}{https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript} online.\\
 }
+
 
 \keywords{viralmetagenome, bioinformatic pipeline, nextflow, viral metagenomics, viral assembly, viral variant analysis}
 
 \maketitle
 
 % Include the shared manuscript content
-\input{manuscript-content}
+\input{manuscript-content-old}
 
-% Bibliography for OUP template (but trimming authors with more than 4 to et al. in reference list)
-% Allowed according to 7th bullet point of https://static.primary.prod.gcms.the-infra.com/static/site/bioinformatics/document/Ministylechecklist_Oxford_SCIMED_A-D.docx?node=1f7ec1ab406ca2617ec8
-\bibliographystyle{custom-plainnat}
-\bibliography{reference}
+% Bibliography for OUP template
+\bibliographystyle{plainnat}
+\bibliography{reference_converted}
 
 \end{document}

@@ -26,7 +26,8 @@ multiqc_data/
 cover-letter*
 work/
 archive/
-
+reviewer-comments/
+.github/
 update_bib.py
 *-old.pdf
 *-diff.tex
