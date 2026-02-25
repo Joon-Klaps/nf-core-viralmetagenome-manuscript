@@ -28,6 +28,7 @@ work/
 archive/
 reviewer-comments/
 .github/
+*.docx
 update_bib.py
 *-old.pdf
 *-diff.tex

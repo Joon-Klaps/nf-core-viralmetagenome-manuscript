@@ -5,6 +5,12 @@ The nf-core/viralmetagenome pipeline is freely available at \url{https://github.
 Scripts used to generate the results as well as parts of the results are available on github at \url{https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript}.
 
 \section*{Supplementary Methods}
+Throughout this manuscript, sequence similarity is quantified using Average Nucleotide Identity (ANI), defined as:
+\begin{equation}
+    \text{ANI} = \frac{N_{\text{matches}}}{L_{\text{alignment}}}
+    \label{eq:ani}
+\end{equation}
+where $L_{\text{alignment}}$ is the total length of the pairwise global alignment. We distinguish two counting modes for $N_{\text{matches}}$: exact matches, counting only identical nucleotide pairs (A--A, C--C, G--G, T--T), and approximate matches, which additionally count positions where an ambiguous base (N) is paired with any nucleotide. Figure~2 (S3) uses exact matches; Supplementary Fig.~\ref{fig:mixture-resolution} (S2) uses approximate matches as some of the references contained ambigous bases themselves, allowing more accurate representation  of the data.
 
 \subsection*{S1. Evaluation of nf-core/viralmetagenome on public data}
 A metagenomic dataset was constructed from publically available data by selecting a random subset of 2,000 records from the NCBI Virus database, targeting the following viruses: \textit{Orthonairovirus haemorrhagiae}, \textit{Mammarenavirus lassaense}, \textit{Zika virus}, \textit{West Nile virus}, \textit{Monkeypox virus}, \textit{Influenza A virus}, \textit{Severe acute respiratory syndrome coronavirus 2}, and \textit{Human respiratory syncytial virus A}. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than `Amplicon'. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using default options with the exception of \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, and \texttt{--skip\_read\_classification} to speed up the analysis.
@@ -14,7 +20,8 @@ For plant pathogens, two samples were randomly selected from the SRA at every qu
 \subsection*{S2. Sample mixture resolution}
 To evaluate the pipeline's ability to distinguish viral genomes from the same species in mixed samples, we simulated a set of HIV-1 co-infections. We retrieved a random subset of 2,000 HIV-1 genomes from NCBI Virus (taxid: 11676) and selected MN090277.1 as the constant representative genome. We then calculated the pairwise Average Nucleotide Identity (ANI) between all 2,000 genomes and the representative using MMseqs2 \citep{Steinegger2017-ci}. Based on these ANI values, we binned the genomes into 0.5\% intervals (ranging from 74\% to 100\%) and selected one target genome from each bin (n=38). Synthetic paired-end reads were generated for both the selected target genome and the representative genome using InSilicoSeq v2.0.1 \citep{Gourle2019-ox} in 'kde' mode with the 'MiSeq' error model. Mixtures were simulated at a 50:50 abundance ratio with 50x coverage for each genome.
 
-The simulated mixtures were analyzed using viralmetagenome with the parameters \texttt{--skip\_preprocessing}, \texttt{--skip\_read\_classification}, and with U-RVDBv29.0 as a reference pool. We characterised the pipeline's performance by comparing the reconstructed consensus genomes to the original target genomes, defining three distinct performance zones based on empirical ANI thresholds (Supplementary Fig. S1):
+The simulated mixtures were analyzed using viralmetagenome with the parameters \texttt{--skip\_preprocessing}, \texttt{--skip\_read\_classification}, and with U-RVDBv29.0 as a reference pool. To assess performance, we performed global alignments between all generated consensus sequences and both reference genomes (the target and the constant reference MN090277.1) using MAFFT \citep{Katoh2002-ox} and determined their alignment statistics (number of exact matches, approximate matches, number of mismatches, and alignment length). In Supplementary Fig.~\ref{fig:mixture-resolution}, both axes display ANI calculated using approximate matches (Eq.~\ref{eq:ani}). For each generated consensus, we determined the best match by assigning it to the constant sequence (MN090277.1) or the target sequence based on the highest number of exact matches in the global alignment.
+Based on these metrics, we identified three distinct performance zones based on empirical ANI thresholds (Supplementary Fig. \ref{fig:mixture-resolution}):
 \begin{itemize}
     \item \textbf{Unresolved Zone (>88.7\%):} At relatively high genetic similarity between target genomes in the mixture, the pipeline is unable to distinguish between the co-infecting strains, collapsing the mixture into a single consensus sequence per reference bin.
     \item \textbf{Ambiguous Zone (85.8\% – 88.7\%):} In this intermediate transition window, the pipeline successfully identifies multiple strains; however, the relatively high sequence similarity still permits reads to cross-map between references. This causes the reconstructed consensus sequences to accumulate mismatches in shared regions, resulting in lower fidelity to the original genomes despite initial separation by the assemblers.
@@ -22,15 +29,19 @@ The simulated mixtures were analyzed using viralmetagenome with the parameters \
 \end{itemize}
 
 \subsection*{S3. Influence of scaffolding reference}
-The choice of scaffolding reference can considerably influence the completeness of the reconstructed genome. To quantify this effect, we analysed a subset of 7 Lassa virus samples from our own sequencing efforts (Lassa virus - Illumina Miseq data with UMIs). Samples were randomly selected based on their measured viral load during diagnostic testing, ensuring that the dataset encompassed different viral load categories (Supplementary Fig. S2). We compared consensus genomes generated using a gradient of scaffolding reference sequences ranging from 64\% to 100\% Average Nucleotide Identity (ANI) relative to the sample's baseline consensus.
+The choice of scaffolding reference can considerably influence the completeness of the reconstructed genome. To quantify this effect, we analysed a subset of 7 Lassa virus samples from our own sequencing efforts (Lassa virus - Illumina Miseq data with UMIs). Samples were randomly selected based on their measured viral load during diagnostic testing, ensuring that the dataset encompassed different viral load categories (Supplementary Fig. \ref{fig:ct-distribution}). We compared consensus genomes generated using a gradient of scaffolding reference sequences ranging from 64\% to 100\% Average Nucleotide Identity (ANI) relative to the sample's baseline consensus.
 
-To establish this gradient, we first generated a baseline consensus for each sample using the unclustered RVDB (U-RVDB) as the reference pool. We then retrieved all \textit{Mammarenavirus lassaense} (taxid: 3052310) sequences from NCBI and calculated their ANI against these baseline consensus genomes using MMseqs2 \citep{Steinegger2017-ci}. From this pool, we selected one scaffolding reference genome at every 2\% ANI interval for each sample (Supplementary Fig. S3). The Lassa virus samples exhibited differential coverage between segments (S segment mean ~231X, L segment mean ~68X; Supplementary Fig. S4), allowing us to evaluate scaffolding performance on both complete and fragmented assemblies.
+To establish this gradient, we first generated a baseline consensus for each sample using the unclustered RVDB (U-RVDB) as the reference pool. We then retrieved all \textit{Mammarenavirus lassaense} (taxid: \texttt{3052310}) sequences from NCBI on the 24th of October 2025 (n = 2804) and calculated their ANI against these baseline consensus genomes using MMseqs2 \citep{Steinegger2017-ci}. From this pool, we selected one scaffolding reference genome at every 2\% ANI interval for each sample (Supplementary Fig. \ref{fig:reference-selection}). In total, 157 reference sequences were selected across the 7 samples (19--30 references per sample), spanning both L and S segments. The Lassa virus samples exhibited differential coverage between segments (S segment mean ~231X, L segment mean ~68X; Supplementary Fig. \ref{fig:coverages}), allowing us to evaluate scaffolding performance on both complete and fragmented assemblies.
 
 By default, nf-core/viralmetagenome selects the cluster centroid as a scaffolding reference. To assess the reference influence, the pipeline’s code needed to be slightly modified to force the specified genomes as scaffolding reference. This version of the code repository is available in the branch \url{https://github.com/Joon-Klaps/viralmetagenome/tree/force-external-ref-centroid}.
 
 The pipeline was then run with the following non-default parameters: \texttt{--with\_umi}, \texttt{--umi\_deduplicate both}, \texttt{--skip\_read\_classification}, \texttt{--skip\_precluster}, \texttt{--intermediate\_consensus\_caller ivar}, \texttt{--consensus\_caller ivar}.
 
-To quantify the impact of the scaffolding reference on the final output, we compared the consensus genomes generated with the specifically supplied scaffold reference genomes against the baseline consensus genomes generated when the U-RVDB was supplied (without scaffold reference forcing, allowing automatic centroid and reference selection). We evaluated the sequence similarity as plotted in Figure 2, where we observe an almost linear correlation for the L segment when references were forced. For the S segment, this pattern is less apparent as \textit{de novo} assemblers could reconstruct near-complete genomes for most samples. In the L segment, where coverage was lower, nf-core/viralmetagenome excelled by connecting individual contigs to improve completeness.
+To quantify the impact of the scaffolding reference on the final output, we performed global alignments between each test consensus genome (generated with a forced scaffolding reference) and the corresponding baseline consensus genome (generated with automatic reference selection from U-RVDB) using MAFFT \citep{Katoh2002-ox} and determined their alignment statistics (number of exact matches, number of mismatches, and alignment length).
+
+Figure~2C--D shows only consensus genomes for which the supplied GenBank sequence was included in the cluster and used as scaffold reference. During the clustering step (CD-HIT-EST with a default similarity threshold of 0.85 in this benchmark), supplied GenBank sequences too divergent from the \textit{de novo} contigs are excluded from the cluster. In such cases, the pipeline proceeds without a GenBank sequence, producing the same \textit{de novo}-only output regardless of which distant reference was supplied. Consequently, Figure~2C-D contains fewer data points than the total number of selected references shown in Supplementary Fig.~\ref{fig:reference-selection}.
+
+We observe an almost linear correlation between reference similarity and consensus accuracy for the L segment when GenBank references were used for scaffolding (Figure 2C). For the S segment, this pattern is less apparent as \textit{de novo} assemblers could reconstruct near-complete genomes for most samples (Figure 2D). In the L segment, where coverage was lower, nf-core/viralmetagenome excelled by connecting individual contigs to improve completeness, but the accuracy was dependent on the similarity of the scaffolding reference.
 
 % Start a new page
 \newpage
@@ -38,30 +49,31 @@ To quantify the impact of the scaffolding reference on the final output, we comp
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{supplfig1}
-    \caption{\textbf{Mixture resolution dynamics across a genetic diversity gradient.} This scatter plot characterises nf-core/viralmetagenome’s ability to resolve co-infections of varying genetic similarity. The Y-axis represents the Average Nucleotide Identity (ANI) between the two target genomes present in the simulated mixture (Target vs. Representative), while the X-axis indicates the ANI of the reconstructed consensus genomes compared to the constant target genome.}
-    \label{fig:supp-fig1}
+    \caption{\textbf{Mixture resolution dynamics across a genetic diversity gradient.} This scatter plot characterises nf-core/viralmetagenome's ability to resolve co-infections of varying genetic similarity. The Y-axis (Mixture Similarity) represents the ANI (approximate matches; Eq.~\ref{eq:ani}) between the two reference genomes present in the simulated mixture (target genome vs. constant representative MN090277.1). The X-axis (Consensus Reconstruction Similarity) indicates the ANI (approximate matches) of the reconstructed consensus genomes compared to the constant reference genome MN090277.1. Green dots are consensus genomes most similar to the constant reference genome; blue dots represent consensus genomes with best matches towards the target sequence. Successful mixture separation is indicated by a blue dot on the diagonal and a green dot at 100\% reconstruction similarity. Three empirically determined zones are highlighted: Unresolved ($>$88.7\% mixture similarity), Ambiguous (85.8--88.7\%), and High-Fidelity Resolution ($<$85.8\%).}
+    \label{fig:mixture-resolution}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{supplfig2}
     \caption{\textbf{Distribution of diagnostic viral loads.} The distribution of diagnostic PCR Ct values for the available Lassa virus samples. Samples are classified into empirical categories (Super low, Low, Mid, High, Super high) based on their Ct values. Up to 3 random samples were selected from each category to ensure a diverse representation of viral loads.}
-    \label{fig:supp-fig2}
+    \label{fig:ct-distribution}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{supplfig3}
-    \caption{\textbf{Sequencing coverage across Lassa virus baseline consensus genomes.} Consensus genomes used to determine the coverages are the baseline consensus genomes (generated with U-RVDB as a reference library supplied with \texttt{--reference\_pool}). A,C display per-base coverage depth (log\textsubscript{10} scale) along the genome. B,D display mean coverage per consensus. Overall, the S segment has a high read depth (median $\sim$231X), whereas the L segment shows lower coverage (median $\sim$68X) along with multiple areas of zero coverage, presenting a challenge for de novo assembly.}
-    \label{fig:supp-fig3}
+    \caption{\textbf{Selection of scaffolding reference genomes across a similarity gradient.} To assess how reference divergence affects scaffolding, we compared all available NCBI \textit{Mammarenavirus lassaense} genomes against the baseline consensus (generated with U-RVDB as a reference library supplied with \texttt{--reference\_pool}) for 7 Lassa virus samples. The y-axis displays the similarity (\% ANI) of these candidate references towards the baseline consensus. For the benchmarking experiment, specific references were selected at $\sim$2\% ANI intervals, highlighted in full dots, to establish a gradient of similarity ranging from 64\% to 100\%.}
+    \label{fig:reference-selection}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{supplfig4}
-    \caption{\textbf{Selection of scaffolding reference genomes across a similarity gradient.} To assess how reference divergence affects scaffolding, we compared all available NCBI \textit{Mammarenavirus lassaense} genomes against the baseline consensus (generated with U-RVDB as a reference library supplied with \texttt{--reference\_pool}) for 7 Lassa virus samples. The y-axis displays the similarity (\% ANI) of these candidate references towards the baseline consensus. For the benchmarking experiment, specific references were selected at $\sim$2\% ANI intervals, highlighted in full dots, to establish a gradient of similarity ranging from 64\% to 100\%.}
-    \label{fig:supp-fig4}
+    \caption{\textbf{Sequencing coverage across Lassa virus baseline consensus genomes.} Consensus genomes used to determine the coverages are the baseline consensus genomes (generated with U-RVDB as a reference library supplied with \texttt{--reference\_pool}). A,C display per-base coverage depth (log\textsubscript{10} scale) along the genome. B,D display mean coverage per consensus. Overall, the S segment has a high read depth (median $\sim$231X), whereas the L segment shows lower coverage (median $\sim$68X) along with multiple areas of zero coverage, presenting a challenge for de novo assembly.}
+    \label{fig:coverages}
 \end{figure}
+
 
 \newpage
 \section*{Supplementary Tables}

@@ -46,6 +46,7 @@ clean:
 # Clean everything including PDFs
 cleanall: clean
 	rm -f $(BIORXIV_MAIN).pdf $(OXFORD_MAIN).pdf $(SUPP_METHODS).pdf
+	rm -f $(BIORXIV_MAIN).docx $(SUPP_METHODS).docx
 
 
 # Diff generation
@@ -90,6 +91,22 @@ diff-supplementary:
 	$(LATEX) supplementary-methods-diff
 	$(LATEX) supplementary-methods-diff
 
+# Word document generation (for Google Docs collaboration)
+PANDOC = pandoc
+PANDOC_OPTS = --resource-path=.:Fig --default-image-extension=.png --bibliography=$(BIBFILE) --citeproc
+
+docx: biorxiv-docx supplementary-docx
+
+biorxiv-docx: $(BIORXIV_MAIN).docx
+
+$(BIORXIV_MAIN).docx: $(BIORXIV_MAIN).tex manuscript-content.tex $(BIBFILE)
+	$(PANDOC) $(PANDOC_OPTS) $< -o $@
+
+supplementary-docx: $(SUPP_METHODS).docx
+
+$(SUPP_METHODS).docx: $(SUPP_METHODS).tex supplementary-methods-content.tex $(BIBFILE)
+	$(PANDOC) $(PANDOC_OPTS) $< -o $@
+
 # Word count
 wordcount:
 	@echo "Word count from PDF (includes references, captions, etc.):"
@@ -123,11 +140,11 @@ help:
 	@echo "  biorxiv      - Build bioRxiv version"
 	@echo "  oxford       - Build Oxford Bioinformatics version"
 	@echo "  supplementary - Build supplementary methods"
+	@echo "  docx         - Build Word documents (manuscript + supplementary)"
+	@echo "  biorxiv-docx - Build manuscript Word document"
+	@echo "  supplementary-docx - Build supplementary Word document"
 	@echo "  clean        - Remove auxiliary files"
 	@echo "  cleanall     - Remove all generated files"
-	@echo "  view-biorxiv - Open bioRxiv PDF"
-	@echo "  view-oxford  - Open Oxford PDF"
-	@echo "  view-supplementary - Open Supplementary Methods PDF"
 	@echo "  help         - Show this help"
 
-.PHONY: all biorxiv oxford supplementary clean cleanall view-biorxiv view-oxford view-supplementary help diff diff-biorxiv diff-oxford
+.PHONY: all biorxiv oxford supplementary clean cleanall help diff diff-biorxiv diff-oxford docx biorxiv-docx supplementary-docx
