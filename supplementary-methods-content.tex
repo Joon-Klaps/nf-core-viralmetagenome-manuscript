@@ -10,7 +10,7 @@ Throughout this manuscript, sequence similarity is quantified using Average Nucl
     \text{ANI} = \frac{N_{\text{matches}}}{L_{\text{global alignment}}}
     \label{eq:ani}
 \end{equation}
-where $L_{\text{global alignment}}$ is the total length of the pairwise global alignment and $N_{\text{matches}}$ is the number of exact matches, counting only identical nucleotide pairs (A--A, C--C, G--G, T--T). Figure~2 (S3) and Supplementary Fig.~\ref{fig:mixture-resolution} (S2) use this definition of ANI to evaluate reconstrucion accuracy.
+where $L_{\text{global alignment}}$ is the total length of the pairwise global alignment and $N_{\text{matches}}$ is the number of exact matches, counting only identical nucleotide pairs (A--A, C--C, G--G, T--T). Figure~2 (S3) and Supplementary Fig.~\ref{fig:mixture-resolution} (S2) use this definition of ANI to evaluate reconstruction accuracy.
 
 \subsection*{S1. Evaluation of nf-core/viralmetagenome on public data}
 A metagenomic dataset was constructed from publically available data by selecting a random subset of 2,000 records from the NCBI Virus database, targeting the following viruses: \textit{Orthonairovirus haemorrhagiae}, \textit{Mammarenavirus lassaense}, \textit{Zika virus}, \textit{West Nile virus}, \textit{Monkeypox virus}, \textit{Influenza A virus}, \textit{Severe acute respiratory syndrome coronavirus 2}, and \textit{Human respiratory syncytial virus A}. Records were filtered to retain only those with associated SRA data, sequenced on the Illumina platform, and with a LibraryStrategy other than `Amplicon'. From the resulting pool, 28 samples were randomly selected and downloaded using nf-core/fetchngs. Samples were then run with nf-core/viralmetagenome using default options with the exception of \texttt{--cluster\_method 'mmseqs-cluster'} due to sequence size limitations of cdhit, and \texttt{--skip\_read\_classification} to speed up the analysis.
@@ -30,7 +30,7 @@ The simulated mixtures were analyzed using viralmetagenome with the parameters \
 \subsection*{S3. Influence of scaffolding reference}
 The choice of scaffolding reference can considerably influence the completeness of the reconstructed genome. To quantify this effect, we analysed a subset of 7 Lassa virus samples from our own sequencing efforts (Lassa virus - Illumina Miseq data with UMIs). Samples were randomly selected based on their measured viral load during diagnostic testing, ensuring that the dataset encompassed different viral load categories (Supplementary Fig. \ref{fig:ct-distribution}). We compared consensus genomes generated using a gradient of scaffolding reference sequences ranging from 64\% to 100\% Average Nucleotide Identity (ANI) relative to the sample's baseline consensus.
 
-To establish this gradient, we first generated a baseline consensus for each sample using the unclustered RVDB (U-RVDBv29.0) as the reference pool. We then retrieved all \textit{Mammarenavirus lassaense} (taxid: \texttt{3052310}) sequences from NCBI on the 24th of October 2025 (n = 2804) and calculated their ANI against these baseline consensus genomes using MMseqs2 \citep{Steinegger2017-ci}.  From this pool, we selected one scaffolding reference genome at every 2\% ANI interval for each sample (Supplementary Fig. \ref{fig:reference-selection}).  In total, 157 reference sequences were selected across the 7 samples (19-–30 references per sample), spanning both L and S segments  (Supplementary Table~\ref{table:n_references}). The Lassa virus samples exhibited differential coverage between segments (S segment median ~231X, L segment median ~68X; Supplementary Fig. \ref{fig:coverages}), allowing us to evaluate scaffolding performance on both complete and fragmented assemblies.
+To establish this gradient, we first generated a baseline consensus for each sample using the unclustered RVDB (U-RVDBv29.0) as the reference pool. We then retrieved all \textit{Mammarenavirus lassaense} (taxid: \texttt{3052310}) sequences from NCBI on the 24th of October 2025 (n = 2804) and calculated their ANI against these baseline consensus genomes using MMseqs2 \citep{Steinegger2017-ci}.  From this pool, we selected one scaffolding reference genome at every 2\% ANI interval for each sample (Supplementary Fig. \ref{fig:reference-selection}).  In total, 157 reference sequences were selected across the 7 samples (19--30 references per sample), spanning both L and S segments  (Supplementary Table~\ref{table:n_references}). The Lassa virus samples exhibited differential coverage between segments (S segment median ~231X, L segment median ~68X; Supplementary Fig. \ref{fig:coverages}), allowing us to evaluate scaffolding performance on both complete and fragmented assemblies.
 
 By default, nf-core/viralmetagenome selects the cluster centroid as a scaffolding reference. To assess the reference influence, the pipeline’s code needed to be slightly modified to force NCBI genomes as scaffolding reference. This version of the code repository is available in the release \url{https://github.com/Joon-Klaps/viralmetagenome/releases/tag/v1.0.0-force-external-centroid}.
 
@@ -49,7 +49,7 @@ We observe an almost linear correlation between reference similarity and consens
     \centering
     \includegraphics[width=\textwidth]{supplfig1}
     \caption{\textbf{Mixture resolution dynamics across a genetic diversity gradient.}
-    This scatter plot characterises nf-core/viralmetagenome’s ability to resolve co-infections of varying genetic similarity. The y-axis (Representative vs Constant Similarity) represents the ANI ( Eq.~\ref{eq:ani}) between the representative genome and the constant genome MN090277.1. The x-axis shows the ANI between each reconstructed consensus genome and the genome represented in the corresponding panel: the representative genome in the right panel and the constant genome MN090277.1 in the left panel. Blue points in the left panel are consensus genomes whose best match is the representative genome; green points in the right panel are consensus genomes whose best match is the constant genome. Triangles represent a failure in resolving the mixture as only a single genome was reconstructed, circles represent a successful identification of both the constant genome and the representative genome. A perfect mixture resolution yields a blue point near 100\% ANI in the representative genome panel and a green point near 100\% ANI in the constant genome panel. Three empirically determined zones are highlighted: Unresolved ($>$88.7\% Representative vs Constant Similarity), Ambiguous (85.8--88.7\%), and High-Fidelity Resolution ($<$85.8\%).}
+    This scatter plot characterises nf-core/viralmetagenome’s ability to resolve co-infections of varying genetic similarity. The y-axis (Representative vs Constant Similarity) represents the ANI (Eq.~\ref{eq:ani}) between the representative genome and the constant genome MN090277.1. The x-axis shows the ANI between each reconstructed consensus genome and the genome represented in the corresponding panel: the representative genome in the left panel and the constant genome MN090277.1 in the right panel. Blue points in the left panel are consensus genomes whose best match is the representative genome; green points in the right panel are consensus genomes whose best match is the constant genome. Triangles represent a failure in resolving the mixture as only a single genome was reconstructed, circles represent a successful identification of both the constant genome and the representative genome. A perfect mixture resolution yields a blue point near 100\% ANI in the representative genome panel and a green point near 100\% ANI in the constant genome panel. Three empirically determined zones are highlighted: Unresolved ($>$88.7\% Representative vs Constant Similarity), Ambiguous (85.8--88.7\%), and High-Fidelity Resolution ($<$85.8\%).}
     \label{fig:mixture-resolution}
 \end{figure}
 
@@ -143,11 +143,30 @@ Variant \& consensus calling & Variant \& consensus calling & iVar & A computati
 
 \begin{table}[htbp]
     \centering
+    \caption{Overview of the number of selected references used for each sample to determine the influence of scaffolding reference (Figure~2; Supplementary Fig.~\ref{fig:reference-selection}). References were systematically selected to span a gradient of similarity to each sample's baseline consensus genome, with one reference selected per 2\% ANI interval (e.g. 64--66\%, 66--68\%, \ldots, 98--100\%).}
+    \label{table:n_references}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Sample ID} & \textbf{Total References} & \textbf{L Segment} & \textbf{S Segment} \\
+        \midrule
+        LVE00045 & 22 & 13 & 9 \\
+        LVE00050 & 19 & 7 & 12 \\
+        LVE00063 & 20 & 11 & 9 \\
+        LVE00127 & 30 & 16 & 14 \\
+        LVE00140 & 23 & 13 & 10 \\
+        LVE00167 & 21 & 11 & 10 \\
+        LVE00279 & 22 & 12 & 10 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
     \caption{Overview of the used references for the used sample mixtures (Supplementary Fig.~\ref{fig:mixture-resolution}). Every 0.5\% ANI interval was represented by a single reference (representative reference genome), spanning a gradient of similarity to the constant reference genome (MN090277.1).}
     \label{table:mixture}
     \begin{tabular}{lccc}
         \toprule
-        \textbf{Sample ID} & \textbf{Bin Range} & \textbf{Bin Representative} & \textbf{Constant Genome} \\
+        \textbf{Mixture ID} & \textbf{Bin Range} & \textbf{Bin Representative} & \textbf{Constant Genome} \\
         \midrule
         HM215250.1\_7474 & 73.5--74.0\% & HM215250.1 & MN090277.1  \\
         MK457885.1\_8080 & 79.5--80.0\% & MK457885.1 & MN090277.1  \\
@@ -185,25 +204,6 @@ Variant \& consensus calling & Variant \& consensus calling & iVar & A computati
         MN090316.1\_9899 & 98.5--99.0\% & MN090316.1 & MN090277.1  \\
         MN090271.1\_99100 & 99.0--99.5\% & MN090271.1 & MN090277.1  \\
         MN090277.1\_100100 & 99.5--100.0\% & MN090277.1 & MN090277.1 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-    \caption{Overview of the number of selected references used for each sample to determine the influence of scaffolding reference (Figure~2; Supplementary Fig.~\ref{fig:reference-selection}). References were systematically selected to span a gradient of similarity to each sample's baseline consensus genome, with one reference selected per 2\% ANI interval (e.g. 64--66\%, 66--68\%, \ldots, 98--100\%).}
-    \label{table:n_references}
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Sample ID} & \textbf{Total References} & \textbf{L Segment} & \textbf{S Segment} \\
-        \midrule
-        LVE00045 & 22 & 13 & 9 \\
-        LVE00050 & 19 & 7 & 12 \\
-        LVE00063 & 20 & 11 & 9 \\
-        LVE00127 & 30 & 16 & 14 \\
-        LVE00140 & 23 & 13 & 10 \\
-        LVE00167 & 21 & 11 & 10 \\
-        LVE00279 & 22 & 12 & 10 \\
         \bottomrule
     \end{tabular}
 \end{table}
