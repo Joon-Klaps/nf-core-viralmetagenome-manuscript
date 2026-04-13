@@ -296,7 +296,7 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { new.block "URL \url{" url * "}" * }
+    { "" }
   if$
 }
 
@@ -1471,11 +1471,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\url}[1]{\texttt{#1}}"
   write$ newline$
-  "\expandafter\ifx\csname urlstyle\endcsname\relax"
-  write$ newline$
-  "  \providecommand{\doi}[1]{doi: #1}\else"
-  write$ newline$
-  "  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi"
+  "\providecommand{\doi}[1]{doi: #1}"
   write$ newline$
 }
 

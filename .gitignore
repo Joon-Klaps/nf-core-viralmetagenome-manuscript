@@ -23,11 +23,8 @@ tmp/
 .vscode/
 multiqc_data/
 *-vs-ref/
-cover-letter*
 work/
 archive/
-reviewer-comments/
-.github/
 *.docx
 update_bib.py
 *-old.pdf

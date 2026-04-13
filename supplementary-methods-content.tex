@@ -2,7 +2,7 @@
 
 \section*{Data Availability}
 The nf-core/viralmetagenome pipeline is freely available at \url{https://github.com/nf-core/viralmetagenome}.
-Scripts used to generate the results as well as parts of the results are available on github at \url{https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript}.
+Scripts used to generate the results as well as parts of the results are available on GitHub at \url{https://github.com/Joon-Klaps/nf-core-viralmetagenome-manuscript}.
 
 \section*{Supplementary Methods}
 Throughout this manuscript, sequence similarity is quantified using Average Nucleotide Identity (ANI), defined as:
@@ -103,7 +103,7 @@ Pre-processing & Read trimming & fastp & A high-performance preprocessing soluti
 \cmidrule{3-5}
  &  & Trimmomatic & A comprehensive preprocessing solution tailored for Illumina sequencing platforms with specialised paired-end read handling capabilities. Provides multiple pre-processing options, including adapter removal, quality-based trimming using sliding window approaches, and length-based filtering. & \citep{Bolger2014-si} \\
 \cmidrule{2-5}
- & Complexity filtering & bbduk & A high-performance, multi-threaded tool designed to combine various data-quality-related operations, including trimming, filtering, and masking, into a single pass. It is particularly effective for removing host and other contaminant DNA using k-mer matching strategies, which is crucial for accurate metagenomic analysis. & \citep{Bushnell2014-qy} \\
+ & Complexity filtering & bbduk & A high-performance, multi-threaded tool designed to combine various data-quality-related operations, including trimming, filtering, and masking, into a single pass. It is particularly effective for removing host and other contaminant DNA using k-mer matching strategies, which is crucial for accurate metagenomic analysis. (Website: \url{https://bbmap.org}) & \citep{Bushnell2014-qy}  \\
 \cmidrule{3-5}
  &  & PRINSEQ++ & A C++ implementation that significantly improves upon its predecessor, prinseq-lite.pl, in terms of computational efficiency. It offers extensive quality control features, including filtering by length, GC content, quality scores, N content, and sequence complexity (entropy/DUST score). & \citep{Cantu2019-vs} \\
 \midrule
