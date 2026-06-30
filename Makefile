@@ -19,6 +19,7 @@ $(BIORXIV_MAIN).pdf: $(BIORXIV_MAIN).tex manuscript-content.tex $(BIBFILE)
 	$(LATEX) $(BIORXIV_MAIN)
 	-$(BIBTEX) $(BIORXIV_MAIN)
 	$(LATEX) $(BIORXIV_MAIN)
+	$(LATEX) -draftmode $(SUPP_METHODS)
 	$(LATEX) $(BIORXIV_MAIN)
 
 # Oxford Bioinformatics version
@@ -28,6 +29,7 @@ $(OXFORD_MAIN).pdf: $(OXFORD_MAIN).tex manuscript-content.tex $(BIBFILE) oup-aut
 	$(LATEX) $(OXFORD_MAIN)
 	-$(BIBTEX) $(OXFORD_MAIN)
 	$(LATEX) $(OXFORD_MAIN)
+	$(LATEX) -draftmode $(SUPP_METHODS)
 	$(LATEX) $(OXFORD_MAIN)
 
 # Supplementary Methods
@@ -37,6 +39,7 @@ $(SUPP_METHODS).pdf: $(SUPP_METHODS).tex supplementary-methods-content.tex $(BIB
 	$(LATEX) $(SUPP_METHODS)
 	-$(BIBTEX) $(SUPP_METHODS)
 	$(LATEX) $(SUPP_METHODS)
+	$(LATEX) -draftmode $(OXFORD_MAIN)
 	$(LATEX) $(SUPP_METHODS)
 
 # Clean auxiliary files
