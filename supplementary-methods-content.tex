@@ -58,6 +58,7 @@ We observe an almost linear correlation between reference similarity and consens
 \newpage
 \section*{Supplementary Tables}
 
+\ifdim\textwidth<140mm\begin{landscape}\fi
 \begin{longtable}{p{2cm}p{1.8cm}p{1.8cm}p{8.3cm}p{1cm}}
 \caption{Overview of computational tools and methods used in the nf-core/viralmetagenome pipeline. The pipeline integrates multiple bioinformatics tools across different stages of viral metagenomic analysis, from preprocessing to consensus calling. Each tool was selected for its specific capabilities and performance characteristics relevant to viral sequence analysis.}
 \label{table:S1} \\
@@ -120,6 +121,7 @@ Variant \& consensus calling & Variant \& consensus calling & iVar & A computati
  & & BCFtools & A robust suite of utilities for manipulating variant calls in VCF and BCF formats. Provides extensive functionality for variant calling using multiallelic models, data filtering, file merging, and consensus sequence generation through variant application. & \citep{Danecek2021-je} \\
 \bottomrule
 \end{longtable}
+\ifdim\textwidth<140mm\end{landscape}\fi
 
 \begin{table}[htbp]
     \centering
