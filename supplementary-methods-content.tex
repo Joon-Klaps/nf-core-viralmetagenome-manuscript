@@ -41,6 +41,9 @@ We observe an almost linear correlation between reference similarity and consens
 \newpage
 \section*{Supplementary Figures}
 
+\renewcommand{\thefigure}{S\thechapter.\arabic{figure}}
+\setcounter{figure}{0}
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{supplfig2}
@@ -58,9 +61,12 @@ We observe an almost linear correlation between reference similarity and consens
 \newpage
 \section*{Supplementary Tables}
 
+\renewcommand{\thetable}{S\thechapter.\arabic{table}}
+\setcounter{table}{0}
+
 \ifdim\textwidth<140mm\begin{landscape}\fi
 \begin{longtable}{p{2cm}p{1.8cm}p{1.8cm}p{8.5cm}p{2cm}}
-\caption{Overview of computational tools and methods used in the nf-core/viralmetagenome pipeline. The pipeline integrates multiple bioinformatics tools across different stages of viral metagenomic analysis, from preprocessing to consensus calling. Each tool was selected for its specific capabilities and performance characteristics relevant to viral sequence analysis.}
+\caption{\textbf{Overview of computational tools and methods used in the nf-core/viralmetagenome pipeline.} The pipeline integrates multiple bioinformatics tools across different stages of viral metagenomic analysis, from preprocessing to consensus calling. Each tool was selected for its specific capabilities and performance characteristics relevant to viral sequence analysis.}
 \label{table:S1} \\
 \toprule
 \textbf{Stage} & \textbf{Step} & \textbf{Tool} & \textbf{Explanation} & \textbf{Reference} \\
@@ -125,7 +131,7 @@ Variant \& consensus calling & Variant \& consensus calling & iVar & A computati
 
 \begin{table}[htbp]
     \centering
-    \caption{Overview of the used references for the used sample mixtures (Figure~\ref{fig:mixture-resolution} in the main text). Every 0.5\% ANI interval was represented by a single reference (representative reference genome), spanning a gradient of similarity to the constant reference genome (MN090277.1).}
+    \caption{\textbf{Overview of the used references for the used sample mixtures} (Figure~\ref{fig:mixture-resolution} in the main text). Every 0.5\% ANI interval was represented by a single reference (representative reference genome), spanning a gradient of similarity to the constant reference genome (MN090277.1).}
     \label{table:mixture}
     \begin{tabular}{lccc}
         \toprule
@@ -170,5 +176,10 @@ Variant \& consensus calling & Variant \& consensus calling & iVar & A computati
         \bottomrule
     \end{tabular}
 \end{table}
+
+\makeatletter
+\renewcommand{\thefigure}{\ifnum\c@chapter>\z@ \thechapter.\fi\arabic{figure}}
+\renewcommand{\thetable}{\ifnum\c@chapter>\z@ \thechapter.\fi\arabic{table}}
+\makeatother
 
 \newpage
