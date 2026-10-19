@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="120mm"
+   height="143.7mm"
+   viewBox="0 0 120 143.7"
+   version="1.1"
+   id="svg-scaffold-refinement"
+   sodipodi:docname="scaffold-refinement.svg"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview"
+     pagecolor="#ffffff"
+     inkscape:document-units="mm"
+     units="mm"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2109573"
+     inkscape:cx="165.57149"
+     inkscape:cy="314.62713"
+     inkscape:window-width="1728"
+     inkscape:window-height="1056"
+     inkscape:window-x="842"
+     inkscape:window-y="1473"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg-scaffold-refinement" />
+  <defs
+     id="defs2994">
+    <marker
+       id="arrow"
+       viewBox="0 0 6 6"
+       refX="5.2"
+       refY="3"
+       markerWidth="5.5"
+       markerHeight="5.5"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0.4 L6,3 L0,5.6 z"
+         fill="#4A4742"
+         id="path2991" />
+    </marker>
+  </defs>
+  <rect
+     id="background"
+     width="120"
+     height="143.7"
+     fill="#FFFFFF" />
+  <g
+     id="labels"
+     inkscape:groupmode="layer"
+     inkscape:label="Step labels">
+    <text
+       x="0"
+       y="3.2"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="3.8"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text2997">A</text>
+    <text
+       x="0"
+       y="13.3"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.9"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text2999">1  Assemble</text>
+    <text
+       x="0"
+       y="16.7"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       fill="#4A4742"
+       id="text3007"><tspan
+         x="0"
+         dy="0"
+         id="tspan3001">Three assemblers</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3003">rebuild fragments</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3005">(contigs)</tspan></text>
+    <text
+       x="0"
+       y="31.3"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.9"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text3009">2  Match</text>
+    <text
+       x="0"
+       y="34.7"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       fill="#4A4742"
+       id="text3015"><tspan
+         x="0"
+         dy="0"
+         id="tspan3011">Search a database</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3013">for similar genomes</tspan></text>
+    <text
+       x="0"
+       y="45.3"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.9"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text3017">3  Cluster</text>
+    <text
+       x="0"
+       y="48.7"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       fill="#4A4742"
+       id="text3025"><tspan
+         x="0"
+         dy="0"
+         id="tspan3019">Group contigs and</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3021">database genomes</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3023">by genome</tspan></text>
+    <polygon
+       points="1.5,56.95 1.78,57.71 2.59,57.74 1.96,58.25 2.18,59.03 1.5,58.58 0.82,59.03 1.04,58.25 0.41,57.74 1.22,57.71"
+       fill="#D9A21B"
+       stroke="#23201D"
+       stroke-width="0.15"
+       id="polygon3027" />
+    <text
+       x="4.2"
+       y="58.9"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="start"
+       fill="#4A4742"
+       id="text3029">centroid</text>
+    <text
+       x="0"
+       y="68.2"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.9"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text3031">4  Scaffold</text>
+    <text
+       x="0"
+       y="71.6"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       fill="#4A4742"
+       id="text3041"><tspan
+         x="0"
+         dy="0"
+         id="tspan3033">Place the contigs</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3035">along the centroid;</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3037">uncovered stretches</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3039">stay N</tspan></text>
+    <text
+       x="0"
+       y="107.1"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="3.8"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text3043">B</text>
+    <text
+       x="0"
+       y="112.7"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.9"
+       font-weight="bold"
+       text-anchor="start"
+       fill="#23201D"
+       id="text3045">Refine</text>
+    <text
+       x="0"
+       y="116.1"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       fill="#4A4742"
+       id="text3053"><tspan
+         x="0"
+         dy="0"
+         id="tspan3047">The reads fill the</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3049">gaps in the scaffold,</tspan><tspan
+         x="0"
+         dy="3"
+         id="tspan3051">round after round</tspan></text>
+  </g>
+  <g
+     id="reads"
+     inkscape:groupmode="layer"
+     inkscape:label="Reads">
+    <text
+       x="47.86"
+       y="3.23"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="text3066"><tspan
+         id="tspan3056">T</tspan><tspan
+         id="tspan3058">T</tspan><tspan
+         id="tspan3060">T</tspan><tspan
+         id="tspan3062">C</tspan><tspan
+         id="tspan3064">C</tspan></text>
+    <text
+       x="56.57"
+       y="4.42"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#5E3F1D"
+       xml:space="preserve"
+       id="text3078"><tspan
+         id="tspan3068">T</tspan><tspan
+         id="tspan3070">C</tspan><tspan
+         id="tspan3072">A</tspan><tspan
+         id="tspan3074">T</tspan><tspan
+         id="tspan3076">G</tspan></text>
+    <text
+       x="66.9"
+       y="3.03"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="text3090"><tspan
+         id="tspan3080">A</tspan><tspan
+         id="tspan3082">T</tspan><tspan
+         id="tspan3084">T</tspan><tspan
+         id="tspan3086">C</tspan><tspan
+         id="tspan3088">A</tspan></text>
+    <text
+       x="76.12"
+       y="4.22"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#5E3F1D"
+       xml:space="preserve"
+       id="text3102"><tspan
+         id="tspan3092">A</tspan><tspan
+         id="tspan3094">A</tspan><tspan
+         id="tspan3096">A</tspan><tspan
+         id="tspan3098">C</tspan><tspan
+         id="tspan3100">C</tspan></text>
+    <text
+       x="85.67"
+       y="3.43"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="text3114"><tspan
+         id="tspan3104">T</tspan><tspan
+         id="tspan3106">G</tspan><tspan
+         id="tspan3108">T</tspan><tspan
+         id="tspan3110">C</tspan><tspan
+         id="tspan3112">C</tspan></text>
+    <text
+       x="94.39"
+       y="4.62"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#5E3F1D"
+       xml:space="preserve"
+       id="text3126"><tspan
+         id="tspan3116">T</tspan><tspan
+         id="tspan3118">A</tspan><tspan
+         id="tspan3120">A</tspan><tspan
+         id="tspan3122">T</tspan><tspan
+         id="tspan3124">G</tspan></text>
+    <text
+       x="49.44"
+       y="7.03"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="text3138"><tspan
+         id="tspan3128">A</tspan><tspan
+         id="tspan3130">G</tspan><tspan
+         id="tspan3132">G</tspan><tspan
+         id="tspan3134">C</tspan><tspan
+         id="tspan3136">G</tspan></text>
+    <text
+       x="59.48"
+       y="7.83"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#5E3F1D"
+       xml:space="preserve"
+       id="text3150"><tspan
+         id="tspan3140">A</tspan><tspan
+         id="tspan3142">T</tspan><tspan
+         id="tspan3144">A</tspan><tspan
+         id="tspan3146">G</tspan><tspan
+         id="tspan3148">T</tspan></text>
+    <text
+       x="69.46"
+       y="6.83"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="text3162"><tspan
+         id="tspan3152">A</tspan><tspan
+         id="tspan3154">A</tspan><tspan
+         id="tspan3156">C</tspan><tspan
+         id="tspan3158">C</tspan><tspan
+         id="tspan3160">A</tspan></text>
+    <text
+       x="78.8"
+       y="7.62"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#5E3F1D"
+       xml:space="preserve"
+       id="text3174"><tspan
+         id="tspan3164">T</tspan><tspan
+         id="tspan3166">T</tspan><tspan
+         id="tspan3168">A</tspan><tspan
+         id="tspan3170">C</tspan><tspan
+         id="tspan3172">G</tspan></text>
+    <text
+       x="88.06"
+       y="7.23"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="text3186"><tspan
+         id="tspan3176">G</tspan><tspan
+         id="tspan3178">G</tspan><tspan
+         id="tspan3180">A</tspan><tspan
+         id="tspan3182">T</tspan><tspan
+         id="tspan3184">A</tspan></text>
+  </g>
+  <g
+     id="step1"
+     inkscape:groupmode="layer"
+     inkscape:label="1 Assemble">
+    <line
+       x1="75"
+       y1="9"
+       x2="45"
+       y2="10.5"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3189" />
+    <rect
+       x="35"
+       y="10.5"
+       width="20"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3191" />
+    <text
+       x="45"
+       y="13.45"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3193">SPAdes</text>
+    <path
+       d="M45,14.9 V17.4"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3195" />
+    <line
+       x1="75"
+       y1="9"
+       x2="75"
+       y2="10.5"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3197" />
+    <rect
+       x="65"
+       y="10.5"
+       width="20"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3199" />
+    <text
+       x="75"
+       y="13.45"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3201">Trinity</text>
+    <path
+       d="M75,14.9 V17.4"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3203" />
+    <line
+       x1="75"
+       y1="9"
+       x2="105"
+       y2="10.5"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3205" />
+    <rect
+       x="95"
+       y="10.5"
+       width="20"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3207" />
+    <text
+       x="105"
+       y="13.45"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3209">MEGAHIT</text>
+    <path
+       d="M105,14.9 V17.4"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3211" />
+    <rect
+       x="32"
+       y="18.9"
+       width="10"
+       height="2.2"
+       fill="#8FA183"
+       id="rect3213" />
+    <rect
+       x="47"
+       y="18.9"
+       width="11"
+       height="2.2"
+       fill="#8FA183"
+       id="rect3215" />
+    <rect
+       x="33"
+       y="22.3"
+       width="25"
+       height="2.2"
+       fill="#B58247"
+       id="rect3217" />
+    <rect
+       x="63"
+       y="18.9"
+       width="8"
+       height="2.2"
+       fill="#8FA183"
+       id="rect3219" />
+    <rect
+       x="75.5"
+       y="18.9"
+       width="12.5"
+       height="2.2"
+       fill="#8FA183"
+       id="rect3221" />
+    <rect
+       x="62"
+       y="22.3"
+       width="26"
+       height="2.2"
+       fill="#B58247"
+       id="rect3223" />
+    <rect
+       x="92"
+       y="18.9"
+       width="12"
+       height="2.2"
+       fill="#8FA183"
+       id="rect3225" />
+    <rect
+       x="108"
+       y="18.9"
+       width="10"
+       height="2.2"
+       fill="#8FA183"
+       id="rect3227" />
+    <rect
+       x="95"
+       y="22.3"
+       width="22"
+       height="2.2"
+       fill="#B58247"
+       id="rect3229" />
+  </g>
+  <g
+     id="step2"
+     inkscape:groupmode="layer"
+     inkscape:label="2 Match">
+    <rect
+       x="31.5"
+       y="30"
+       width="13"
+       height="2"
+       fill="#8FA183"
+       id="rect3232" />
+    <rect
+       x="46"
+       y="30"
+       width="11"
+       height="2"
+       fill="#8FA183"
+       id="rect3234" />
+    <rect
+       x="31.5"
+       y="33"
+       width="25"
+       height="2"
+       fill="#B58247"
+       id="rect3236" />
+    <text
+       x="44"
+       y="38.1"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3238">de novo contigs</text>
+    <path
+       d="M62,32.5 H84.5"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3240" />
+    <rect
+       x="65"
+       y="30.4"
+       width="15"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3242" />
+    <text
+       x="72.5"
+       y="33.35"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3244">BLASTn</text>
+    <rect
+       x="86.5"
+       y="30.35"
+       width="17"
+       height="1.3"
+       fill="#4F6046"
+       id="rect3246" />
+    <rect
+       x="86.5"
+       y="33.35"
+       width="19"
+       height="1.3"
+       fill="#5E3F1D"
+       id="rect3248" />
+    <path
+       d="M108.5,28.85 V36.15 A4.5,1.6 0 0 0 117.5,36.15 V28.85 Z"
+       fill="#C3D6E8"
+       stroke="#3F6585"
+       stroke-width="0.3"
+       id="path3250" />
+    <path
+       d="M108.5,31.28 A4.5,1.6 0 0 0 117.5,31.28"
+       fill="none"
+       stroke="#3F6585"
+       stroke-width="0.3"
+       id="path3252" />
+    <path
+       d="M108.5,33.72 A4.5,1.6 0 0 0 117.5,33.72"
+       fill="none"
+       stroke="#3F6585"
+       stroke-width="0.3"
+       id="path3254" />
+    <ellipse
+       cx="113"
+       cy="28.85"
+       rx="4.5"
+       ry="1.6"
+       fill="#6F93B5"
+       stroke="#3F6585"
+       stroke-width="0.3"
+       id="ellipse3256" />
+    <text
+       x="96"
+       y="38.1"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3258">RVDB genomes</text>
+  </g>
+  <g
+     id="step3"
+     inkscape:groupmode="layer"
+     inkscape:label="3 Cluster">
+    <line
+       x1="44"
+       y1="39.6"
+       x2="75"
+       y2="42.5"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3261" />
+    <line
+       x1="96"
+       y1="39.6"
+       x2="75"
+       y2="42.5"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3263" />
+    <rect
+       x="65"
+       y="42.5"
+       width="20"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3265" />
+    <text
+       x="75"
+       y="45.45"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3267">CD-HIT-EST</text>
+    <line
+       x1="75"
+       y1="46.7"
+       x2="52"
+       y2="49.9"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3269" />
+    <rect
+       x="35"
+       y="49.9"
+       width="34"
+       height="12.5"
+       rx="3.5"
+       fill="#F1EDE3"
+       stroke="#BDB6A5"
+       stroke-width="0.3"
+       id="rect3271" />
+    <line
+       x1="75"
+       y1="46.7"
+       x2="98"
+       y2="49.9"
+       stroke="#4A4742"
+       stroke-width="0.25"
+       id="line3273" />
+    <rect
+       x="81"
+       y="49.9"
+       width="34"
+       height="12.5"
+       rx="3.5"
+       fill="#F1EDE3"
+       stroke="#BDB6A5"
+       stroke-width="0.3"
+       id="rect3275" />
+    <rect
+       x="39"
+       y="52.3"
+       width="12"
+       height="2"
+       fill="#8FA183"
+       id="rect3277" />
+    <rect
+       x="54"
+       y="52.3"
+       width="12"
+       height="2"
+       fill="#8FA183"
+       id="rect3279" />
+    <rect
+       x="39"
+       y="55.6"
+       width="9"
+       height="2"
+       fill="#8FA183"
+       id="rect3281" />
+    <rect
+       x="55"
+       y="55.6"
+       width="10"
+       height="2"
+       fill="#8FA183"
+       id="rect3283" />
+    <rect
+       x="39"
+       y="59.25"
+       width="27"
+       height="1.3"
+       fill="#4F6046"
+       id="rect3285" />
+    <polygon
+       points="37.3,58.75 37.58,59.51 38.39,59.54 37.76,60.05 37.98,60.83 37.3,60.38 36.62,60.83 36.84,60.05 36.21,59.54 37.02,59.51"
+       fill="#D9A21B"
+       stroke="#23201D"
+       stroke-width="0.15"
+       id="polygon3287" />
+    <rect
+       x="85"
+       y="52.3"
+       width="27"
+       height="2"
+       fill="#B58247"
+       id="rect3289" />
+    <polygon
+       points="83.3,52.15 83.58,52.91 84.39,52.94 83.76,53.45 83.98,54.23 83.3,53.78 82.62,54.23 82.84,53.45 82.21,52.94 83.02,52.91"
+       fill="#D9A21B"
+       stroke="#23201D"
+       stroke-width="0.15"
+       id="polygon3291" />
+    <rect
+       x="85"
+       y="55.6"
+       width="16"
+       height="2"
+       fill="#B58247"
+       id="rect3293" />
+    <rect
+       x="102"
+       y="55.6"
+       width="10"
+       height="2"
+       fill="#B58247"
+       id="rect3295" />
+    <rect
+       x="85"
+       y="59.25"
+       width="27"
+       height="1.3"
+       fill="#5E3F1D"
+       id="rect3297" />
+  </g>
+  <g
+     id="step4"
+     inkscape:groupmode="layer"
+     inkscape:label="4 Scaffold">
+    <rect
+       x="33"
+       y="65.4"
+       width="84"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3300" />
+    <text
+       x="75"
+       y="68.35"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3302">Minimap2</text>
+    <rect
+       x="33"
+       y="84.4"
+       width="84"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3304" />
+    <text
+       x="75"
+       y="87.35"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3306">iVar</text>
+    <path
+       d="M52,62.7 V65.2"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3308" />
+    <path
+       d="M52,69.8 V72.3"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3310" />
+    <path
+       d="M52,82.1 V84.2"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3312" />
+    <path
+       d="M52,88.8 V91"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3314" />
+    <path
+       d="M98,62.7 V65.2"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3316" />
+    <path
+       d="M98,69.8 V72.3"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3318" />
+    <path
+       d="M98,82.1 V84.2"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3320" />
+    <path
+       d="M98,88.8 V91"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3322" />
+    <rect
+       x="38"
+       y="72.9"
+       width="11"
+       height="2"
+       fill="#8FA183"
+       id="rect3324" />
+    <rect
+       x="55"
+       y="72.9"
+       width="11"
+       height="2"
+       fill="#8FA183"
+       id="rect3326" />
+    <rect
+       x="39"
+       y="75.9"
+       width="8"
+       height="2"
+       fill="#8FA183"
+       id="rect3328" />
+    <rect
+       x="56"
+       y="75.9"
+       width="8"
+       height="2"
+       fill="#8FA183"
+       id="rect3330" />
+    <rect
+       x="38"
+       y="79.6"
+       width="28"
+       height="1.6"
+       fill="#4F6046"
+       id="rect3332" />
+    <polygon
+       points="36.4,79.25 36.68,80.01 37.49,80.04 36.86,80.55 37.08,81.33 36.4,80.88 35.72,81.33 35.94,80.55 35.31,80.04 36.12,80.01"
+       fill="#D9A21B"
+       stroke="#23201D"
+       stroke-width="0.15"
+       id="polygon3334" />
+    <rect
+       x="84"
+       y="72.9"
+       width="18"
+       height="2"
+       fill="#B58247"
+       id="rect3336" />
+    <rect
+       x="101"
+       y="75.9"
+       width="11"
+       height="2"
+       fill="#B58247"
+       id="rect3338" />
+    <rect
+       x="84"
+       y="79.4"
+       width="28"
+       height="2"
+       fill="#B58247"
+       id="rect3340" />
+    <polygon
+       points="82.4,79.25 82.68,80.01 83.49,80.04 82.86,80.55 83.08,81.33 82.4,80.88 81.72,81.33 81.94,80.55 81.31,80.04 82.12,80.01"
+       fill="#D9A21B"
+       stroke="#23201D"
+       stroke-width="0.15"
+       id="polygon3342" />
+    <rect
+       x="38"
+       y="91.7"
+       width="11"
+       height="2.4"
+       fill="#8FA183"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3344" />
+    <rect
+       x="55"
+       y="91.7"
+       width="11"
+       height="2.4"
+       fill="#8FA183"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3346" />
+    <rect
+       x="49"
+       y="91.2"
+       width="6"
+       height="3.4"
+       fill="#FFFFFF"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3348" />
+    <text
+       x="52"
+       y="93.7"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.2"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3350">NNN</text>
+    <rect
+       x="84"
+       y="91.7"
+       width="28"
+       height="2.4"
+       fill="#B58247"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3352" />
+  </g>
+  <g
+     id="panelB"
+     inkscape:groupmode="layer"
+     inkscape:label="B Iterative refinement">
+    <rect
+       x="32"
+       y="106.7"
+       width="28"
+       height="2.4000001"
+       fill="#8fa183"
+       id="rect3355" />
+    <rect
+       x="39.900002"
+       y="106.2364"
+       width="4.21"
+       height="3.4000001"
+       fill="#ffffff"
+       stroke="#23201d"
+       stroke-width="0.3"
+       id="rect3357" />
+    <text
+       x="42.009998"
+       y="108.76639"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5px"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201d"
+       id="text3359">NN</text>
+    <rect
+       x="50.900002"
+       y="106.2364"
+       width="4.21"
+       height="3.4000001"
+       fill="#ffffff"
+       stroke="#23201d"
+       stroke-width="0.3"
+       id="rect3361" />
+    <text
+       x="53.009998"
+       y="108.76639"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5px"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201d"
+       id="text3363">NN</text>
+    <text
+       x="46"
+       y="113.45414"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5px"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201d"
+       id="text3365">scaffold</text>
+    <path
+       d="M 61.5,108.05415 H 86"
+       fill="none"
+       stroke="#4a4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3367" />
+    <rect
+       x="65"
+       y="105.95415"
+       width="16"
+       height="4.1999998"
+       rx="1.4"
+       fill="#eef2f8"
+       stroke="#23201d"
+       stroke-width="0.3"
+       id="rect3369"
+       ry="1.4" />
+    <text
+       x="73"
+       y="108.90417"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5px"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201d"
+       id="text3371">BWA-MEM2</text>
+    <rect
+       x="88"
+       y="106.7"
+       width="30"
+       height="2.4"
+       fill="#8FA183"
+       id="rect3373" />
+    <rect
+       x="94.92"
+       y="106.2"
+       width="2.71"
+       height="3.4"
+       fill="#FFFFFF"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3375" />
+    <text
+       x="96.28"
+       y="108.73"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3377">N</text>
+    <rect
+       x="103.95"
+       y="106.2"
+       width="2.71"
+       height="3.4"
+       fill="#FFFFFF"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3379" />
+    <text
+       x="105.31"
+       y="108.73"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3381">N</text>
+    <g
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       fill="#4F6046"
+       xml:space="preserve"
+       id="g3413">
+
+    <text
+   x="88"
+   y="112.33"
+   id="text3385">GGATC<tspan
+   fill="#C0392B"
+   font-weight="bold"
+   id="tspan3383">A</tspan>CA</text>
+    <text
+   x="101.55"
+   y="112.33"
+   id="text3389">GT<tspan
+   fill="#2D5F8F"
+   font-weight="bold"
+   id="tspan3387">T</tspan>TACAC</text>
+
+    <text
+   x="92.52"
+   y="115.33"
+   id="text3393">TG<tspan
+   fill="#C0392B"
+   font-weight="bold"
+   id="tspan3391">A</tspan>TCAC</text>
+    <text
+   x="104.56"
+   y="115.33"
+   id="text3397"><tspan
+   fill="#2D5F8F"
+   font-weight="bold"
+   id="tspan3395">T</tspan>CCAACCC</text>
+
+    <text
+   x="89.5"
+   y="118.33"
+   id="text3401">CGGC<tspan
+   fill="#C0392B"
+   font-weight="bold"
+   id="tspan3399">A</tspan>CC</text>
+    <text
+   x="101.55"
+   y="118.33"
+   id="text3405">TG<tspan
+   fill="#2D5F8F"
+   font-weight="bold"
+   id="tspan3403">T</tspan>GTCCG</text>
+
+    <text
+   x="94.019997"
+   y="121.33"
+   id="text3411">A<tspan
+   style="font-weight:bold;fill:#c0392b;fill-opacity:1"
+   id="tspan4055">A</tspan>GAGAG<tspan
+   style="font-weight:bold;fill:#2d5f8f;fill-opacity:1"
+   id="tspan4053">T</tspan></text>
+
+  </g>
+    <rect
+       x="94.78"
+       y="105.5"
+       width="3"
+       height="16.8"
+       fill="none"
+       stroke="#C0392B"
+       stroke-width="0.4"
+       id="rect3433" />
+    <rect
+       x="103.81"
+       y="105.5"
+       width="3"
+       height="16.8"
+       fill="none"
+       stroke="#2D5F8F"
+       stroke-width="0.4"
+       id="rect3435" />
+    <text
+       x="103"
+       y="125.5"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3437">reads mapped</text>
+    <line
+       x1="100"
+       y1="126.3"
+       x2="100"
+       y2="127.9"
+       stroke="#4A4742"
+       stroke-width="0.3"
+       id="line3439" />
+    <rect
+       x="93"
+       y="127.9"
+       width="14"
+       height="4.2"
+       rx="1.4"
+       fill="#EEF2F8"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3441" />
+    <text
+       x="100"
+       y="130.85"
+       font-family="Menlo, 'Courier New', monospace"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3443">iVar</text>
+    <path
+       d="M100,132.3 V134.7"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3445" />
+    <rect
+       x="76"
+       y="134.9"
+       width="28"
+       height="2.4"
+       fill="#8FA183"
+       stroke="#23201D"
+       stroke-width="0.3"
+       id="rect3447" />
+    <text
+       x="90"
+       y="141.5"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="normal"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3449">new consensus</text>
+    <path
+       d="M74.5,136.1 C 30,136.1 30.5,122.1 32.5,112.9"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.35"
+       marker-end="url(#arrow)"
+       id="path3451" />
+    <path
+       d="M59.7,120.72 A5.4,5.4 0 1 1 54.3,120.72"
+       fill="none"
+       stroke="#4A4742"
+       stroke-width="0.5"
+       marker-end="url(#arrow)"
+       id="path3453" />
+    <text
+       x="57"
+       y="126.3"
+       font-family="Helvetica, Arial, sans-serif"
+       font-size="2.5"
+       font-weight="bold"
+       text-anchor="middle"
+       fill="#23201D"
+       id="text3455">1–4×</text>
+  </g>
+</svg>
