@@ -10,12 +10,21 @@ To address these limitations, we developed \href{https://github.com/nf-core/vira
 \section{Pipeline Description}
 \href{https://github.com/nf-core/viralmetagenome}{nf-core/viralmetagenome} implements a workflow for \textit{de novo} assembly, reference matching, and iterative consensus refinement to reconstruct viral genomes without prior target knowledge. The pipeline comprises five stages: read preprocessing, metagenomic diversity assessment, contig assembly and scaffolding, iterative consensus refinement with variant analysis, and quality control (Figure~\ref{fig:pipeline-workflow}). Unless otherwise specified, the pipeline offers multiple options to accommodate established user workflows and preferences. Detailed tool descriptions are provided in Supplementary Table~\ref{table:S1}.
 
-\begin{figure*}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{fig1}
-    \caption[Overview of the nf-core/viralmetagenome pipeline for untargeted viral genome reconstruction.]{\textbf{Overview of the nf-core/viralmetagenome pipeline for untargeted viral genome reconstruction.} Default options are highlighted in bold. nf-core/viralmetagenome processes short-read data through pre-processing, metagenomic diversity assessment, \textit{de novo} assembly with multiple assemblers, scaffolding with automated reference identification and taxonomy-guided contig clustering, and iterative consensus refinement. Quality-control metrics, assembly statistics, and coverage data are summarised in MultiQC reports and overview tables for downstream analysis.}
-    \label{fig:pipeline-workflow}
-\end{figure*}
+% Thesis-only: Figure 1 sits sideways on a page of its own (the page is viewed in landscape), caption at the foot.
+\clearpage
+\newgeometry{left=10mm,right=10mm,top=10mm,bottom=10mm,includehead=false,includefoot=false}
+\begin{landscape}
+\thispagestyle{empty}
+% The running head is redrawn by hand at the top of the sideways page, in the style of the thesis head (thesis.tex); the marks are those of the last shipped page.
+\noindent\hbox to\linewidth{\scriptsize\sffamily\color{thesischarcoal}\ifodd\value{page}\rightmark\ {\color{thesisfaint}\hrulefill}\ \thepage\else\thepage\ {\color{thesisfaint}\hrulefill}\ \leftmark\fi}\par
+\vspace{2mm}
+\centering
+\includegraphics[width=\linewidth,height=106mm,keepaspectratio]{fig1}\par
+\vfill
+\captionof{figure}[Overview of the nf-core/viralmetagenome pipeline for untargeted viral genome reconstruction.]{\textbf{Overview of the nf-core/viralmetagenome pipeline for untargeted viral genome reconstruction.} Default options are highlighted in bold. nf-core/viralmetagenome processes short-read data through pre-processing, metagenomic diversity assessment, \textit{de novo} assembly with multiple assemblers, scaffolding with automated reference identification and taxonomy-guided contig clustering, and iterative consensus refinement. Quality-control metrics, assembly statistics, and coverage data are summarised in MultiQC reports and overview tables for downstream analysis.}
+\label{fig:pipeline-workflow}
+\end{landscape}
+\restoregeometry
 
 \subsection{Read preprocessing}
 Input reads are provided via sample sheets containing sample names and paths to short-read FASTQ files. These are preprocessed using FastQC and trimmed for adapters using fastp \citep{Chen2018-tu} (default) or Trimmomatic \citep{Bolger2014-si}. Fastp offers automated adapter detection and faster processing \citep{Chen2018-tu}. UMI deduplication is implemented using HUMID (GitHub repository: \url{https://github.com/jfjlaros/HUMID}) for raw reads, or UMI-tools after mapping \citep{Smith2017-nk}. Multiple sequencing runs can be merged after trimming by specifying merge group identifiers in the sample sheet. Optional filtering with bbduk \citep{Bushnell2014-qy} or PRINSEQ++ \citep{Cantu2019-vs} removes low-complexity sequences, while host reads are removed with Kraken2 \citep{Wood2019-jl}.
